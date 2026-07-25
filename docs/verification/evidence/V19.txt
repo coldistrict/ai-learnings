@@ -1,4 +1,4 @@
-# V19 harness output — 2026-07-25T18:10:42.837Z
+# V19 harness output — 2026-07-25T18:38:47.553Z
 # command: node tools/verify/v19.js
 
 ok   m1-model-contracts/01-structured-output-contract — headers 3/3, ACs 7, tests 7, unmatched 0

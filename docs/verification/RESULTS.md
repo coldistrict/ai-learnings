@@ -110,3 +110,36 @@ harnesses green** (V11 = PASS+BLOCKED on `prereq:claude CLI`,
 links; `npm run test:labs` → exactly 0 pass / 18 fail (stub baseline
 preserved). No gate result recorded above was invalidated — the fixes
 widened test coverage and tightened enforcement.
+
+## Amendment 2 — Codex re-review hardening (2026-07-25)
+
+Codex's re-review moved the verdict to **approve-with-changes**, confirming
+B1/S1/S2/S3 resolved and raising two hardening items + one operational note
+(dispositions in DECISIONS ADR-0007; both items accepted):
+
+- **Stale-lock removal race** — the read→unlink gap in `learn:start` could,
+  under a rare interleaving, delete a freshly acquired replacement lock.
+  Fixed by serializing EVERY removal of `active-session.json` through an
+  exclusive cleanup mutex with a UUID re-verify under the mutex
+  (`removeLockSerialized` in `tools/learn/lib.js`; used by start, close,
+  resume, regen, abort). Since removal is the only way the slot frees for a
+  new exclusive create, no process can delete a lock it did not verify. New
+  V2 scenario: 5 racers contend over a pre-planted stale lock → exactly 1
+  takeover, 1 fresh lock, 1 draft, closed journal preserved
+  (`evidence/V2.txt`).
+- **Consent substring trap** — `/yes/i` accepted "not yes". Consent is now a
+  strict enum: `yes-explicit | yes-mechanical-unblock` (free text goes in
+  `consent_note`). V18 grew to **20/20** with both "not yes" and "not asked"
+  rejected by name (`evidence/V18.txt`).
+- **Inventory refresh** — re-ran `zsh -c 'npm run prereq'` 2026-07-25:
+  codex CLI remains ABSENT in this environment's non-interactive AND login
+  shells, while Codex's own session reports `0.146.0-alpha.3.1` — a
+  per-context PATH discrepancy (the plan's evidence appendix documented this
+  exact phenomenon). V1 measures the non-interactive shell by design; the
+  report stands. To unblock codex-host gates from any context, the codex
+  binary must be made visible to non-interactive shells (e.g., PATH export
+  in `~/.zshenv` or a symlink into `/opt/homebrew/bin`) — a user action,
+  not automated. claude CLI, Go, .NET remain absent.
+
+Re-verification: 15/15 harnesses green (V11 PASS+BLOCKED); `test:labs`
+0 pass / 18 fail unchanged.

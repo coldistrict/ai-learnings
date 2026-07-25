@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   repoRoot, P, readJson, writeJson, readJournal, validateCloseFields,
-  writeViews,
+  writeViews, removeLockSerialized,
 } from './lib.js';
 
 const root = repoRoot();
@@ -39,7 +39,7 @@ if (fs.existsSync(journalFile)) {
   const state = readJson(P.stateFile(root));
   state.last_closed_session = lock.uuid;
   writeJson(P.stateFile(root), state);
-  fs.unlinkSync(lockFile);
+  removeLockSerialized(root, lock.uuid);
   console.log('  views regenerated, pointer repaired, stale lock cleared.');
   process.exit(0);
 }

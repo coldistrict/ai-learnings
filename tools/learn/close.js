@@ -6,8 +6,15 @@ import path from 'node:path';
 import {
   repoRoot, P, nowIso, readJson, writeJson, readJournal, writeJournal,
   validateCloseFields, learnerManifest, manifestDiff, unattributedChanges,
-  writeViews, crashAfter,
+  writeViews, crashAfter, removeLockSerialized,
 } from './lib.js';
+
+function unlock(root, uuid) {
+  const res = removeLockSerialized(root, uuid);
+  if (!res.removed && res.reason === 'busy') {
+    console.log('note: lock removal is momentarily contended; the lock is now stale and the next learn:start / learn:regen will clear it.');
+  }
+}
 
 const root = repoRoot();
 const lockFile = P.lockFile(root);
@@ -37,7 +44,7 @@ if (!fs.existsSync(draftFile)) {
     state.last_closed_session = lock.uuid;
     writeJson(P.stateFile(root), state);
     crashAfter('pointer');
-    fs.unlinkSync(lockFile);
+    unlock(root, lock.uuid);
     console.log(`Close completed for ${lock.uuid}.`);
     process.exit(0);
   }
@@ -84,7 +91,7 @@ writeJson(P.stateFile(root), state);
 crashAfter('pointer');
 
 // ---- unlock ----------------------------------------------------------------
-fs.unlinkSync(lockFile);
+unlock(root, front.uuid);
 
 const total = Object.values(front.phase_minutes).reduce((a, b) => a + b, 0);
 if (front.variant === 'default' && (total < 45 || total > 75)) {

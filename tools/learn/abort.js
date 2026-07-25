@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   repoRoot, P, nowIso, readJson, readJournal, writeJournal, writeViews,
+  removeLockSerialized,
 } from './lib.js';
 
 function arg(name, fallback = null) {
@@ -30,9 +31,15 @@ if (!fs.existsSync(draftFile)) {
   const journalFile = path.join(P.journalDir(root), `${lock.uuid}.md`);
   if (!fs.existsSync(journalFile)) {
     // True orphan lock (crash between lock reservation and draft creation).
-    // Nothing was recorded, so there is nothing to journal — just release it.
-    fs.unlinkSync(lockFile);
-    console.log(`Cleared orphan lock for session ${lock.uuid} (no draft was ever created; nothing recorded).`);
+    // Nothing was recorded, so there is nothing to journal — release it.
+    // Serialized + UUID-verified: if another tutor is mid-acquisition on a
+    // NEW lock, we will not touch it.
+    const res = removeLockSerialized(root, lock.uuid);
+    if (res.removed) {
+      console.log(`Cleared orphan lock for session ${lock.uuid} (no draft was ever created; nothing recorded).`);
+    } else {
+      console.log(`Lock for ${lock.uuid} was already ${res.reason === 'replaced' ? 'replaced by a newer session' : 'cleared'}; nothing to do.`);
+    }
     process.exit(0);
   }
   console.error(`Lock exists for ${lock.uuid} but its journal is already closed. Run: npm run learn:regen`);
@@ -50,7 +57,7 @@ const journalFile = path.join(P.journalDir(root), `${lock.uuid}.md`);
 writeJournal(draftFile, front, body);
 fs.renameSync(draftFile, journalFile);
 writeViews(root); // provenance events (if any) still surface; ledger untouched
-fs.unlinkSync(lockFile);
+removeLockSerialized(root, lock.uuid);
 
 console.log(`Session aborted: ${lock.uuid} (reason: ${reason})`);
 console.log('  aborted record kept in learning/journal/; 0 mastery rows changed.');

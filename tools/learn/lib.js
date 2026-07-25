@@ -225,6 +225,10 @@ export const REQUIRED_CLOSE_FIELDS = [
 
 export const PHASES = ['start', 'model', 'gate', 'lab', 'debrief'];
 
+// Strict consent enum (Codex re-review 2026-07-25: substring matching let
+// "not yes" pass). Free-text detail belongs in the optional consent_note.
+export const CONSENT_VALUES = ['yes-explicit', 'yes-mechanical-unblock'];
+
 // Validates a draft's frontmatter for closing. Returns a list of problems
 // (empty = valid). closed_at is filled by close itself, so it is exempt when
 // checking a still-open draft (pass {open:true}).
@@ -287,8 +291,8 @@ export function validateCloseFields(front, { open = false } = {}) {
       if (typeof ev.reason !== 'string' || !ev.reason.trim()) {
         problems.push(`${tag}: reason must be a non-empty string`);
       }
-      if (typeof ev.consent !== 'string' || !/yes/i.test(ev.consent)) {
-        problems.push(`${tag}: consent must record an affirmative (a string containing "yes"; got: ${JSON.stringify(ev.consent ?? null)})`);
+      if (!CONSENT_VALUES.includes(ev.consent)) {
+        problems.push(`${tag}: consent must be exactly one of ${CONSENT_VALUES.join(' | ')} (got: ${JSON.stringify(ev.consent ?? null)}); free-text detail goes in consent_note`);
       }
       if (typeof ev.interview_claim_impact !== 'string' || !ev.interview_claim_impact.trim()) {
         problems.push(`${tag}: interview_claim_impact must be a non-empty string`);
@@ -551,6 +555,51 @@ export function writeViews(root) {
   fs.writeFileSync(P.provView(root), provText);
 }
 
+// ---------------------------------------------------------------------------
+// Serialized lock removal (Codex re-review 2026-07-25, hardening item 1).
+// EVERY removal of learning/active-session.json goes through an exclusive
+// cleanup mutex and re-verifies the lock's UUID under that mutex before
+// unlinking. Because removal is the only path that frees the slot for a new
+// exclusive create, a fresh replacement lock can never appear between the
+// re-read and the unlink — so no process can ever delete a lock it did not
+// verify. A mutex older than 30s is treated as abandoned (crashed clearer).
+// ---------------------------------------------------------------------------
+
+const CLEANUP_MUTEX_MAX_AGE_MS = 30000;
+
+function pauseMs(ms) {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+}
+
+export function removeLockSerialized(root, expectedUuid, { attempts = 100 } = {}) {
+  const lockFile = P.lockFile(root);
+  const mutex = `${lockFile}.cleanup`;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      if (Date.now() - fs.statSync(mutex).mtimeMs > CLEANUP_MUTEX_MAX_AGE_MS) {
+        fs.unlinkSync(mutex);
+      }
+    } catch { /* mutex absent — fine */ }
+    try {
+      fs.writeFileSync(mutex, String(process.pid), { flag: 'wx' });
+    } catch (e) {
+      if (e.code === 'EEXIST') { pauseMs(10); continue; }
+      throw e;
+    }
+    try {
+      let current = null;
+      try { current = readJson(lockFile); } catch { /* absent or mid-write */ }
+      if (!current) return { removed: false, reason: 'absent' };
+      if (current.uuid !== expectedUuid) return { removed: false, reason: 'replaced' };
+      fs.unlinkSync(lockFile);
+      return { removed: true, reason: 'removed' };
+    } finally {
+      try { fs.unlinkSync(mutex); } catch { /* best-effort */ }
+    }
+  }
+  return { removed: false, reason: 'busy' };
+}
+
 // Pointer repair: state.json.last_closed_session ← newest closed journal.
 // Also clears a stale lock whose UUID already has a closed/aborted journal.
 export function repairPointerAndLock(root) {
@@ -567,12 +616,14 @@ export function repairPointerAndLock(root) {
   const lockFile = P.lockFile(root);
   let lockCleared = false;
   if (fs.existsSync(lockFile)) {
-    const lock = readJson(lockFile);
-    const journalFile = path.join(P.journalDir(root), `${lock.uuid}.md`);
-    const draftFile = path.join(P.inProgressDir(root), `${lock.uuid}.md`);
-    if (fs.existsSync(journalFile) && !fs.existsSync(draftFile)) {
-      fs.unlinkSync(lockFile);
-      lockCleared = true;
+    let lock = null;
+    try { lock = readJson(lockFile); } catch { /* mid-write; leave it */ }
+    if (lock) {
+      const journalFile = path.join(P.journalDir(root), `${lock.uuid}.md`);
+      const draftFile = path.join(P.inProgressDir(root), `${lock.uuid}.md`);
+      if (fs.existsSync(journalFile) && !fs.existsSync(draftFile)) {
+        lockCleared = removeLockSerialized(root, lock.uuid).removed;
+      }
     }
   }
   return { pointerRepaired: changed, lockCleared };

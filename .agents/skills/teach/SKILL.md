@@ -40,8 +40,8 @@ plugins.
 6. **Ownership & provenance (plan §8.5):** the learner writes all
    substantive code. Tutor edits to learner-owned files require explicit
    consent (or a named ≤3-line mechanical unblock with a yes) and a COMPLETE
-   provenance event in the journal (agent, files/lines, reason, affirmative
-   consent, interview-claim impact) — `learn:close` enforces attribution
+   provenance event in the journal (agent, files/lines, reason, consent
+   recorded as yes-explicit | yes-mechanical-unblock, interview-claim impact) — `learn:close` enforces attribution
    against the start-of-session manifest and refuses incomplete events.
 7. **Withheld material:** never read withheld tutor fixtures (ground-truth
    labels, red-herring inventories, scoring keys; tutor-only layout is

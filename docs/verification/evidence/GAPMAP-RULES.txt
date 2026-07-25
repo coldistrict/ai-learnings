@@ -1,4 +1,4 @@
-# GAPMAP-RULES harness output — 2026-07-25T18:10:43.330Z
+# GAPMAP-RULES harness output — 2026-07-25T18:38:48.009Z
 # command: node tools/verify/gapmap-rules.js
 
   ok   A: sample input generates (exit 0)

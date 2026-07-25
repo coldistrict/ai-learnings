@@ -19,7 +19,8 @@ function completeEvent(overrides = {}) {
     files: [LEARNER_FILE_POSIX],
     lines: '6 appended',
     reason: 'requested refactor demo',
-    consent: 'learner-yes (explicit)',
+    consent: 'yes-explicit',
+    consent_note: 'learner said yes in chat (fixture)',
     interview_claim_impact: 'none — fixture',
     ...overrides,
   };
@@ -52,7 +53,7 @@ function scenario(label, { lines, event }) {
   const prov = fs.readFileSync(path.join(root, 'learning', 'PROVENANCE.md'), 'utf8');
   const rows = prov.split('\n').filter((l) => l.startsWith('|') && l.includes('placeholder.js'));
   g.check('B: regenerated PROVENANCE.md contains exactly 1 matching event row (with lines + impact)',
-    rows.length === 1 && rows[0].includes('claude') && rows[0].includes('learner-yes')
+    rows.length === 1 && rows[0].includes('claude') && rows[0].includes('yes-explicit')
     && rows[0].includes('6 appended') && rows[0].includes('none — fixture'), `rows=${rows.length}`);
   cleanup(root);
 }
@@ -72,7 +73,7 @@ function scenario(label, { lines, event }) {
     event: completeEvent({
       lines: '3 appended',
       reason: 'mechanical unblock: missing export keyword',
-      consent: 'learner-yes (<=3-line mechanical unblock)',
+      consent: 'yes-mechanical-unblock',
     }),
   });
   g.check('D: consented ≤3-line mechanical unblock → close succeeds', r.status === 0, `exit=${r.status}`);
@@ -86,7 +87,8 @@ function scenario(label, { lines, event }) {
 const negatives = [
   ['E', 'missing interview_claim_impact', completeEvent({ interview_claim_impact: undefined }), 'interview_claim_impact'],
   ['F', 'empty reason', completeEvent({ reason: '' }), 'reason'],
-  ['G', 'non-affirmative consent', completeEvent({ consent: 'not asked' }), 'consent'],
+  ['G', 'non-affirmative consent ("not yes" — substring traps rejected)', completeEvent({ consent: 'not yes' }), 'consent'],
+  ['G2', 'off-enum consent ("not asked")', completeEvent({ consent: 'not asked' }), 'consent'],
   ['H', 'invalid agent', completeEvent({ agent: 'gpt' }), 'agent'],
   ['I', 'missing lines reference', completeEvent({ lines: undefined }), 'lines'],
 ];

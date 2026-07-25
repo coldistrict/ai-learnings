@@ -1,4 +1,4 @@
-# V2 harness output — 2026-07-25T18:10:38.375Z
+# V2 harness output — 2026-07-25T18:38:43.256Z
 # command: node tools/verify/v2.js
 
   ok   learn:start --teacher claude --mode solo exits 0 — exit=0
@@ -16,4 +16,9 @@
   ok   the winner announced the same UUID the lock holds
   ok   every loser reports the live lock (winning UUID or in-flight acquisition), never a second session
   ok   losers that saw the winner offer learn:resume / learn:abort
-V2: PASS (15/15 checks)
+  ok   stale-lock race: exactly 1 of 5 racers wins the takeover — successes=1
+  ok   stale-lock race: exactly 1 live lock remains
+  ok   stale-lock race: the surviving lock is a FRESH session, not the stale one — 69f82d82-5cbc-4b78-8c68-1a86a45249e7
+  ok   stale-lock race: exactly 1 draft, matching the surviving lock — 69f82d82-5cbc-4b78-8c68-1a86a45249e7.md
+  ok   stale-lock race: the closed journal was preserved
+V2: PASS (20/20 checks)

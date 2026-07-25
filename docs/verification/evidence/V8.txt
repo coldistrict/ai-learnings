@@ -1,4 +1,4 @@
-# V8 harness output — 2026-07-25T18:10:40.718Z
+# V8 harness output — 2026-07-25T18:38:45.393Z
 # command: node tools/verify/v8.js
 
   ok   generator runs twice with the same seed (exit 0, 0)

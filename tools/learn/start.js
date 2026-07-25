@@ -12,7 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   repoRoot, P, nowIso, newUuid, readJson,
-  writeJournal, learnerManifest, PHASES,
+  writeJournal, learnerManifest, PHASES, removeLockSerialized,
 } from './lib.js';
 
 function arg(name, fallback = null) {
@@ -60,9 +60,18 @@ for (let attempt = 0; attempt < 3 && !acquired; attempt++) {
     const journalFile = path.join(P.journalDir(root), `${lock.uuid}.md`);
     const draftFile = path.join(P.inProgressDir(root), `${lock.uuid}.md`);
     if (fs.existsSync(journalFile) && !fs.existsSync(draftFile)) {
-      // Stale lock left by a crash after its journal closed (V5 pointer phase).
-      try { fs.unlinkSync(lockFile); } catch (err) { if (err.code !== 'ENOENT') throw err; }
-      console.log(`Cleared stale lock for already-closed session ${lock.uuid}; closed journal preserved.`);
+      // Stale lock left by a crash after its journal closed (V5 pointer
+      // phase). Removal is serialized + UUID-verified so a concurrent
+      // starter's fresh lock can never be deleted by mistake.
+      const res = removeLockSerialized(root, lock.uuid);
+      if (res.removed) {
+        console.log(`Cleared stale lock for already-closed session ${lock.uuid}; closed journal preserved.`);
+      } else if (res.reason === 'busy') {
+        console.error('Another process is clearing the stale lock right now; try again in a moment.');
+        process.exit(1);
+      }
+      // 'absent'/'replaced': someone else already cleared or re-acquired —
+      // fall through and race fairly for the slot.
       continue; // retry exclusive acquisition
     }
     console.error(`A live session lock exists for session ${lock.uuid} (teacher ${lock.teacher}, started ${lock.started_at}).`);

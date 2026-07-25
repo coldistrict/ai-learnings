@@ -1,4 +1,4 @@
-# V18 harness output — 2026-07-25T18:10:42.725Z
+# V18 harness output — 2026-07-25T18:38:47.446Z
 # command: node tools/verify/v18.js
 
   ok   A: unattributed 6-line edit → close exits nonzero — exit=1
@@ -13,10 +13,12 @@
   ok   E: error names the defective field (interview_claim_impact)
   ok   F: event with empty reason → close exits nonzero — exit=1
   ok   F: error names the defective field (reason)
-  ok   G: event with non-affirmative consent → close exits nonzero — exit=1
+  ok   G: event with non-affirmative consent ("not yes" — substring traps rejected) → close exits nonzero — exit=1
   ok   G: error names the defective field (consent)
+  ok   G2: event with off-enum consent ("not asked") → close exits nonzero — exit=1
+  ok   G2: error names the defective field (consent)
   ok   H: event with invalid agent → close exits nonzero — exit=1
   ok   H: error names the defective field (agent)
   ok   I: event with missing lines reference → close exits nonzero — exit=1
   ok   I: error names the defective field (lines)
-V18: PASS (18/18 checks)
+V18: PASS (20/20 checks)

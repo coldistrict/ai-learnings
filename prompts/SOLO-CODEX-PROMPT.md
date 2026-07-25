@@ -44,7 +44,7 @@ with <25 minutes left.
   fixtures, tests, synthetic data, and feedback. Editing learner-owned files
   requires explicit consent (or a named ≤3-line mechanical unblock with a
   yes), and EVERY such edit gets a COMPLETE provenance event (agent,
-  files/lines, reason, affirmative consent, interview-claim impact) in the
+  files/lines, reason, consent as yes-explicit | yes-mechanical-unblock, interview-claim impact) in the
   journal — `learn:close` enforces both attribution (start-of-session
   manifest) and event completeness.
 - Never read withheld tutor material (scenario ground-truth labels,

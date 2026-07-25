@@ -1,4 +1,4 @@
-# V12 harness output — 2026-07-25T18:10:41.553Z
+# V12 harness output — 2026-07-25T18:38:46.230Z
 # command: node tools/verify/v12.js
 
   ok   F1 (all triggers present): names resume of the open draft UUID — next: Resume open session 00000000-0000-4000-8000-000000000001 (teacher claude); run: npm run learn:resume

@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { makeScratchRoot, run, runAsync, cleanup, Gate, FIXED_UUID, FIXED_TIME } from './fixture-lib.js';
-import { readJournal } from '../learn/lib.js';
+import { readJournal, writeJournal } from '../learn/lib.js';
 
 const g = new Gate('V2');
 const root = makeScratchRoot('v2');
@@ -59,6 +59,36 @@ cleanup(root);
     losers.filter((l) => l.out.includes(lockC.uuid))
       .every((l) => l.out.includes('learn:resume') && l.out.includes('learn:abort')));
   cleanup(rootC);
+}
+
+// --- stale-lock takeover under contention: serialized removal means racers
+// can never delete each other's fresh locks (Codex re-review hardening 1) ---
+{
+  const rootS = makeScratchRoot('v2-stale-race');
+  const staleUuid = '00000000-0000-4000-8000-00000000aaaa';
+  writeJournal(path.join(rootS, 'learning', 'journal', `${staleUuid}.md`), {
+    uuid: staleUuid, teacher: 'claude', mode: 'solo', variant: 'default',
+    status: 'closed', started_at: '2026-01-01T00:00:00Z',
+    closed_at: '2026-01-01T01:00:00Z', planned_scope: 'fixture', module: null,
+    ledger_changes: [], provenance_events: [],
+  }, '\nfixture\n');
+  fs.writeFileSync(path.join(rootS, 'learning', 'active-session.json'),
+    JSON.stringify({ uuid: staleUuid, teacher: 'claude', mode: 'solo', started_at: '2026-01-01T00:00:00Z' }, null, 2) + '\n');
+
+  const N = 5;
+  const results = await Promise.all(Array.from({ length: N }, (_, i) =>
+    runAsync('start', { root: rootS, args: ['--teacher', i % 2 ? 'codex' : 'claude', '--mode', 'solo'] })));
+  const winners = results.filter((r) => r.status === 0);
+  g.check(`stale-lock race: exactly 1 of ${N} racers wins the takeover`, winners.length === 1, `successes=${winners.length}`);
+  const lockFileS = path.join(rootS, 'learning', 'active-session.json');
+  g.check('stale-lock race: exactly 1 live lock remains', fs.existsSync(lockFileS));
+  const lockS = JSON.parse(fs.readFileSync(lockFileS, 'utf8'));
+  g.check('stale-lock race: the surviving lock is a FRESH session, not the stale one', lockS.uuid !== staleUuid, lockS.uuid);
+  const draftsS = fs.readdirSync(path.join(rootS, 'learning', 'journal', '.in-progress')).filter((f) => f.endsWith('.md'));
+  g.check('stale-lock race: exactly 1 draft, matching the surviving lock', draftsS.length === 1 && draftsS[0] === `${lockS.uuid}.md`, draftsS.join(', '));
+  g.check('stale-lock race: the closed journal was preserved',
+    fs.existsSync(path.join(rootS, 'learning', 'journal', `${staleUuid}.md`)));
+  cleanup(rootS);
 }
 
 g.finish();

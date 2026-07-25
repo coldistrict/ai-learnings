@@ -116,3 +116,31 @@ discipline, each finding gets an explicit disposition.
 **Re-verification:** 15/15 harnesses green (V11 PASS+BLOCKED);
 `test:labs` 0/18 unchanged; `sources:check` 0 dead links. Recorded in
 `docs/verification/RESULTS.md` Amendment 1.
+
+## ADR-0007 — Codex re-review hardening dispositions (2026-07-25)
+
+**Status:** accepted; both items applied and re-verified.
+**Context:** Codex's re-review (verdict: approve-with-changes) confirmed
+B1/S1/S2/S3 resolved and raised two hardening items plus an
+inventory-refresh note.
+**Dispositions (2/2 accepted):**
+
+- **Stale-lock removal race — accept.** All removals of
+  `learning/active-session.json` now go through `removeLockSerialized`
+  (exclusive cleanup mutex + UUID re-verify under the mutex; abandoned
+  mutex reclaimed after 30s). Sites: start (stale takeover), close (both
+  unlock paths), resume (interrupted-close), regen (pointer/lock repair),
+  abort (normal + orphan). New V2 stale-lock 5-racer scenario proves exactly
+  one takeover with the closed journal preserved.
+- **Consent substring trap — accept.** `consent` is a strict enum
+  (`yes-explicit` | `yes-mechanical-unblock`), optional `consent_note` for
+  free text; template, prompts, and teach-skill body updated; V18 extended
+  to 20/20 incl. the literal "not yes" rejection.
+
+**Inventory refresh:** re-run 2026-07-25; codex CLI still absent from this
+environment's non-interactive and login shells (Codex's own session sees
+0.146.0-alpha.3.1 — per-context PATH). Report honest; unblocking is a user
+PATH action (`~/.zshenv` export or symlink), never automated. claude CLI,
+Go, .NET remain absent.
+**Re-verification:** 15/15 harnesses green (V11 PASS+BLOCKED); labs baseline
+0/18 unchanged. Recorded in RESULTS.md Amendment 2.

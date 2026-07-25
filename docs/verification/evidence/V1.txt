@@ -1,4 +1,4 @@
-# V1 harness output — 2026-07-25T18:10:38.115Z
+# V1 harness output — 2026-07-25T18:38:42.918Z
 # command: node tools/verify/v1.js
 
   ok   `zsh -c "npm run prereq"` exits 0 (non-interactive shell) — exit=0

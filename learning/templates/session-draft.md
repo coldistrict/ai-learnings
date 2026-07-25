@@ -17,10 +17,11 @@ contexts, ≥1 build/debug/review class, and a timed-explain-back class
 
 Provenance-event fields (ALL required, enforced at close): agent (claude|
 codex), files (non-empty list), lines (count or range, e.g. 3 or
-"L10-L12 replaced"), reason (non-empty), consent (must record an affirmative
-— a string containing "yes"), interview_claim_impact (non-empty). EVERY
-tutor edit to a learner-owned file — including the consented ≤3-line
-mechanical unblock — needs one (plan §8.5).
+"L10-L12 replaced"), reason (non-empty), consent (strict enum:
+"yes-explicit" | "yes-mechanical-unblock"; free-text detail goes in the
+optional consent_note), interview_claim_impact (non-empty). EVERY tutor
+edit to a learner-owned file — including the consented ≤3-line mechanical
+unblock — needs one (plan §8.5).
 
 Body sections: START/PRIME (due retrievals) · MODEL ↔ PROBE · GATE · LAB
 (evidence step, hints used) · DEBRIEF/CLOSE (retention-3, next review).
