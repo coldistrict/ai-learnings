@@ -1,0 +1,5 @@
+{
+  "$comment": "SYNTHETIC pricing for deterministic lab arithmetic — not any real provider's rates. Real pricing is verified against the SOURCE_LEDGER row before the first live benchmark (plan §10.3).",
+  "input_per_1k_usd": 0.003,
+  "output_per_1k_usd": 0.015
+}

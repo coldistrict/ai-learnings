@@ -1,0 +1,29 @@
+{
+  "learner": "SAMPLE — not the learner; machinery self-test fixture only",
+  "recorded_at": "2026-01-01",
+  "availability": { "hours_per_week": 8, "target_interview_date": null },
+  "pace_variant": "10h/wk",
+  "role_overlay": "core-enablement",
+  "area_scores": {
+    "llm-fundamentals": { "explain": 3, "build_debug": 2, "judgment": 2 },
+    "tool-workflow-agent": { "explain": 2, "build_debug": 2, "judgment": 3 },
+    "retrieval-rag": { "explain": 2, "build_debug": 1, "judgment": null },
+    "mcp": { "explain": 1, "build_debug": null, "judgment": null },
+    "devtool-packaging": { "explain": 2, "build_debug": null, "judgment": null },
+    "evals-observability": { "explain": 2, "build_debug": 1, "judgment": 2 },
+    "security-governance": { "explain": 2, "build_debug": null, "judgment": 2 },
+    "production-platform": { "explain": 3, "build_debug": 3, "judgment": 3 },
+    "enablement-org": { "explain": 2, "build_debug": null, "judgment": 2 },
+    "interview-communication": { "explain": 3, "build_debug": null, "judgment": null }
+  },
+  "skipped_but_gated": ["client-side retry/backoff basics (scored 3 explain; M1 gate still applies)"],
+  "selected_port": {
+    "value": "go",
+    "inputs": {
+      "posting_fit": "SAMPLE: 2 of 3 target postings list Go for platform tooling",
+      "background": "SAMPLE: prior Go services experience per TASK context",
+      "inventory_ref": "learning/prereq-report.json"
+    }
+  },
+  "next_session_id": "m1-01-structured-output-contract"
+}

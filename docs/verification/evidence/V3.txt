@@ -1,0 +1,14 @@
+# V3 harness output — 2026-07-25T18:10:38.656Z
+# command: node tools/verify/v3.js
+
+  ok   learn:close exits 0 with required fields filled — exit=0
+  ok   journal/<u1>.md exists
+  ok   .in-progress contains 0 files — count=0
+  ok   state.json pointer equals u1
+  ok   lock file absent
+  ok   views regenerated (mtime > close start)
+  ok   close with a missing required field exits nonzero — exit=1
+  ok   error names the missing field (next_review)
+  ok   draft remains in .in-progress
+  ok   no file appears in journal/
+V3: PASS (10/10 checks)

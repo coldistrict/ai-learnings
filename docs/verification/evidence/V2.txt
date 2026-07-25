@@ -1,0 +1,19 @@
+# V2 harness output — 2026-07-25T18:10:38.375Z
+# command: node tools/verify/v2.js
+
+  ok   learn:start --teacher claude --mode solo exits 0 — exit=0
+  ok   active-session.json exists and contains UUID u1 — uuid=00000000-0000-4000-8000-000000000001
+  ok   draft exists for u1
+  ok   draft has open metadata (teacher, mode, started-at, planned scope) — teacher=claude mode=solo started_at=2026-01-01T00:00:00Z
+  ok   second learn:start exits nonzero while lock is live — exit=1
+  ok   output names u1
+  ok   output offers learn:resume / learn:abort
+  ok   no second draft created (draft count exactly 1) — count=1
+  ok   concurrent starts: exactly 1 of 5 simultaneous processes succeeds — successes=1
+  ok   exactly 1 live lock after the race
+  ok   exactly 1 draft after the race — count=1
+  ok   the lock UUID matches the single draft
+  ok   the winner announced the same UUID the lock holds
+  ok   every loser reports the live lock (winning UUID or in-flight acquisition), never a second session
+  ok   losers that saw the winner offer learn:resume / learn:abort
+V2: PASS (15/15 checks)

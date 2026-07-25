@@ -1,0 +1,29 @@
+# V9 harness output — 2026-07-25T18:10:40.779Z
+# command: node tools/verify/v9.js
+
+  ok   ls -d scenarios/*/ | wc -l → 3 at Stage 0 exit — 01-stale-merchant-settlement, 02-duplicate-webhook-ledger-postings, 03-refund-queue-backlog
+  ok   [01-stale-merchant-settlement] public bundle: ≥1 log/metric bundle — logs.ndjson, metrics.json
+  ok   [01-stale-merchant-settlement] public bundle: ≥1 ticket-thread file
+  ok   [01-stale-merchant-settlement] public bundle: ≥1 doc-link list
+  ok   [01-stale-merchant-settlement] withheld root-cause statement exists
+  ok   [01-stale-merchant-settlement] machine-readable labels file parses
+  ok   [01-stale-merchant-settlement] red-herring inventory with ≥1 entry — entries=3
+  ok   [01-stale-merchant-settlement] withheld labels reference only public criteria (unmatched = 0) — 6 label groups, all public
+  ok   [02-duplicate-webhook-ledger-postings] public bundle: ≥1 log/metric bundle — logs.ndjson, metrics.json
+  ok   [02-duplicate-webhook-ledger-postings] public bundle: ≥1 ticket-thread file
+  ok   [02-duplicate-webhook-ledger-postings] public bundle: ≥1 doc-link list
+  ok   [02-duplicate-webhook-ledger-postings] withheld root-cause statement exists
+  ok   [02-duplicate-webhook-ledger-postings] machine-readable labels file parses
+  ok   [02-duplicate-webhook-ledger-postings] red-herring inventory with ≥1 entry — entries=3
+  ok   [02-duplicate-webhook-ledger-postings] withheld labels reference only public criteria (unmatched = 0) — 6 label groups, all public
+  ok   [03-refund-queue-backlog] public bundle: ≥1 log/metric bundle — logs.ndjson, metrics.json
+  ok   [03-refund-queue-backlog] public bundle: ≥1 ticket-thread file
+  ok   [03-refund-queue-backlog] public bundle: ≥1 doc-link list
+  ok   [03-refund-queue-backlog] withheld root-cause statement exists
+  ok   [03-refund-queue-backlog] machine-readable labels file parses
+  ok   [03-refund-queue-backlog] red-herring inventory with ≥1 entry — entries=4
+  ok   [03-refund-queue-backlog] withheld labels reference only public criteria (unmatched = 0) — 6 label groups, all public
+  ok   authoring time recorded for all 3 packs
+  ok   dated DECISIONS.md entry states measured median vs the 2h hypothesis
+  ok   exactly 1 keep/reduce decision — decision statements=1
+V9: PASS (25/25 checks)

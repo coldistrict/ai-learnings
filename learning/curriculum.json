@@ -1,0 +1,75 @@
+{
+  "note": "Milestone map from plan §7 — titles, module order, and exit gates only. Lesson content is authored just-in-time (plan §15 Stage 4); this file is navigation for learn:next, not a pre-generated course.",
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "Role/availability calibration + baseline diagnostic",
+      "hours": "4–6",
+      "modules": ["m0-diagnostic-session-a", "m0-diagnostic-session-b"],
+      "gates": ["V13"]
+    },
+    {
+      "id": "M1",
+      "title": "Model contracts + provider boundary",
+      "hours": "8–11",
+      "modules": ["m1-01-structured-output-contract", "m1-02-retry-repair-path", "m1-03-ratelimit-fallback-costcap"],
+      "gates": ["V14", "V16", "V17"]
+    },
+    {
+      "id": "M2",
+      "title": "Deterministic workflow + evalkit v1",
+      "hours": "13–17",
+      "modules": [],
+      "gates": ["V15"]
+    },
+    {
+      "id": "M3",
+      "title": "MCP context gateway (stdio)",
+      "hours": "12–16",
+      "modules": [],
+      "gates": ["V20"]
+    },
+    {
+      "id": "M4",
+      "title": "Retrieval grounded in evidence",
+      "hours": "13–17",
+      "modules": [],
+      "gates": ["V21"]
+    },
+    {
+      "id": "M5",
+      "title": "Investigation runtime harness",
+      "hours": "11–15",
+      "modules": [],
+      "gates": ["V23", "V24"]
+    },
+    {
+      "id": "M6",
+      "title": "Eval/observability/security release gate",
+      "hours": "13–18",
+      "modules": [],
+      "gates": ["V22(>=8)", "V25"]
+    },
+    {
+      "id": "M7",
+      "title": "Developer-tool enablement packaging",
+      "hours": "10–14",
+      "modules": [],
+      "gates": ["V31"]
+    },
+    {
+      "id": "M8",
+      "title": "Production/remote/rollout mechanics",
+      "hours": "12–17",
+      "modules": [],
+      "gates": ["V22(12/12)", "V26", "V34"]
+    },
+    {
+      "id": "M9",
+      "title": "Enablement + interview capstone",
+      "hours": "12–16",
+      "modules": [],
+      "gates": ["V27", "V28", "V32", "V33", "V35", "V36", "V29"]
+    }
+  ]
+}

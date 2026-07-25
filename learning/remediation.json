@@ -1,0 +1,4 @@
+{
+  "note": "Mandatory remediation queue (plan §8.6, §16). Tutors append items when a gate fails or a competency demotes; learn:next surfaces open items before new material. Items: {id, competency, description, created, status: open|closed, closed_by_session}.",
+  "items": []
+}

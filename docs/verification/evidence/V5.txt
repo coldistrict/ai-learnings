@@ -1,0 +1,32 @@
+# V5 harness output — 2026-07-25T18:10:40.240Z
+# command: node tools/verify/v5.js
+
+  ok   reference close produced all 5 tracked files
+  ok   crash hook fired after phase 'validate' (exit 99) — exit=99
+  ok   [validate] draft + lock persist
+  ok   [validate] learn:check reports the interrupted/open session
+  ok   [validate] learn:resume re-attaches (exit 0, close-ready)
+  ok   [validate] 5/5 checksums equal reference after recovery — ok,ok,ok,ok,ok
+  ok   [validate] journal file count for the UUID = 1
+  ok   crash hook fired after phase 'rename' (exit 99) — exit=99
+  ok   [rename] learn:check detects a closed UUID newer than the pointer
+  ok   [rename] learn:regen regenerates views + repairs pointer + clears stale lock
+  ok   [rename] 5/5 checksums equal reference after recovery — ok,ok,ok,ok,ok
+  ok   [rename] journal file count for the UUID = 1
+  ok   crash hook fired after phase 'regen' (exit 99) — exit=99
+  ok   [regen] learn:check detects the stale pointer
+  ok   [regen] learn:regen completes the close
+  ok   [regen] 5/5 checksums equal reference after recovery — ok,ok,ok,ok,ok
+  ok   [regen] journal file count for the UUID = 1
+  ok   crash hook fired after phase 'pointer' (exit 99) — exit=99
+  ok   [pointer] stale lock remains with closed journal
+  ok   [pointer] learn:start clears the stale lock and proceeds (exit 0)
+  ok   [pointer] closed journal preserved
+  ok   [pointer] cleanup abort of the new session exits 0
+  ok   [pointer] 5/5 checksums equal reference after recovery — ok,ok,ok,ok,ok
+  ok   [pointer] journal file count for the UUID = 1
+  ok   learn:abort --reason test exits 0
+  ok   aborted-session record appended to journal/
+  ok   aborted record carries status aborted + reason
+  ok   COMPETENCY_LEDGER diff after regen = 0 changed mastery rows
+V5: PASS (28/28 checks)

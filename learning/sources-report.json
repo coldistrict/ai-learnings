@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-07-25T18:10:58.493Z",
+  "results": [
+    {
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/specification/2025-11-25",
+      "chain": []
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+      "chain": [
+        {
+          "status": 308,
+          "to": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+          "to_host": "modelcontextprotocol.io"
+        }
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/en/docs/build-with-claude/structured-outputs",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+      "chain": [
+        {
+          "status": 307,
+          "to": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+          "to_host": "platform.claude.com"
+        }
+      ]
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/structured-outputs",
+      "status": 200,
+      "final_url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "chain": [
+        {
+          "status": 301,
+          "to": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "to_host": "developers.openai.com"
+        }
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/plugins",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/plugins",
+      "chain": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/skills",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/skills",
+      "chain": []
+    },
+    {
+      "url": "https://developers.openai.com/codex",
+      "status": 200,
+      "final_url": "https://learn.chatgpt.com/docs",
+      "chain": [
+        {
+          "status": 308,
+          "to": "https://learn.chatgpt.com/docs",
+          "to_host": "learn.chatgpt.com"
+        }
+      ]
+    },
+    {
+      "url": "https://agentskills.io",
+      "status": 200,
+      "final_url": "https://agentskills.io/home",
+      "chain": [
+        {
+          "status": 308,
+          "to": "https://agentskills.io/home",
+          "to_host": "agentskills.io"
+        }
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "status": 200,
+      "final_url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "chain": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/api/messages",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/api/messages",
+      "chain": []
+    },
+    {
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "status": 200,
+      "final_url": "https://nodejs.org/en/about/previous-releases",
+      "chain": []
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/tools/inspector",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/docs/tools/inspector",
+      "chain": []
+    }
+  ]
+}

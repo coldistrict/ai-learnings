@@ -1,0 +1,9 @@
+# V8 harness output — 2026-07-25T18:10:40.718Z
+# command: node tools/verify/v8.js
+
+  ok   generator runs twice with the same seed (exit 0, 0)
+  ok   recursive sha256 over both outputs identical — 83bdbcbbf6f45bb0
+  ok   generated docs count in [25, 40] — count=30
+  ok   services in world/spec.yaml in [8, 12] — count=11
+  ok   owner + dependency entries for every service (missing = 0) — all present
+V8: PASS (5/5 checks)

@@ -1,0 +1,17 @@
+# V10A harness output — 2026-07-25T18:10:41.077Z
+# command: node tools/verify/v10a.js
+
+  ok   ≥10 data rows — rows=12
+  ok   every row has all 6 columns non-empty — all complete
+  ok   row present: MCP 2025-11-25
+  ok   row present: Anthropic structured outputs
+  ok   row present: OpenAI structured outputs
+  ok   row present: Claude Code skills/plugins
+  ok   row present: Codex skills/plugins
+  ok   row present: hosted-Evals retirement
+  ok   fixture: exactly one row aged >30 days
+  ok   learn:check --strict exits nonzero with the aged row — exit=2
+  ok   flags exactly that 1 row as stale — 1 stale line(s)
+  ok   with the date restored learn:check --strict exits 0 — exit=0
+  ok   real repo: learn:check --strict exits 0 (no stale rows as of today) — exit=0
+V10a: PASS (13/13 checks)

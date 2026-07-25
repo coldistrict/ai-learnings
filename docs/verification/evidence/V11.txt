@@ -1,0 +1,16 @@
+# V11 harness output — 2026-07-25T18:10:41.188Z
+# command: node tools/verify/v11.js
+
+  ok   SOLO-CLAUDE-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   SOLO-CODEX-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   PAIRED-SESSION-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   PAIRED: examiner read-only
+  ok   PAIRED: single review file
+  ok   PAIRED: ≤3 findings
+  ok   PAIRED: exactly 1 challenge
+  ok   .claude/skills/teach/SKILL.md exists
+  ok   .agents/skills/teach/SKILL.md exists
+  ok   delimited shared body: 0 differing lines between hosts — skills:verify — shared bodies identical across both hosts and current (0 differing lines).
+  BLOCKED(prereq:claude CLI) [host] claude CLI: live "Teach me the next session" run — no artifact (v11-host-claude.md)
+  BLOCKED(prereq:codex CLI) [host] codex CLI: live "Teach me the next session" run — no artifact (v11-host-codex.md)
+V11: PASS on runnable checks (10/10) + 2 BLOCKED sub-check(s): prereq:claude CLI, prereq:codex CLI

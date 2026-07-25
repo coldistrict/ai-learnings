@@ -1,0 +1,30 @@
+{
+  "window": "2026-07-19T00:00:00Z/2026-07-22T12:00:00Z",
+  "series": {
+    "reconciliation_scan.records_processed": [
+      { "scan": "scan-20260719-01", "expected": 12401, "processed": 12401, "delta": 0 },
+      { "scan": "scan-20260720-01", "expected": 12433, "processed": 12433, "delta": 0 },
+      { "scan": "scan-20260721-01", "expected": 12466, "processed": 12449, "delta": -17 },
+      { "scan": "scan-20260722-01", "expected": 12480, "processed": 12463, "delta": -17 }
+    ],
+    "merchant.settlement_lag_minutes.p99": [
+      { "day": "2026-07-19", "value": 22 },
+      { "day": "2026-07-20", "value": 24 },
+      { "day": "2026-07-21", "value": 1441 },
+      { "day": "2026-07-22", "value": 2882 }
+    ],
+    "merchants.settlement_state.pending_reconciliation.count": [
+      { "day": "2026-07-19", "value": 3 },
+      { "day": "2026-07-20", "value": 2 },
+      { "day": "2026-07-21", "value": 19 },
+      { "day": "2026-07-22", "value": 19 }
+    ],
+    "postgres_main.cpu_percent.nightly_peak": [
+      { "day": "2026-07-19", "value": 84 },
+      { "day": "2026-07-20", "value": 86 },
+      { "day": "2026-07-21", "value": 85 },
+      { "day": "2026-07-22", "value": 87 }
+    ]
+  },
+  "notes": "settlement_lag_minutes.p99 saturates at minutes-since-last-successful-state-update for stuck merchants. postgres nightly CPU peak is shown for the same window for comparison."
+}

@@ -1,0 +1,10 @@
+# GAPMAP-RULES harness output — 2026-07-25T18:10:43.330Z
+# command: node tools/verify/gapmap-rules.js
+
+  ok   A: sample input generates (exit 0)
+  ok   A: area with unknown dims (interview-communication {3,null,null}) is NOT a skip candidate — production-platform
+  ok   A: fully-measured area at ≥3 (production-platform {3,3,3}) IS a skip candidate
+  ok   B: explicit n/a dims with measured 3 → skip candidate
+  ok   C: {3,3,null} → NOT a skip candidate (one unknown blocks)
+  ok   D: invalid dim value ("maybe") → generator exits nonzero naming the field
+GAPMAP-RULES: PASS (6/6 checks)

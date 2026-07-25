@@ -1,0 +1,13 @@
+# V1 harness output — 2026-07-25T18:10:38.115Z
+# command: node tools/verify/v1.js
+
+  ok   `zsh -c "npm run prereq"` exits 0 (non-interactive shell) — exit=0
+  ok   report file parses as JSON
+  ok   exactly these six inventory entries — node, npm, codex CLI, claude CLI, Go, .NET
+  ok   every entry has present:boolean and version-or-note
+  ok   PATH used is recorded
+  ok   0 port-selection fields in the Stage-0 report (no key carries a port choice) — no port-like keys
+  ok   learn:check lists gates BLOCKED(prereq:codex CLI)
+  ok   learn:check lists gates BLOCKED(prereq:claude CLI)
+  ok   count of blocked gates reported as PASS = 0 — 10 blocked lines, none say PASS
+V1: PASS (9/9 checks)

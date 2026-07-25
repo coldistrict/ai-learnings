@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+# Scratch/QA areas are never committed; solvability QA implementations are
+# created outside the repo and discarded (plan §8.5 A1).
+.scratch/

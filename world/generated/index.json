@@ -1,0 +1,244 @@
+{
+  "world": "NimbusPay",
+  "seed": "nimbuspay-v1",
+  "services": [
+    {
+      "id": "api-gateway",
+      "owner": "platform-infra",
+      "depends_on": [
+        "merchant-service",
+        "payment-orchestrator",
+        "refund-service"
+      ]
+    },
+    {
+      "id": "merchant-service",
+      "owner": "merchant-experience",
+      "depends_on": [
+        "ledger-service",
+        "notification-service"
+      ]
+    },
+    {
+      "id": "payment-orchestrator",
+      "owner": "payments-core",
+      "depends_on": [
+        "fraud-screening",
+        "ledger-service",
+        "webhook-dispatcher"
+      ]
+    },
+    {
+      "id": "ledger-service",
+      "owner": "payments-core",
+      "depends_on": [
+        "event-bus"
+      ]
+    },
+    {
+      "id": "settlement-service",
+      "owner": "payments-core",
+      "depends_on": [
+        "ledger-service",
+        "reconciliation-scanner",
+        "notification-service"
+      ]
+    },
+    {
+      "id": "reconciliation-scanner",
+      "owner": "payments-core",
+      "depends_on": [
+        "ledger-service",
+        "merchant-service"
+      ]
+    },
+    {
+      "id": "webhook-dispatcher",
+      "owner": "integrations",
+      "depends_on": [
+        "event-bus",
+        "notification-service"
+      ]
+    },
+    {
+      "id": "refund-service",
+      "owner": "payments-core",
+      "depends_on": [
+        "payment-orchestrator",
+        "ledger-service",
+        "event-bus"
+      ]
+    },
+    {
+      "id": "fraud-screening",
+      "owner": "risk",
+      "depends_on": [
+        "event-bus"
+      ]
+    },
+    {
+      "id": "notification-service",
+      "owner": "merchant-experience",
+      "depends_on": [
+        "event-bus"
+      ]
+    },
+    {
+      "id": "event-bus",
+      "owner": "platform-infra",
+      "depends_on": []
+    }
+  ],
+  "docs": [
+    {
+      "id": "runbook-api-gateway",
+      "title": "Runbook — api-gateway",
+      "path": "docs/runbook-api-gateway.md"
+    },
+    {
+      "id": "arch-api-gateway",
+      "title": "Architecture — api-gateway",
+      "path": "docs/arch-api-gateway.md"
+    },
+    {
+      "id": "runbook-merchant-service",
+      "title": "Runbook — merchant-service",
+      "path": "docs/runbook-merchant-service.md"
+    },
+    {
+      "id": "arch-merchant-service",
+      "title": "Architecture — merchant-service",
+      "path": "docs/arch-merchant-service.md"
+    },
+    {
+      "id": "runbook-payment-orchestrator",
+      "title": "Runbook — payment-orchestrator",
+      "path": "docs/runbook-payment-orchestrator.md"
+    },
+    {
+      "id": "arch-payment-orchestrator",
+      "title": "Architecture — payment-orchestrator",
+      "path": "docs/arch-payment-orchestrator.md"
+    },
+    {
+      "id": "runbook-ledger-service",
+      "title": "Runbook — ledger-service",
+      "path": "docs/runbook-ledger-service.md"
+    },
+    {
+      "id": "arch-ledger-service",
+      "title": "Architecture — ledger-service",
+      "path": "docs/arch-ledger-service.md"
+    },
+    {
+      "id": "runbook-settlement-service",
+      "title": "Runbook — settlement-service",
+      "path": "docs/runbook-settlement-service.md"
+    },
+    {
+      "id": "arch-settlement-service",
+      "title": "Architecture — settlement-service",
+      "path": "docs/arch-settlement-service.md"
+    },
+    {
+      "id": "runbook-reconciliation-scanner",
+      "title": "Runbook — reconciliation-scanner",
+      "path": "docs/runbook-reconciliation-scanner.md"
+    },
+    {
+      "id": "arch-reconciliation-scanner",
+      "title": "Architecture — reconciliation-scanner",
+      "path": "docs/arch-reconciliation-scanner.md"
+    },
+    {
+      "id": "runbook-webhook-dispatcher",
+      "title": "Runbook — webhook-dispatcher",
+      "path": "docs/runbook-webhook-dispatcher.md"
+    },
+    {
+      "id": "arch-webhook-dispatcher",
+      "title": "Architecture — webhook-dispatcher",
+      "path": "docs/arch-webhook-dispatcher.md"
+    },
+    {
+      "id": "runbook-refund-service",
+      "title": "Runbook — refund-service",
+      "path": "docs/runbook-refund-service.md"
+    },
+    {
+      "id": "arch-refund-service",
+      "title": "Architecture — refund-service",
+      "path": "docs/arch-refund-service.md"
+    },
+    {
+      "id": "runbook-fraud-screening",
+      "title": "Runbook — fraud-screening",
+      "path": "docs/runbook-fraud-screening.md"
+    },
+    {
+      "id": "arch-fraud-screening",
+      "title": "Architecture — fraud-screening",
+      "path": "docs/arch-fraud-screening.md"
+    },
+    {
+      "id": "runbook-notification-service",
+      "title": "Runbook — notification-service",
+      "path": "docs/runbook-notification-service.md"
+    },
+    {
+      "id": "arch-notification-service",
+      "title": "Architecture — notification-service",
+      "path": "docs/arch-notification-service.md"
+    },
+    {
+      "id": "runbook-event-bus",
+      "title": "Runbook — event-bus",
+      "path": "docs/runbook-event-bus.md"
+    },
+    {
+      "id": "arch-event-bus",
+      "title": "Architecture — event-bus",
+      "path": "docs/arch-event-bus.md"
+    },
+    {
+      "id": "pagination-cursor-design",
+      "title": "Design standard — keyset pagination and cursors",
+      "path": "docs/pagination-cursor-design.md"
+    },
+    {
+      "id": "idempotency-standards",
+      "title": "Design standard — idempotency for write APIs",
+      "path": "docs/idempotency-standards.md"
+    },
+    {
+      "id": "queue-operations-and-dlq",
+      "title": "Operations standard — queues, retries, and DLQs",
+      "path": "docs/queue-operations-and-dlq.md"
+    },
+    {
+      "id": "deployment-and-rollback-checklist",
+      "title": "Deployment and rollback checklist",
+      "path": "docs/deployment-and-rollback-checklist.md"
+    },
+    {
+      "id": "incident-management-process",
+      "title": "Incident management process",
+      "path": "docs/incident-management-process.md"
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "path": "docs/glossary.md"
+    },
+    {
+      "id": "oncall-guide",
+      "title": "On-call guide",
+      "path": "docs/oncall-guide.md"
+    },
+    {
+      "id": "data-freshness-and-retention",
+      "title": "Data freshness and retention",
+      "path": "docs/data-freshness-and-retention.md"
+    }
+  ]
+}

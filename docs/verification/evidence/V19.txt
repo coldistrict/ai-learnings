@@ -1,0 +1,13 @@
+# V19 harness output — 2026-07-25T18:10:42.837Z
+# command: node tools/verify/v19.js
+
+ok   m1-model-contracts/01-structured-output-contract — headers 3/3, ACs 7, tests 7, unmatched 0
+ok   m1-model-contracts/02-retry-repair-path — headers 3/3, ACs 6, tests 6, unmatched 0
+ok   m1-model-contracts/03-ratelimit-fallback-costcap — headers 3/3, ACs 5, tests 5, unmatched 0
+labs:audit — 3 lab(s), 0 violation(s).
+  ok   labs:audit exits 0 (0 violations) — exit=0
+  ok   3 labs audited — 3 labs
+  ok   every lab: 3/3 headers (scenario/constraints/acceptance criteria)
+  ok   every lab: unmatched tests = 0
+  ok   0 solution blocks reported
+V19: PASS (5/5 checks)

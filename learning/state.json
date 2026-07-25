@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "plan_version": "ai-enabler-mastery-system-v3",
+  "current_milestone": "M0",
+  "last_closed_session": null,
+  "pace_variant": null,
+  "mode_default": "solo",
+  "selected_port": null,
+  "live_cost_cap_usd": null,
+  "notes": "pace_variant, selected_port, and live_cost_cap_usd are M0/M1 outputs (plan §4, §10.3); they stay null until the diagnostic runs. current_milestone advances only when a milestone's gates pass."
+}

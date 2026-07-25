@@ -1,0 +1,14 @@
+{
+  "note": "Ownership boundary for provenance enforcement (plan §8.5). learner_paths are hashed into a start-of-session manifest; learn:close refuses to close if a learner-owned file changed without attribution (learner_changes or a provenance event). Everything else is tutor-owned infrastructure.",
+  "learner_paths": [
+    "packages/",
+    "apps/",
+    "labs/*/*/workspace/",
+    "diagnostics/work/"
+  ],
+  "tutor_paths_reference": [
+    "tools/", "learning/", "labs/ (README, SESSION, RUBRIC, tests, fixtures)",
+    "scenarios/", ".tutor/", "world/", "prompts/", "docs/", "diagnostics/",
+    ".claude/", ".agents/"
+  ]
+}

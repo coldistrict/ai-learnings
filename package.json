@@ -1,0 +1,46 @@
+{
+  "name": "ai-enabler-mastery-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Enabler Mastery System v3 — learning repository (plan: ai-enabler-mastery-system-v3). Learner-owned capstone code lives in packages/ and apps/; tutor-owned learning OS lives in tools/ and learning/.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "prereq": "node tools/learn/prereq.js",
+    "learn:start": "node tools/learn/start.js",
+    "learn:close": "node tools/learn/close.js",
+    "learn:abort": "node tools/learn/abort.js",
+    "learn:resume": "node tools/learn/resume.js",
+    "learn:regen": "node tools/learn/regen.js",
+    "learn:check": "node tools/learn/check.js",
+    "learn:next": "node tools/learn/next.js",
+    "sources:check": "node tools/sources-check.js",
+    "world:generate": "node world/generate.js",
+    "labs:audit": "node tools/labs-audit.js",
+    "skills:build": "node tools/build-skills.js",
+    "skills:verify": "node tools/build-skills.js --verify",
+    "test:labs": "node --test \"labs/**/*.test.js\"",
+    "verify:v1": "node tools/verify/v1.js",
+    "verify:v2": "node tools/verify/v2.js",
+    "verify:v3": "node tools/verify/v3.js",
+    "verify:v4": "node tools/verify/v4.js",
+    "verify:v5": "node tools/verify/v5.js",
+    "verify:v6": "node tools/verify/v6.js",
+    "verify:v7": "node tools/verify/v7.js",
+    "verify:v8": "node tools/verify/v8.js",
+    "verify:v9": "node tools/verify/v9.js",
+    "verify:v10a": "node tools/verify/v10a.js",
+    "verify:v11": "node tools/verify/v11.js",
+    "verify:v12": "node tools/verify/v12.js",
+    "verify:v18": "node tools/verify/v18.js",
+    "verify:v19": "node tools/verify/v19.js",
+    "verify:gapmap": "node tools/verify/gapmap-rules.js",
+    "verify:stage0": "node tools/verify/run-all.js"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "window": "2026-06-30T06:00:00Z/2026-06-30T13:30:00Z",
+  "series": {
+    "refund_execution.queue_depth": [
+      { "time": "06:00", "value": 4 },
+      { "time": "07:00", "value": 6 },
+      { "time": "08:00", "value": 5 },
+      { "time": "08:30", "value": 7 },
+      { "time": "09:00", "value": 141 },
+      { "time": "10:00", "value": 486 },
+      { "time": "11:00", "value": 902 },
+      { "time": "12:00", "value": 1418 },
+      { "time": "13:00", "value": 1907 },
+      { "time": "13:30", "value": 1961 }
+    ],
+    "refund_execution.throughput_per_min": [
+      { "time": "06:00", "value": 5.2 },
+      { "time": "07:00", "value": 6.1 },
+      { "time": "08:00", "value": 5.8 },
+      { "time": "08:30", "value": 5.5 },
+      { "time": "09:00", "value": 0 },
+      { "time": "10:00", "value": 0 },
+      { "time": "11:00", "value": 0 },
+      { "time": "12:00", "value": 0 },
+      { "time": "13:00", "value": 0 }
+    ],
+    "refund_worker.restarts": [
+      { "time": "10:15", "value": 1 },
+      { "time": "11:40", "value": 1 }
+    ],
+    "refund_intake_api.success_rate_percent": [
+      { "time": "08:00", "value": 100 },
+      { "time": "10:00", "value": 100 },
+      { "time": "12:00", "value": 100 }
+    ]
+  },
+  "notes": "intake keeps succeeding (requests are accepted and enqueued); execution throughput is zero from 08:37 while depth climbs linearly with intake volume. Worker restarts produce no throughput change."
+}

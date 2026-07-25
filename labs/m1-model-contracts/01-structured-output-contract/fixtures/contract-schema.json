@@ -1,0 +1,23 @@
+{
+  "$comment": "Classifier value contract — lab m1-01 (mirrors README verbatim).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["category", "causal_service", "confidence", "needs_human"],
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["cursor-pagination", "idempotency", "queue-poisoning", "other"]
+    },
+    "causal_service": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "string",
+          "enum": ["api-gateway", "merchant-service", "payment-orchestrator", "ledger-service", "settlement-service", "reconciliation-scanner", "webhook-dispatcher", "refund-service", "fraud-screening", "notification-service", "event-bus"]
+        }
+      ]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "needs_human": { "type": "boolean" }
+  }
+}

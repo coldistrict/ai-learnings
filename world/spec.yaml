@@ -1,0 +1,64 @@
+# NimbusPay — the one fixed fictional company (plan §5.4).
+# Payments domain: entities, ledgers, paginated scans, queues, webhooks.
+# ALL data in this world is synthetic. Parsed by tools/learn/lib.js parseYaml
+# (YAML subset: quoted strings, JSON flow arrays, block sequences of maps).
+name: "NimbusPay"
+domain: "payments"
+default_seed: "nimbuspay-v1"
+description: "Mid-size payments company: merchants onboard, payments orchestrate through fraud screening to a double-entry ledger, settlements batch daily, webhooks notify merchants, refunds flow back. Everything below is generated or authored synthetically."
+teams:
+  - id: "payments-core"
+    oncall: "payments-core-oncall@nimbuspay.test"
+  - id: "merchant-experience"
+    oncall: "merchant-exp-oncall@nimbuspay.test"
+  - id: "platform-infra"
+    oncall: "platform-oncall@nimbuspay.test"
+  - id: "risk"
+    oncall: "risk-oncall@nimbuspay.test"
+  - id: "integrations"
+    oncall: "integrations-oncall@nimbuspay.test"
+services:
+  - id: "api-gateway"
+    owner: "platform-infra"
+    depends_on: ["merchant-service", "payment-orchestrator", "refund-service"]
+    summary: "Public API edge: authn, rate limiting, request routing."
+  - id: "merchant-service"
+    owner: "merchant-experience"
+    depends_on: ["ledger-service", "notification-service"]
+    summary: "Merchant accounts, onboarding state, settlement preferences."
+  - id: "payment-orchestrator"
+    owner: "payments-core"
+    depends_on: ["fraud-screening", "ledger-service", "webhook-dispatcher"]
+    summary: "Drives a payment through screening, capture, and posting."
+  - id: "ledger-service"
+    owner: "payments-core"
+    depends_on: ["event-bus"]
+    summary: "Double-entry ledger; postings API with idempotency keys."
+  - id: "settlement-service"
+    owner: "payments-core"
+    depends_on: ["ledger-service", "reconciliation-scanner", "notification-service"]
+    summary: "Daily merchant settlement batches and payout files."
+  - id: "reconciliation-scanner"
+    owner: "payments-core"
+    depends_on: ["ledger-service", "merchant-service"]
+    summary: "Paginated scans comparing ledger balances to settlement states; marks merchants settled/stale."
+  - id: "webhook-dispatcher"
+    owner: "integrations"
+    depends_on: ["event-bus", "notification-service"]
+    summary: "Delivers signed webhooks to merchant endpoints with retries."
+  - id: "refund-service"
+    owner: "payments-core"
+    depends_on: ["payment-orchestrator", "ledger-service", "event-bus"]
+    summary: "Refund intake queue and refund execution workers."
+  - id: "fraud-screening"
+    owner: "risk"
+    depends_on: ["event-bus"]
+    summary: "Synchronous risk scoring with async model-feature updates."
+  - id: "notification-service"
+    owner: "merchant-experience"
+    depends_on: ["event-bus"]
+    summary: "Email/dashboard notifications to merchants and internal teams."
+  - id: "event-bus"
+    owner: "platform-infra"
+    depends_on: []
+    summary: "Kafka-style event backbone (topics, consumer groups, DLQs). Base dependency sink."

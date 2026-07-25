@@ -1,0 +1,37 @@
+{
+  "pack": "02-duplicate-webhook-ledger-postings",
+  "tutor_only": true,
+  "labels_reference_public_criteria_only": true,
+  "ac_map": {
+    "AC-1": {
+      "causal_service": "ledger-service",
+      "not_accepted": ["api-gateway", "payment-orchestrator", "fraud-screening", "event-bus", "acquirer (external)"]
+    },
+    "AC-2": {
+      "mechanism": "migration 0142 moved idempotency_key to posting_meta without recreating the unique index; writes still record the key but nothing enforces uniqueness, so normal at-least-once redeliveries create second postings with replayed:false from 2026-07-06 onward",
+      "must_mention": ["migration 0142 / schema split", "missing unique index/constraint", "redelivery or retry creating a second posting"],
+      "wrong_mechanisms": ["fraud latency causing double processing", "rate-limit change", "redelivery rate increase", "consumer lag"]
+    },
+    "AC-3": {
+      "correct_docs": ["idempotency-standards", "runbook-ledger-service"],
+      "also_acceptable": ["arch-ledger-service", "deployment-and-rollback-checklist", "incident-management-process", "glossary"]
+    },
+    "AC-4": {
+      "core_evidence_log_ids": ["L108", "L109", "L106", "L107", "L114"],
+      "supporting": ["L101", "L102", "L103", "L104", "L105", "L110"],
+      "minimum_chain": "any 3 connecting migration/missing index -> duplicate postings with same key -> replayed-rate collapse on 07-06"
+    },
+    "AC-5": {
+      "remediation_class": "code-fix",
+      "acceptable_secondary": "data-backfill (compensating reversing postings for the 41 duplicates) and/or process-change (migration checklist)",
+      "falsifying_check_examples": [
+        "staging duplicate-delivery test with one idempotency key -> two postings",
+        "diff unique indexes before/after migration 0142",
+        "group postings by idempotency_key: count>1 rows appear only after 2026-07-06T03:12Z"
+      ]
+    },
+    "AC-6": {
+      "red_herrings": ["fraud-screening p99 spike 07-08 (L111)", "api-gateway rate-limit raise 07-07 (L113)", "warehouse-sync consumer lag (L112)"]
+    }
+  }
+}

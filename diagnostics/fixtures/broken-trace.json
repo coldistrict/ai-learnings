@@ -1,0 +1,57 @@
+{
+  "fixture": "m0-a3-broken-trace",
+  "description": "Recorded tool-loop trace from an incident-assistant run over NimbusPay pack-like data. Diagnose what went wrong. Synthetic.",
+  "run": {
+    "run_id": "run_5541",
+    "budgets": { "max_steps": 5, "max_cost_usd": 0.5 },
+    "spans": [
+      {
+        "span": 1,
+        "kind": "model_call",
+        "model": "example-model-1",
+        "prompt_version": "inv-2.3",
+        "output_summary": "plan: search runbooks for settlement staleness, then inspect scan logs",
+        "usage": { "input_tokens": 3120, "output_tokens": 240 }
+      },
+      {
+        "span": 2,
+        "kind": "tool_call",
+        "tool": "search_docs",
+        "args": { "query": "settlement stale reconciliation" },
+        "result_summary": "3 hits: doc-runbook-reconciliation-scanner, doc-arch-settlement-service, doc-glossary"
+      },
+      {
+        "span": 3,
+        "kind": "tool_call",
+        "tool": "read_logs",
+        "args": { "service": "reconciliation-scanner" },
+        "args_schema_note": "schema requires { service, time_range }; call executed anyway with time_range missing",
+        "result_summary": "returned 30 days of logs, 41200 lines, truncated at 8000"
+      },
+      {
+        "span": 4,
+        "kind": "model_call",
+        "model": "example-model-1",
+        "prompt_version": "inv-2.3",
+        "output_summary": "hypothesis: cursor pagination skips same-timestamp rows; citing doc-pagination-cursor-design and doc-batch-import-guide",
+        "usage": { "input_tokens": 9950, "output_tokens": 410 }
+      },
+      {
+        "span": 5,
+        "kind": "tool_call",
+        "tool": "create_draft_update",
+        "args": { "incident": "INC-4127", "body": "Root cause identified: pagination cursor bug. Fix deploying today. Sources: doc-pagination-cursor-design, doc-batch-import-guide" },
+        "result_summary": "draft created"
+      },
+      {
+        "span": 6,
+        "kind": "tool_call",
+        "tool": "read_logs",
+        "args": { "service": "merchant-service", "time_range": "2026-07-21/2026-07-22" },
+        "result_summary": "returned 312 lines"
+      }
+    ],
+    "retrieved_doc_ids_this_run": ["doc-runbook-reconciliation-scanner", "doc-arch-settlement-service", "doc-glossary", "doc-pagination-cursor-design"],
+    "final_status": "completed"
+  }
+}

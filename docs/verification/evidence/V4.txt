@@ -1,0 +1,8 @@
+# V4 harness output — 2026-07-25T18:10:38.878Z
+# command: node tools/verify/v4.js
+
+  ok   re-running learn:close exits 0 — exit=0
+  ok   with an already-closed message
+  ok   exactly 1 journal file for the UUID — count=1
+  ok   3/3 view checksums unchanged before/after the repeat
+V4: PASS (4/4 checks)

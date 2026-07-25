@@ -1,0 +1,37 @@
+{
+  "pack": "03-refund-queue-backlog",
+  "tutor_only": true,
+  "labels_reference_public_criteria_only": true,
+  "ac_map": {
+    "AC-1": {
+      "causal_service": "refund-service",
+      "not_accepted": ["event-bus", "platform-infra/postgres", "api-gateway", "ledger-service"]
+    },
+    "AC-2": {
+      "mechanism": "poison message (rfnd_7731, amount_cents null, currency XXX) at offset 884210 crash-loops the single-concurrency consumer; no DLQ and unbounded retries mean the committed offset never advances — head-of-line blocking with throughput exactly zero while depth grows",
+      "must_mention": ["poison/malformed message", "same offset/message repeating", "missing DLQ or unbounded retries", "head-of-line blocking with single concurrency"],
+      "wrong_mechanisms": ["load/scaling problem", "broker rebalance", "Friday deploy", "DB CPU"]
+    },
+    "AC-3": {
+      "correct_docs": ["queue-operations-and-dlq", "runbook-refund-service"],
+      "also_acceptable": ["arch-refund-service", "runbook-event-bus", "incident-management-process", "glossary"]
+    },
+    "AC-4": {
+      "core_evidence_log_ids": ["L202", "L205", "L206", "L207", "L213"],
+      "supporting": ["L201", "L203", "L204", "L208", "L209", "L214"],
+      "minimum_chain": "any 3 connecting repeating offset/error -> no-DLQ/unbounded config or single concurrency -> zero throughput with pinned committed offset"
+    },
+    "AC-5": {
+      "remediation_class": "config-fix",
+      "acceptable_secondary": "code-fix (partner-path validation) and/or process-change (consumer config review); quarantining the poison message is part of the immediate remediation",
+      "explicitly_wrong": "infra-scale (scaling workers)",
+      "falsifying_check_examples": [
+        "verify the same offset/message id repeats across crash logs and both restarts",
+        "staging replica: move offset 884210 aside and observe throughput resume"
+      ]
+    },
+    "AC-6": {
+      "red_herrings": ["broker partition rebalance 08:20 (L212)", "refund-service deploy 4.8.2 on 06-27 (L210)", "postgres-main nightly CPU (L211)", "scale-out suggestion in ticket"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# V7 harness output — 2026-07-25T18:10:40.531Z
+# command: node tools/verify/v7.js
+
+  ok   grep -rl ".tutor/withheld" over labs/ scenarios/ prompts/ START_HERE.md .claude/skills/ .agents/skills/ → 0 files — 0 hits
+  ok   find labs -iname *solution* -o -iname *reference* → 0 — 0 files
+  ok   micro-probe references over 60 lines = 0 violations — 0 reference file(s) exist
+  ok   prompts/SOLO-CLAUDE-PROMPT.md: grep -c "withheld" >= 1 — count=3
+  ok   prompts/SOLO-CODEX-PROMPT.md: grep -c "withheld" >= 1 — count=3
+  ok   prompts/PAIRED-SESSION-PROMPT.md: grep -c "withheld" >= 1 — count=1
+  ok   .claude/skills/teach/SKILL.md: grep -c "withheld" >= 1 — count=2
+  ok   .agents/skills/teach/SKILL.md: grep -c "withheld" >= 1 — count=2
+V7: PASS (8/8 checks)

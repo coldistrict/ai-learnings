@@ -1,0 +1,12 @@
+{
+  "note": "Scenario-pack authoring-time records for the plan §5.4 cost hypothesis (≤2 tutor-hours/pack, measured at Stage 0). Times are wall-clock during AI-tutor authoring on 2026-07-25; per-pack boundaries reconstructed from the authoring transcript and approximate to the minute. Human curation/review time not yet included.",
+  "hypothesis_hours_per_pack": 2,
+  "window": { "start": "2026-07-25T17:08:51Z", "end": "2026-07-25T17:15:45Z", "includes": "world spec + generator + packs 01-03" },
+  "packs": [
+    { "slug": "01-stale-merchant-settlement", "hours": 0.06 },
+    { "slug": "02-duplicate-webhook-ledger-postings", "hours": 0.04 },
+    { "slug": "03-refund-queue-backlog", "hours": 0.03 }
+  ],
+  "median_hours": 0.04,
+  "decision": "KEEP 6-8 pack core target (DECISIONS.md ADR-0004)"
+}

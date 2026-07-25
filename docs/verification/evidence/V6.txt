@@ -1,0 +1,7 @@
+# V6 harness output — 2026-07-25T18:10:40.467Z
+# command: node tools/verify/v6.js
+
+  ok   regen twice in a row → 3/3 view checksums identical
+  ok   delete all 3 views → regen reproduces pre-deletion checksums (3/3)
+  ok   6/6 checksum equalities total
+V6: PASS (3/3 checks)

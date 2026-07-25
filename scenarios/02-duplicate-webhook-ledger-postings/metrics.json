@@ -1,0 +1,38 @@
+{
+  "window": "2026-07-03T00:00:00Z/2026-07-09T12:00:00Z",
+  "series": {
+    "acquirer_webhooks.redelivery_rate_percent": [
+      { "day": "2026-07-03", "value": 2.1 },
+      { "day": "2026-07-04", "value": 1.9 },
+      { "day": "2026-07-05", "value": 2.2 },
+      { "day": "2026-07-06", "value": 2.0 },
+      { "day": "2026-07-07", "value": 2.1 },
+      { "day": "2026-07-08", "value": 2.3 }
+    ],
+    "ledger.postings_replayed_true_count": [
+      { "day": "2026-07-03", "value": 312 },
+      { "day": "2026-07-04", "value": 285 },
+      { "day": "2026-07-05", "value": 301 },
+      { "day": "2026-07-06", "value": 4 },
+      { "day": "2026-07-07", "value": 0 },
+      { "day": "2026-07-08", "value": 0 }
+    ],
+    "ledger.duplicate_postings_detected": [
+      { "day": "2026-07-03", "value": 0 },
+      { "day": "2026-07-04", "value": 0 },
+      { "day": "2026-07-05", "value": 0 },
+      { "day": "2026-07-06", "value": 6 },
+      { "day": "2026-07-07", "value": 14 },
+      { "day": "2026-07-08", "value": 21 }
+    ],
+    "fraud_screening.p99_ms": [
+      { "day": "2026-07-03", "value": 445 },
+      { "day": "2026-07-04", "value": 430 },
+      { "day": "2026-07-05", "value": 460 },
+      { "day": "2026-07-06", "value": 455 },
+      { "day": "2026-07-07", "value": 490 },
+      { "day": "2026-07-08", "value": 1840 }
+    ]
+  },
+  "notes": "redelivery rate is the acquirer's normal at-least-once behavior and is flat across the window. replayed_true_count = idempotent replays acknowledged by ledger-service. duplicate_postings_detected = daily audit query over postings sharing an idempotency key."
+}

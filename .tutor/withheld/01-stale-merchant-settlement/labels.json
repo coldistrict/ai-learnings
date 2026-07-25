@@ -1,0 +1,36 @@
+{
+  "pack": "01-stale-merchant-settlement",
+  "tutor_only": true,
+  "labels_reference_public_criteria_only": true,
+  "ac_map": {
+    "AC-1": {
+      "causal_service": "reconciliation-scanner",
+      "not_accepted": ["merchant-service", "ledger-service", "notification-service", "event-bus", "postgres/platform-infra"]
+    },
+    "AC-2": {
+      "mechanism": "single-column keyset cursor (updated_at > :cursor, no unique tiebreaker) skips rows sharing the boundary updated_at when a page ends mid-group; the 2026-07-21 bulk backfill created a 181-row same-timestamp group, page 4 split it, 17 rows skipped every scan since",
+      "must_mention": ["cursor/pagination boundary", "same/identical updated_at group", "skipped rows"],
+      "wrong_mechanisms": ["DB load/timeouts dropping rows", "notification/display issue", "consumer lag delaying updates"]
+    },
+    "AC-3": {
+      "correct_docs": ["pagination-cursor-design", "runbook-reconciliation-scanner"],
+      "also_acceptable": ["arch-reconciliation-scanner", "incident-management-process", "glossary"]
+    },
+    "AC-4": {
+      "core_evidence_log_ids": ["L007", "L012", "L014", "L022", "L023"],
+      "supporting": ["L006", "L015", "L016", "L017", "L018"],
+      "minimum_chain": "any 3 that connect same-timestamp group -> cursor predicate/config -> recurring -17 delta or stale reads"
+    },
+    "AC-5": {
+      "remediation_class": "code-fix",
+      "acceptable_secondary": "data-backfill (re-scan skipped rows) as follow-up",
+      "falsifying_check_examples": [
+        "re-run scan with a different page_size and observe the delta move/change",
+        "query rows with updated_at = 2026-07-21T02:00:00Z ordered by id and show the 17 excluded ids"
+      ]
+    },
+    "AC-6": {
+      "red_herrings": ["notification-service deploy 2.31.0 (L019)", "postgres-main nightly CPU 87% (L021)", "warehouse-sync consumer lag (L020)"]
+    }
+  }
+}
