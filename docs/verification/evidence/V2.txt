@@ -1,4 +1,4 @@
-# V2 harness output — 2026-07-25T18:38:43.256Z
+# V2 harness output — 2026-07-25T18:47:41.055Z
 # command: node tools/verify/v2.js
 
   ok   learn:start --teacher claude --mode solo exits 0 — exit=0
@@ -18,7 +18,16 @@
   ok   losers that saw the winner offer learn:resume / learn:abort
   ok   stale-lock race: exactly 1 of 5 racers wins the takeover — successes=1
   ok   stale-lock race: exactly 1 live lock remains
-  ok   stale-lock race: the surviving lock is a FRESH session, not the stale one — 69f82d82-5cbc-4b78-8c68-1a86a45249e7
-  ok   stale-lock race: exactly 1 draft, matching the surviving lock — 69f82d82-5cbc-4b78-8c68-1a86a45249e7.md
+  ok   stale-lock race: the surviving lock is a FRESH session, not the stale one — 68064735-ff65-416f-bb57-4a137db77874
+  ok   stale-lock race: exactly 1 draft, matching the surviving lock — 68064735-ff65-416f-bb57-4a137db77874.md
   ok   stale-lock race: the closed journal was preserved
-V2: PASS (20/20 checks)
+  ok   interleaving: reached the lock-without-draft window — lock=true drafts=0
+  ok   interleaving: abort REFUSES to clear the in-flight lock (exit nonzero) — exit=1
+  ok   interleaving: refusal names the mid-acquisition condition
+  ok   interleaving: the live lock survived the abort attempt
+  ok   interleaving: the held start completes successfully — exit=0
+  ok   interleaving: end state is consistent — 1 lock + 1 matching draft, no orphan draft — b3416db2-03c8-415e-9ca2-afc0061005ed.md
+  ok   abandoned orphan: abort clears a lock older than the threshold (exit 0) — exit=0
+  ok   abandoned orphan: clearing message names the orphan
+  ok   abandoned orphan: lock removed
+V2: PASS (29/29 checks)

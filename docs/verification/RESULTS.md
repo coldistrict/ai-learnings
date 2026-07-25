@@ -143,3 +143,32 @@ B1/S1/S2/S3 resolved and raising two hardening items + one operational note
 
 Re-verification: 15/15 harnesses green (V11 PASS+BLOCKED); `test:labs`
 0 pass / 18 fail unchanged.
+
+## Amendment 3 — start-vs-abort acquisition race (2026-07-25)
+
+Codex's second re-check (verdict still approve-with-changes) found one
+remaining race, with a deterministic repro: `learn:abort` treated any
+lock-without-draft as an orphan, but every legitimate `learn:start` passes
+through exactly that state between reserving the lock and writing the draft
+— so an abort in that window deleted a live lock and left an orphan draft.
+Disposition: **accepted** (ADR-0008). Fix:
+
+- An in-flight acquisition is distinguished from a genuine orphan by AGE
+  (lock file mtime — real filesystem time, immune to `LEARN_FIXED_TIME`):
+  `learn:abort` REFUSES to clear a draftless lock younger than 30s
+  (`ORPHAN_LOCK_MIN_AGE_MS`), and only then applies the serialized,
+  UUID-verified removal. `learn:check` reports the young state as
+  "may be mid-acquisition" instead of "orphan".
+- A test-only hook (`LEARN_HOLD_AFTER_LOCK_MS`) holds the acquisition
+  window open deterministically. New V2 regression cases reproduce Codex's
+  exact interleaving: abort during the window → refusal naming
+  mid-acquisition, live lock survives, the held start completes to a
+  consistent 1-lock + 1-matching-draft state; and a backdated (120s)
+  abandoned orphan is still cleared (`evidence/V2.txt`, V2 now 29/29).
+
+Residual risk accepted and documented: a starter pathologically stalled
+>30s inside acquisition could still be cleared as an orphan; the window is
+milliseconds in practice and the failure is recoverable via `learn:check`.
+
+Re-verification: 15/15 harnesses green (V11 PASS+BLOCKED); `test:labs`
+0 pass / 18 fail unchanged; `learn:check --strict` clean.

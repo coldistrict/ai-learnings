@@ -1,4 +1,4 @@
-# V6 harness output — 2026-07-25T18:38:45.154Z
+# V6 harness output — 2026-07-25T18:47:43.017Z
 # command: node tools/verify/v6.js
 
   ok   regen twice in a row → 3/3 view checksums identical

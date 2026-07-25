@@ -1,4 +1,4 @@
-# V10A harness output — 2026-07-25T18:38:45.736Z
+# V10A harness output — 2026-07-25T18:47:43.574Z
 # command: node tools/verify/v10a.js
 
   ok   ≥10 data rows — rows=12

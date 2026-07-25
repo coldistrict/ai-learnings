@@ -144,3 +144,21 @@ PATH action (`~/.zshenv` export or symlink), never automated. claude CLI,
 Go, .NET remain absent.
 **Re-verification:** 15/15 harnesses green (V11 PASS+BLOCKED); labs baseline
 0/18 unchanged. Recorded in RESULTS.md Amendment 2.
+
+## ADR-0008 — start-vs-abort acquisition race disposition (2026-07-25)
+
+**Status:** accepted; fixed and re-verified.
+**Context:** Codex's second re-check reproduced deterministically: an abort
+issued while a start sat between lock reservation and draft creation cleared
+the live lock as an "orphan", leaving an orphan draft.
+**Decision:** In-flight acquisitions are distinguished from abandoned locks
+by lock-file mtime age: `learn:abort` refuses to clear a draftless lock
+younger than 30s (ORPHAN_LOCK_MIN_AGE_MS) and only then applies serialized
+UUID-verified removal; `learn:check` labels the young state as possibly
+mid-acquisition. A test-only `LEARN_HOLD_AFTER_LOCK_MS` hook makes the
+window deterministically testable; V2 gained the exact interleaving
+regression plus a backdated abandoned-orphan case (V2 29/29).
+**Residual risk (documented):** an acquisition stalled >30s could still be
+cleared; the real window is milliseconds and recovery is via learn:check.
+**Re-verification:** 15/15 harnesses green; labs baseline 0/18 unchanged.
+Recorded in RESULTS.md Amendment 3.

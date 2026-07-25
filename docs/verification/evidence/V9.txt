@@ -1,4 +1,4 @@
-# V9 harness output — 2026-07-25T18:38:45.452Z
+# V9 harness output — 2026-07-25T18:47:43.302Z
 # command: node tools/verify/v9.js
 
   ok   ls -d scenarios/*/ | wc -l → 3 at Stage 0 exit — 01-stale-merchant-settlement, 02-duplicate-webhook-ledger-postings, 03-refund-queue-backlog

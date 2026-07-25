@@ -1,4 +1,4 @@
-# V18 harness output — 2026-07-25T18:38:47.446Z
+# V18 harness output — 2026-07-25T18:47:45.191Z
 # command: node tools/verify/v18.js
 
   ok   A: unattributed 6-line edit → close exits nonzero — exit=1

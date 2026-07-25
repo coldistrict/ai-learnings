@@ -567,7 +567,19 @@ export function writeViews(root) {
 
 const CLEANUP_MUTEX_MAX_AGE_MS = 30000;
 
-function pauseMs(ms) {
+// A lock with no draft and no journal is only a true orphan once it is older
+// than the acquisition window: every legitimate learn:start passes through
+// exactly that state for milliseconds between reserving the lock and writing
+// the draft (Codex re-review 2 2026-07-25). Age is measured from the lock
+// FILE's mtime (real filesystem time — deliberately unaffected by
+// LEARN_FIXED_TIME; fixtures backdate it with utimes).
+export const ORPHAN_LOCK_MIN_AGE_MS = 30000;
+
+export function lockAgeMs(root) {
+  return Date.now() - fs.statSync(P.lockFile(root)).mtimeMs;
+}
+
+export function pauseMs(ms) {
   Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 }
 

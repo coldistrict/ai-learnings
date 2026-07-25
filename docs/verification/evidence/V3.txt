@@ -1,4 +1,4 @@
-# V3 harness output — 2026-07-25T18:38:43.518Z
+# V3 harness output — 2026-07-25T18:47:41.325Z
 # command: node tools/verify/v3.js
 
   ok   learn:close exits 0 with required fields filled — exit=0

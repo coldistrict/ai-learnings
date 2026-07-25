@@ -12,7 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   repoRoot, P, nowIso, newUuid, readJson,
-  writeJournal, learnerManifest, PHASES, removeLockSerialized,
+  writeJournal, learnerManifest, PHASES, removeLockSerialized, pauseMs,
 } from './lib.js';
 
 function arg(name, fallback = null) {
@@ -85,6 +85,13 @@ if (!acquired) {
 }
 
 // ---- lock held: create the draft; roll back the reservation on failure ------
+// Test-only hook (V2 start-vs-abort interleaving fixture): hold the
+// acquisition window — lock reserved, draft not yet written — open for a
+// deterministic duration.
+if (process.env.LEARN_HOLD_AFTER_LOCK_MS) {
+  pauseMs(Number(process.env.LEARN_HOLD_AFTER_LOCK_MS));
+}
+
 const draftFile = path.join(P.inProgressDir(root), `${uuid}.md`);
 try {
   const front = {

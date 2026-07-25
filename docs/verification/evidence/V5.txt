@@ -1,4 +1,4 @@
-# V5 harness output — 2026-07-25T18:38:44.947Z
+# V5 harness output — 2026-07-25T18:47:42.809Z
 # command: node tools/verify/v5.js
 
   ok   reference close produced all 5 tracked files

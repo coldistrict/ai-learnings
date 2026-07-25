@@ -8,6 +8,7 @@ import path from 'node:path';
 import {
   repoRoot, P, readJson, generateViews, closedJournals, loadJournals,
   withheldReferences, blockedGates, staleLedgerRows, parseSourceLedger,
+  lockAgeMs, ORPHAN_LOCK_MIN_AGE_MS,
 } from './lib.js';
 
 const strict = process.argv.includes('--strict');
@@ -26,7 +27,12 @@ if (fs.existsSync(lockFile)) {
   } else if (fs.existsSync(journal)) {
     issues.push(`stale lock: session ${lock.uuid} is already closed — run learn:regen (clears it) or learn:start (clears then starts)`);
   } else {
-    issues.push(`orphan lock: session ${lock.uuid} has no draft and no journal`);
+    const ageMs = lockAgeMs(root);
+    if (ageMs < ORPHAN_LOCK_MIN_AGE_MS) {
+      issues.push(`lock without draft or journal: ${lock.uuid} is ${(ageMs / 1000).toFixed(1)}s old — a learn:start may be mid-acquisition; re-run learn:check shortly before treating it as an orphan`);
+    } else {
+      issues.push(`orphan lock: session ${lock.uuid} has no draft and no journal (age ${Math.round(ageMs / 1000)}s) — clear with: npm run learn:abort -- --reason "<why>"`);
+    }
   }
 } else {
   const drafts = fs.existsSync(P.inProgressDir(root))

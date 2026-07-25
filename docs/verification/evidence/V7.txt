@@ -1,4 +1,4 @@
-# V7 harness output — 2026-07-25T18:38:45.217Z
+# V7 harness output — 2026-07-25T18:47:43.075Z
 # command: node tools/verify/v7.js
 
   ok   grep -rl ".tutor/withheld" over labs/ scenarios/ prompts/ START_HERE.md .claude/skills/ .agents/skills/ → 0 files — 0 hits
