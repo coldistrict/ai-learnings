@@ -3,20 +3,15 @@
 Date: 2026-07-25  
 Plan: `ai-enabler-mastery-system-v3`  
 Reviewer: Codex  
-Verdict: **request-changes**
+Verdict: **approve** (final re-verification after Amendments 1–3)
 
 ## Verdict
 
-The implementation is substantially faithful: all requested harnesses produced
-the recorded outcomes, the real learning state is still pristine, the three
-labs contain stubs rather than solutions, the public scenario bundles are
-independently solvable, and the recorded blockers/deviations are honest.
-
-One blocking learning-OS defect remains before a real M0 session: session-lock
-acquisition is check-then-write rather than atomic, so simultaneous tutors can
-both pass the absence check and create competing sessions. This defeats the
-exclusive cross-agent ownership that the transaction is meant to provide. The
-provenance validator and M0 skip router also need tightening to match the plan.
+The implementation is approved for Stages 0–2. All original findings and the
+two narrower concurrency/provenance hardening findings discovered during
+re-review were fixed and independently re-verified. The original findings
+below are retained as the audit trail; their final dispositions are recorded
+in the closure addendum at the end of this review.
 
 ## Review method and state-safety
 
@@ -303,3 +298,46 @@ Before starting the real M0 diagnostic:
    blocked live sub-check into PASS.
 5. Re-run `npm run verify:stage0`, `npm run sources:check`, and
    `npm run test:labs`; the last must remain exactly 0 pass / 18 fail.
+
+## Final closure addendum — 2026-07-25
+
+**Final verdict: approve.**
+
+All original findings are closed:
+
+- B1: atomic exclusive-create acquisition and simultaneous-start coverage
+  were added; later hardening serialized UUID-verified lock removal.
+- S1: provenance validation now requires complete typed metadata and strict
+  affirmative consent values; V18 is 20/20 including `"not yes"` rejection.
+- S2: skip candidates now require measured scores of at least 3 for every
+  applicable dimension, with explicit `n/a` as the only exclusion.
+- S3: the harness protocol preserves PASS / PASS+BLOCKED / FAIL and V11
+  reports its host-dependent sub-checks honestly.
+
+Two narrower lock-protocol issues found during re-review are also closed.
+Stale-lock removal is serialized and UUID-verified
+(`tools/learn/lib.js:586-612`), and a draftless lock younger than 30 seconds is
+now protected as a possible in-flight acquisition
+(`tools/learn/abort.js:30-51`). V2 deterministically holds the
+lock-before-draft window, proves that a racing abort is refused and the
+resulting lock/draft match, then separately proves that a backdated abandoned
+orphan is cleared (`tools/verify/v2.js:94-146`). V2 personally passed 29/29.
+
+The 30-second age rule leaves a documented, recoverable residual risk: a
+starter pathologically stalled inside acquisition for more than 30 seconds
+could be cleared. ADR-0008 (`learning/DECISIONS.md:148-163`) and RESULTS
+Amendment 3 (`docs/verification/RESULTS.md:147-174`) state this explicitly. It
+does not block approval.
+
+Final commands personally observed from a fresh isolated copy:
+
+| Command | Exit | Result |
+|---|---:|---|
+| `node tools/verify/v2.js` | 0 | V2 PASS, 29/29 |
+| `npm run verify:stage0` | 0 | 15/15 green; V11 PASS+BLOCKED |
+| `npm run learn:check -- --strict` | 0 | All invariants hold; missing host/toolchain gates remain BLOCKED |
+| `npm run test:labs` | 1 | Exactly 0 pass / 18 fail, preserving the required stub baseline |
+
+The earlier independent network run also remained 12/12 reachable with zero
+dead links. No real session was started, closed, resumed, or aborted during
+any re-verification.
