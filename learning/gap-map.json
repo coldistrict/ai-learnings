@@ -1,0 +1,85 @@
+{
+  "generated_from": "diagnostic-scores.json",
+  "plan_version": "ai-enabler-mastery-system-v3",
+  "recorded_at": "2026-08-29",
+  "learner": "learner",
+  "area_scores": {
+    "llm-fundamentals": {
+      "explain": 1,
+      "build_debug": null,
+      "judgment": null
+    },
+    "tool-workflow-agent": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": 0
+    },
+    "retrieval-rag": {
+      "explain": 1,
+      "build_debug": null,
+      "judgment": null
+    },
+    "mcp": {
+      "explain": 1,
+      "build_debug": null,
+      "judgment": null
+    },
+    "devtool-packaging": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    },
+    "evals-observability": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    },
+    "security-governance": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    },
+    "production-platform": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    },
+    "enablement-org": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    },
+    "interview-communication": {
+      "explain": null,
+      "build_debug": null,
+      "judgment": null
+    }
+  },
+  "pace_variant": "15h/wk",
+  "role_overlay": "core-enablement",
+  "availability": {
+    "hours_per_week": 15,
+    "target_interview_date": null
+  },
+  "environment_report": "learning/prereq-report.json",
+  "skipped_but_still_gated": [],
+  "skip_suggestions": [],
+  "skip_suggestions_note": "no areas met the skip bar (measured >=3 on every applicable dim, no unknowns)",
+  "selected_port": {
+    "value": "go",
+    "decision_inputs": {
+      "posting_fit": "No target postings were selected at M0, so posting fit is neutral and no market-fit claim is made.",
+      "background": "TypeScript is primary; Go is used occasionally now, while regular C# use was 2–3 years ago and is now occasional. Go was selected to deepen a currently used secondary language and broaden the portfolio beyond TypeScript.",
+      "inventory_ref": "learning/prereq-report.json"
+    },
+    "post_choice_validation": {
+      "validated_at": "2026-08-29T23:27:34.862Z",
+      "toolchain": "Go",
+      "present": false,
+      "v32_status": "BLOCKED(prereq:Go)",
+      "output": "selected port toolchain 'go' ABSENT (ENOENT). Dependent gate V32 is BLOCKED(prereq:Go). Never waive, never silently switch (plan §6)."
+    }
+  },
+  "next_session_id": "m1-01-structured-output-contract",
+  "routing_note": "Scores route; they never grant mastery. Unknown areas stay `unseen` in the ledger (non-punitive). Diagnostic skip logic may skip lessons, never gates or artifacts."
+}

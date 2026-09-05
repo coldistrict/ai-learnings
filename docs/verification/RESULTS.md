@@ -42,7 +42,7 @@ present; **codex CLI, claude CLI, Go, .NET absent from PATH**
 
 | Gate | Outcome | Notes |
 |---|---|---|
-| V13 diagnostic gap map [manual+] | **NOT RUN — authoring complete, execution deferred by design** | Both session plans exist with §4 time boxes (60+60), fixtures authored, scoring key withheld, gap-map generator implemented and self-tested on a clearly-labeled SAMPLE fixture into scratch only (no `learning/gap-map.*` exists). The diagnostic itself requires the learner and sits exactly at the approved stop boundary. **V13 is NOT claimed passed.** |
+| V13 diagnostic gap map [manual+] | **PASS** (2026-08-29) | `evidence/V13.txt` — both 60-minute diagnostic plans executed into 2 closed journals; post-submission scoring produced 10-area `learning/gap-map.{md,json}` with 15h/wk pace, core-enablement overlay, environment reference, empty skipped-but-gated list, and next session; exactly one `selectedPort` (`go`) with all decision inputs; post-choice validation recorded **BLOCKED(prereq:Go)** without switching; 0 diagnostic durable promotions; 10 ledger rows remain non-punitively `unseen`; routing-rule machinery 6/6. |
 
 ## Stage 2 gate
 
