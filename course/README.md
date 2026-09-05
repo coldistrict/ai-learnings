@@ -78,3 +78,6 @@ Use the [glossary](GLOSSARY.md) for terminology and the
 [source ledger](../learning/SOURCE_LEDGER.md) for checked product facts.
 The [review report](../docs/course-review-2026-09-05.md) explains this revision,
 its verification, and the remaining execution work.
+
+The [dated follow-up report](../docs/course-follow-up-2026-09-05.md) records the
+assessment/scope decisions, structural checks, preservation and pending pilot.
