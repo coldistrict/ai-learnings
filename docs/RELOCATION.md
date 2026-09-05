@@ -35,6 +35,12 @@ Base: `/Users/coldistric/source/repos/codex-claude-communication/tasks/2026-07-1
 
 `final-plan.md` + `verification.md` are the authoritative approved pair.
 
+**Local content amendment (2026-09-05):** The user subsequently authorized a
+course review and improvement. ADR-0009 in `learning/DECISIONS.md` adds teaching
+guides and narrowly amends obsolete content/lifecycle assumptions; consult it
+alongside the original pair. The original files remain unchanged. This is a
+content amendment distinct from the operational relocation above.
+
 ## Where verification results live
 
 `verification.md` says results are appended below its final line; because

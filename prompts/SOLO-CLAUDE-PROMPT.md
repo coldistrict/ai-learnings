@@ -23,6 +23,11 @@ with "Teach me the next session." Follow this contract exactly.
 
 ## 2. Teach per the session lifecycle (plan §8.2)
 
+Prepare using the current milestone's `study_guide` and the relevant section of
+`course/AUTHORING.md` (ADR-0009). These bounded teaching references supply worked
+explanations and required bridges; later runnable labs must be authored and
+verified before assignment. Respect existing public ACs and check dated sources.
+
 START/PRIME (5) with 1–3 due retrievals → MODEL↔PROBE (10–15; learner
 predicts before any reveal) → GATE (5; learner states the model in their own
 words; two misses → the lab becomes guided repair, no third lecture) → LAB

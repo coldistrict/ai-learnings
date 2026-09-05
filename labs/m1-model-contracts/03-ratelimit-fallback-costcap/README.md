@@ -8,8 +8,9 @@ by the token — so the call site needs a policy: back off when told, fail
 over when the primary is dead, account for every token, and stop cold when
 the budget is spent. You are building
 `runWithPolicy(providers, request, options)` in `workspace/policy.js`. This
-is also where the program's live-cost consent story (plan §10.3) gets its
-mechanical teeth: the same cap semantics later guard real API spend.
+teaches exhausted-budget checks and reporting. Live spending additionally needs
+the reservation bridge explained below; this fake-provider exercise alone is
+not a production hard-cap implementation.
 
 ## Constraints
 
@@ -64,3 +65,17 @@ node --test "labs/m1-model-contracts/03-ratelimit-fallback-costcap/tests/*.test.
   (including AC-4's), not just on success.
 
 These criteria are the complete grading surface.
+
+## Budget limitation and the live-use bridge
+
+The check above knows cost already accumulated, not the next call's maximum cost.
+With $0.09 spent and a $0.10 cap it can still permit a call costing $0.04. AC-4
+proves zero-budget blocking; it does not prove a hard cap for positive budgets.
+The synthetic shared pricing also does not model different provider prices,
+reasoning/cache/tool charges, or uncertain usage after a timeout.
+
+Before live use, the M1 bridge must add a conservative per-call bound, atomic
+reservations shared across concurrent calls, and usage reconciliation, including
+unknown in-flight charges. See [the M1 guide](../../../course/01-model-contracts.md)
+and [tutor authoring standard](../../../course/AUTHORING.md). Those are new public
+exercises before V16 live enforcement, not hidden additions to this lab's ACs.

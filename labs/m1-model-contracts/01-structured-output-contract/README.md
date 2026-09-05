@@ -11,7 +11,9 @@ value or a typed, actionable error. You are building the first piece of
 
 The provider is the deterministic fake (`tools/fake-provider/`): it returns
 `{ text, usage }` where `text` is whatever the "model" said — valid JSON,
-subtly wrong JSON, or prose. Treat it exactly like a real SDK response.
+subtly wrong JSON, or prose. This simplified envelope teaches boundary validation;
+real SDKs also expose refusal, incomplete output, streaming events, and transport
+errors. See [the M1 guide](../../../course/01-model-contracts.md) for that bridge.
 
 ## Constraints
 
@@ -62,3 +64,11 @@ node --test "labs/m1-model-contracts/01-structured-output-contract/tests/*.test.
 
 These criteria are the complete grading surface. Tests assert observable
 behavior only; how you implement validation is yours to defend at review.
+
+## What passing establishes
+
+Passing establishes the specified shape/value boundary for the fixtures. It does
+not prove correct incident classification or calibrated confidence. A value of
+`confidence: 0.9` is valid data, not evidence of 90% accuracy. Current provider
+structured-output schemas and refusals are covered in the M1 guide; this lab's
+two error codes describe its limited fake-provider contract.

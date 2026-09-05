@@ -3,8 +3,8 @@
 ## Scenario
 
 Lab 01's boundary rejects malformed model output — but production adapters
-get a second chance: re-ask the model with the validation failure attached
-and it usually repairs its own output. That retry loop is where budgets and
+may get a second chance: re-ask with a safe validation summary when repair is
+appropriate. Repair success must be measured; it is never guaranteed. That retry loop is where budgets and
 traces earn their keep, because unbounded "just retry" is how token bills
 and latencies explode. You are building the JSON-completion adapter
 `completeJson(provider, request, options)` in `workspace/adapter.js` — the
@@ -60,3 +60,16 @@ node --test "labs/m1-model-contracts/02-retry-repair-path/tests/*.test.js"
   `schema_failed` then `ok`.
 
 These criteria are the complete grading surface.
+
+## Production interpretation
+
+This lab deliberately exercises unconstrained malformed output. With a real
+structured-output API, distinguish unsupported requests, refusals, truncation,
+transport errors, and wrong-but-valid content before choosing repair. Do not
+retry a refusal to bypass it or paste arbitrary untrusted output into privileged
+repair instructions. The lab does not claim to implement all provider outcomes.
+
+Its `timeoutMs` bounds waiting for an attempt and ends the run on that timeout.
+A production run also needs a total deadline covering prior attempts and waits.
+Resolving a timeout does not prove the remote request stopped or ceased billing.
+See [M1's cancellation and budget explanation](../../../course/01-model-contracts.md).

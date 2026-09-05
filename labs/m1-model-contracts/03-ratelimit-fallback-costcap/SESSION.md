@@ -22,14 +22,14 @@ Model: "Reliability and cost are call-site POLICY: the provider tells you
 how to behave (retry_after, error codes); the budget tells you when to stop;
 the report is how humans stay in control of spend." Cover: backoff contract,
 fallback as taxonomy decision, pre-flight budget checks, why the report
-exists on failures (the failed run is the one finance asks about) — and how
-this exact cap mechanism becomes the learner-approved live-cost cap in
-`learning/state.json` (plan §10.3).
+exists on failures. Distinguish an exhausted-budget check from reserving the next
+call: this lab implements the former. A positive hard live cap requires the M1
+reservation bridge before it can enforce the learner-approved session cap.
 Probes:
 1. "429 with retry_after_ms 200 vs PROVIDER_UNAVAILABLE — why do these get
    different treatments mechanically?"
-2. "Where must the budget check sit so a cap of $0 provably makes zero
-   calls? What breaks if you check after the call?"
+2. "Why can $0 block all calls while $0.01 remaining still permit an overspend?
+   What information and reservation must exist before a real call?"
 
 ## GATE (4)
 Learner restates + different-context prediction: "same policy shape for a
@@ -47,4 +47,5 @@ route to fallback vs retry; (3) what the report must carry for the M1
 live-cost benchmark. Ledger updates + highest hint. Interview bank: "how do
 you keep an LLM feature from blowing up the bill?" M1 wrap: the live
 benchmark + learner-approved cap (V16/V17) run at Stage 3 with real
-consent — schedule it as the next milestone action.
+consent — first schedule the refusal/streaming/reservation bridge from
+`course/AUTHORING.md`, then the live milestone action when its prerequisites hold.

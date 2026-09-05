@@ -1,6 +1,7 @@
 # START_HERE — tutor/learner contract
 
-Plan version `ai-enabler-mastery-system-v3`. Changes to THIS file happen
+Plan version `ai-enabler-mastery-system-v3`; content amendment 2026-09-05
+(ADR-0009). Changes to THIS file happen
 only via a DECISIONS.md ADR. Tutors: your full session contract is
 `prompts/SOLO-CLAUDE-PROMPT.md`, `prompts/SOLO-CODEX-PROMPT.md`, or
 `prompts/PAIRED-SESSION-PROMPT.md` (the `teach` skill wraps the same body).
@@ -49,10 +50,31 @@ Natural start: say **"Teach me the next session."**
 
 ## Where things stand
 
-Stage 0–2 are built (learning OS, NimbusPay world, 3 scenario packs, M0
-diagnostic, M1 labs 01–03). Next: **M0 diagnostic Session A**
-(`diagnostics/m0-session-a.md`) — two 60-minute sessions that produce the
-gap map, pace variant, role overlay, and the `selectedPort` decision. Don't
-pre-read diagnostics or SESSION.md files. Gate results and evidence live in
-`docs/verification/RESULTS.md`; authoritative plan paths in
-`docs/RELOCATION.md`.
+Use `npm run learn:next` for the current action and
+`learning/LEARNING_STATE.md` for progress. An open session takes precedence.
+Infrastructure includes the learning OS, NimbusPay world, three scenario packs,
+M0 diagnostic, and M1 labs 01–03. M0–M9 teaching references are in
+`course/`; later executable exercises are authored just in time. Don't pre-read
+diagnostics or SESSION.md probes. Gate results and evidence live in
+`docs/verification/RESULTS.md`; original plan paths in `docs/RELOCATION.md`.
+
+## Teaching content and current facts (ADR-0009)
+
+After bounded state reads, load the current milestone's `study_guide` from
+`learning/curriculum.json`, plus the relevant section of `course/AUTHORING.md`.
+This is bounded lesson preparation, not permission to read every chapter or
+the full learning history. Explain one concept with a worked analogous example,
+check a prediction, and use the existing public exercise contract for grading.
+Keep the diagnostic teaching-free until scoring ends.
+
+The guide distinguishes implemented labs from future exercise briefs. Author
+and verify new lab prerequisites before assigning them. Before M1 live work,
+complete the refusal/streaming/provider and hard-budget reservation bridge;
+lab 03's spent-so-far check is insufficient for a positive live cap. New tests
+must have public criteria before use, never retroactive hidden requirements.
+
+Recheck relevant SOURCE_LEDGER facts by opening the official pages; distinguish
+documentation verification from SDK/host testing. At M3 use the recorded current
+MCP revision, with legacy lifecycle tests only for a named compatibility path.
+The course guide and ADR-0009 amend stale product teaching in the original plan
+while retaining its learning objectives, ownership, and mastery thresholds.

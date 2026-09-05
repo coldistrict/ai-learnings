@@ -162,3 +162,51 @@ regression plus a backdated abandoned-orphan case (V2 29/29).
 cleared; the real window is milliseconds and recovery is via learn:check.
 **Re-verification:** 15/15 harnesses green; labs baseline 0/18 unchanged.
 Recorded in RESULTS.md Amendment 3.
+
+## ADR-0009 — Course content refresh (2026-09-05)
+
+**Status:** accepted under the user's explicit request to analyze, update, and
+improve the course using Codex's judgment.
+**Context:** The v3 design has strong mastery, evaluation, security, and ownership
+rules, but local material mainly consists of a milestone map and three M1 labs.
+Introductory progress text is obsolete, M1 retry/cost wording overstates the
+fake-provider guarantees, and the original M3 model predates the July MCP revision.
+
+**Decision:** Add `course/` as the local teaching reference: ten milestone guides,
+worked examples, glossary, and tutor authoring standard. Link it from the
+curriculum, START_HERE, and tutor prompts. Preserve just-in-time executable
+exercise authoring, the capstone, gate IDs/learning objectives, learner ownership,
+cost consent, and delayed mastery. This supersedes the original plan's “no
+pre-generated course” restriction only for reusable concept guides and exercise
+briefs, not prewritten learner implementations or pre-scored sessions.
+
+Amend the M3 teaching/verification interpretation for the pinned protocol:
+2026-07-28 current request/discovery behavior replaces a universal legacy
+initialize/session requirement. V20 still requires correct protocol behavior,
+negative tests, Inspector evidence, and actual host compatibility; legacy paths
+retain revision-specific tests. This supersedes outdated wording in plan §7.1,
+§7.2, §10.1 and V20/V34 only where it assumes one historical lifecycle. The
+same rule applies to M8 HTTP tests; audience/scope/passthrough negatives remain.
+
+Clarify M1: repair is conditional and measured; schema validity is not factual
+correctness; streaming/refusal and cancellation need explicit treatment. Lab 03
+keeps its public ACs but is labeled an exhausted-budget/accounting exercise.
+Before V16 live enforcement, author public exercises and tests for conservative
+next-call bounds, shared atomic reservations, and uncertain usage reconciliation.
+This corrects the claim that current fake-provider semantics alone enforce a
+hard positive live cap. It does not waive live evidence or authorize spending.
+
+Integrate context selection/compaction/memory, recovery after uncertain effects,
+confidence calibration, grader controls, isolated eval splits, citation support,
+cache revocation, and honest pilot design into existing milestone time budgets.
+Advanced agent/tool/retrieval techniques remain measured optional experiments.
+Correct the unskipped milestone-range sum to **108–147 hours**; elapsed duration
+depends on practice, remediation, prerequisites, and delayed reviews.
+
+**Consequences:** `learn:next` must identify an unauthored milestone instead of
+claiming its empty module list is complete. Freshness means checked claim content,
+not just link health. The source ledger records documentation checks separately
+from live tests. Existing learner work, journals, open session, progress, and
+external approved documents are preserved. These additions are **tutor-authored
+(Codex)** and are not learner portfolio/build evidence. Review and verification
+are recorded in `docs/course-review-2026-09-05.md`.

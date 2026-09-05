@@ -1,5 +1,5 @@
 // V12 — learn:next resolution order (plan §9.4)
-// Four fixtures; each ALSO contains every lower-priority trigger, so the
+// Priority fixtures ALSO contain every lower-priority trigger, so the
 // output proves the priority order, not just the class.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -37,6 +37,13 @@ function next(root) {
   return run('next', { root, env: { LEARN_FIXED_TIME: FIXED_NOW } });
 }
 
+function setMilestone(root, id) {
+  const file = path.join(root, 'learning', 'state.json');
+  const state = JSON.parse(fs.readFileSync(file, 'utf8'));
+  state.current_milestone = id;
+  fs.writeFileSync(file, JSON.stringify(state, null, 2) + '\n');
+}
+
 // F1: open draft + remediation + due row + milestone → resume wins
 {
   const root = makeScratchRoot('v12-f1');
@@ -71,6 +78,8 @@ function next(root) {
 // F4: clean → current milestone gate / next module
 {
   const root = makeScratchRoot('v12-f4');
+  // The learner's real milestone may have advanced since this test was authored.
+  setMilestone(root, 'M0');
   const r = next(root);
   g.check('F4 (clean): names the current milestone module/gate',
     r.out.includes('next-action-class: milestone') && r.out.includes('m0-diagnostic-session-a'), r.out.trim().split('\n')[1]);
@@ -78,4 +87,22 @@ function next(root) {
 }
 
 g.check('4/4 fixtures produced the expected next-action class in priority order', !g.failed);
+
+// F5: an empty just-in-time milestone is unauthored, not completed.
+{
+  const root = makeScratchRoot('v12-f5');
+  setMilestone(root, 'M2');
+  const file = path.join(root, 'learning', 'curriculum.json');
+  const curriculum = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const milestone = curriculum.milestones.find((m) => m.id === 'M2');
+  milestone.modules = [];
+  milestone.study_guide = 'course/02-workflows-and-evals.md';
+  fs.writeFileSync(file, JSON.stringify(curriculum, null, 2) + '\n');
+  const r = next(root);
+  g.check('F5 (unauthored milestone): asks for lesson authoring with guide and pending gate',
+    r.status === 0 && r.out.includes('Author the next lesson for M2') &&
+    r.out.includes(milestone.study_guide) && r.out.includes('V15') &&
+    !r.out.includes('All M2 modules closed'), r.out.trim().split('\n')[1]);
+  cleanup(root);
+}
 g.finish();
