@@ -5,6 +5,11 @@ current milestone's guide and the sections needed for today's objective. Continu
 to use START_HERE, bounded state, the hint ladder, and transactional journals.
 The guide supplies explanations; it does not authorize completing learner code.
 
+Apply [scope and migration status](SCOPE.md) (ADR-0011) before planning assessment.
+Only [M1-01](pilots/m1-01-structured-output-contract.md) has a prepared teaching
+pilot; all full chapter restructuring is pending learner evidence. Three tiers
+must change pacing, examples, and explanations, not merely rename headings.
+
 ## 1. Prepare a teachable unit
 
 Choose one concept and one observable behavior from the current milestone.
@@ -64,6 +69,11 @@ Every milestone also produces an enablement artifact and an interview attempt.
 V18 provenance, V19 new-lab audit, V27 durability, and V30 handoff remain
 cross-cutting. The immutable original gate document is identified in
 `docs/RELOCATION.md`; local content amendments are in `learning/DECISIONS.md`.
+
+Before executing V20 or V34, open the local
+[execution amendments](../docs/verification/RESULTS.md#execution-amendments-2026-09-05).
+Use the pinned protocol's lifecycle contract and explicitly isolated legacy
+compatibility tests; historical results must not be relabeled as later checks.
 
 The M1 bridge is necessary because lab 03 cannot bound the next live call with
 its current interface. Before claiming live cap enforcement, publish and test

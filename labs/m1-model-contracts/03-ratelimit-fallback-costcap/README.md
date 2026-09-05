@@ -68,14 +68,4 @@ These criteria are the complete grading surface.
 
 ## Budget limitation and the live-use bridge
 
-The check above knows cost already accumulated, not the next call's maximum cost.
-With $0.09 spent and a $0.10 cap it can still permit a call costing $0.04. AC-4
-proves zero-budget blocking; it does not prove a hard cap for positive budgets.
-The synthetic shared pricing also does not model different provider prices,
-reasoning/cache/tool charges, or uncertain usage after a timeout.
-
-Before live use, the M1 bridge must add a conservative per-call bound, atomic
-reservations shared across concurrent calls, and usage reconciliation, including
-unknown in-flight charges. See [the M1 guide](../../../course/01-model-contracts.md)
-and [tutor authoring standard](../../../course/AUTHORING.md). Those are new public
-exercises before V16 live enforcement, not hidden additions to this lab's ACs.
+The spent-so-far check does not guarantee a hard positive live spending cap; see [the required reservation bridge](../../../course/01-model-contracts.md#accounting-is-different-from-reserving-a-budget).

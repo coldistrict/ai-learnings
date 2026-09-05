@@ -210,3 +210,83 @@ from live tests. Existing learner work, journals, open session, progress, and
 external approved documents are preserved. These additions are **tutor-authored
 (Codex)** and are not learner portfolio/build evidence. Review and verification
 are recorded in `docs/course-review-2026-09-05.md`.
+
+## ADR-0010 — Lab 03 assessment amendment (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Context:** The inherited refresh preserved Lab 03's public executable ACs and
+tests, but changed assessment expectations. The level-4 budget rubric changed
+from connecting the cap to session consent/V16 unprompted to explaining why
+positive live caps need next-call reservations. The explain-back and session
+probe also moved from placement of a spent-so-far check toward positive-budget
+overspend. Calling this only a wording clarification would conceal that change.
+
+**Decision:** Retain the corrected expectations and label them at the rubric and
+session plan. Teach the distinction before assessing it, and apply it only to
+new attempts after teaching. Never rescore historical work. Consent remains a
+required V16 control; reservations do not replace permission to spend. The
+existing five public ACs remain the complete executable grading surface.
+
+**Consequences:** Explanation/transfer assessment has changed; executable lab
+acceptance has not. Public reservation bridge work must be authored and tested
+before live enforcement. This decision grants no score, mastery, or spending
+consent and does not change the 0–4 scale or durable evidence rules.
+
+## ADR-0011 — Explicit scope and a single teaching pilot (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Context:** Dense technical guides are useful references, not demonstrated
+beginner teaching. The original plan's §3, §6, §7.2 and gate contract distinguish
+required depth from awareness, impressive scope, and specialist work. The refresh
+made subskills explicit without consistently separating those categories.
+
+**Decision:** Keep all ten competency IDs, depth targets, subskill names, learner
+records, public ACs, and mastery rules. Classify coverage in
+`learning/course-map.json`, explained in `course/SCOPE.md`. Distinguish original
+requirements, clarifications, added required exercises, and optional exploration.
+Gate mappings describe destinations and supporting teaching; they do not rewrite
+gate acceptance. Required-later topics must name their milestone and relevant
+gate. V22 remains at least eight fixtures at M6 and all twelve at M8. Security,
+authorization, recovery, spending consent and spending controls remain required.
+Optional techniques never become prerequisites for durable mastery.
+
+Pilot the three tiers (understand now, required later, optional exploration) in
+M1-01 only. Keep one guide and study_guide mapping per milestone; all full chapter
+restructuring remains pending. START_HERE and both tutor workflows point to the
+pilot through the current guide/session plan. Preparing materials does not start
+or resume a session. Actual learner participation, recorded assistance, and
+clarity/pacing feedback must precede any broader rewrite. Prior exposure and the
+absence of an earlier scored gate baseline preclude causal before/after claims.
+
+**Hour assessment:** Preserve **108–147 hours** as the original milestone-sum
+planning estimate, not an execution-validated total. This supersedes ADR-0009's
+assumption that additional required work necessarily fits existing budgets.
+Next-call/concurrent reservation exercises and uncertain-effect recovery drills
+are concrete added work even where motivated by existing safety objectives.
+Provisional authoring estimates in `course/SCOPE.md` identify 2.5–6.5 hours of
+potential pressure across M1/M5/M6/M8, with overlap unresolved; do not silently
+add that number to the headline or claim it is absorbed. Measure pilot teaching
+time and later bridge/drill time, then revisit scope/hours through a new ADR.
+Optional builds are outside the core estimate. No extra mandatory calibration
+dashboard, parallel-agent build, full OAuth server, or deletion service is added.
+
+**Consequences:** The offline checker verifies structure and traceability only.
+Scope classification is complete for the current subskill inventory; lesson
+sequencing, semantic completeness, and educational effectiveness are not. New
+exercise criteria and any assessment additions must be public before teaching
+and assessment, never retroactive. One pilot can inform design, not prove general
+teaching effectiveness. Phase B and Phase C remain pending.
+
+## ADR-0012 — Unfinished sessions remain local recovery data (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Decision:** Ignore both `/learning/active-session.json` and
+`/learning/journal/.in-progress/` in Git, while keeping the actual local pair
+intact. Closed journals remain trackable and immutable. Operational handling is
+documented in `docs/SESSION_STATE.md`; START_HERE links it.
+**Consequences:** A fresh clone has no open session. Transferring unfinished work
+between machines requires separate handling of both files; Git is not its backup.
+Ignored drafts remain important recovery data, not disposable scratch files.
+`learn:check` diagnoses orphaned state. `learn:next` returns resume only when the
+lock and matching draft exist; it does not diagnose every orphan. No session
+recovery redesign, state regeneration, or transaction is authorized by this ADR.

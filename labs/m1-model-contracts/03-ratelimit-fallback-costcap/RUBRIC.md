@@ -1,5 +1,7 @@
 # Review rubric — m1-03 (tutor-facing)
 
+Assessment amendment: [ADR-0010](../../../learning/DECISIONS.md#adr-0010--lab-03-assessment-amendment-2026-09-05) changes the budget explanation/transfer expectations. Teach them before assessing new attempts; never rescore history. Public executable ACs and tests are unchanged.
+
 Same workflow as m1-01 (plan §8.4). Score 0–4 per dimension:
 
 | Dimension | 2 (guided partial) | 3 (independent solid) | 4 (transfer) |

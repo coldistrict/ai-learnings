@@ -37,6 +37,9 @@ Check actual product support and pricing at implementation.
 
 ## Remote authorization and configuration
 
+Execution reference: [V34 amendment](../docs/verification/RESULTS.md#v34--pinned-http-lifecycle-and-authorization)
+under ADR-0009; consult it alongside the original gate before running tests.
+
 For remote MCP, test token expiry, wrong audience, insufficient scope, issuer
 mix-up, and forbidden token passthrough against the pinned revision. V34's
 protocol tests follow that revision, with the historical initialize/session

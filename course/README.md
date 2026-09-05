@@ -50,6 +50,16 @@ remediation, waiting for delayed reviews, and unavailable prerequisites can
 extend elapsed time. This is a planning range, not a mastery or employment promise.
 Diagnostic skips may shorten lessons but never waive gates.
 
+## Pilot and structural checks
+
+The [M1-01 teaching pilot](pilots/m1-01-structured-output-contract.md) is prepared
+for the learner's separate instruction to begin. All full chapter restructuring
+remains pending actual pilot evidence and feedback. The guides remain technical
+references; their existence does not establish beginner teaching effectiveness.
+See [scope, tiers, and hour implications](SCOPE.md) (ADR-0011).
+Run `npm run course:check` and `npm run course:test` for offline structural
+consistency; see [the checker contract](../tools/course/README.md).
+
 ## What is core and what is optional
 
 Core: structured contracts, prompt experiments, context selection, deterministic

@@ -3,6 +3,12 @@
 module: `m1-01-structured-output-contract` · variant: default (60)
 competencies: llm-fundamentals (primary), tool-workflow-agent (secondary)
 
+For the next learner-authorized M1-01 attempt, use the [prepared pilot](../../../course/pilots/m1-01-structured-output-contract.md)
+for orientation, example, prediction and small practice. On resume, acknowledge
+the existing draft evidence (including the H0 repair), then use the unfinished
+gate/lab below; do not restart all prior retrievals. No teaching begins merely
+because these materials were prepared.
+
 ## START/PRIME (5)
 First M1 session — retrieval draws on M0 diagnostic observations: ask the
 learner to restate (from memory) the two nondeterminism sources they named

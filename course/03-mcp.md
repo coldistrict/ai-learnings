@@ -17,6 +17,9 @@ authorization, timeouts, output limits, and auditing. [MCP specification](https:
 
 ## Teach the revision you actually run
 
+Execution reference: [V20 amendment](../docs/verification/RESULTS.md#v20--pinned-protocol-contract)
+under ADR-0009; consult it alongside the original gate before running tests.
+
 The July plan's universal initialize/session mental model is outdated. The
 **2026-07-28** revision uses self-describing requests with protocol version and
 client capabilities; the initialize handshake is removed and server discovery

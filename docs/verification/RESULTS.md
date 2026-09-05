@@ -57,6 +57,39 @@ V22–V25 (M5/M6), V26/V34 (M8), V27/V28/V32/V33/V35/V36 (M9 / core build
 complete), V29 (program ready), V30 (first drill during Stage 3), V31 (M7).
 None attempted; none claimed.
 
+## Execution amendments (2026-09-05)
+
+Read these markers before authoring or running the affected gates, together with
+the original checklist located by [RELOCATION](../RELOCATION.md). They apply to
+future execution under [ADR-0009](../../learning/DECISIONS.md#adr-0009--course-content-refresh-2026-09-05).
+They are not new test results. All dated historical entries above and below keep
+their original meaning; July checks did not test the later pinned protocol.
+
+### V20 — Pinned protocol contract
+
+Test lifecycle behavior against the protocol revision pinned in SOURCE_LEDGER
+and record actual SDK/client/transport versions. Under ADR-0009, the pinned
+revision's discovery/request behavior replaces a universal legacy initialize
+requirement. Isolate legacy initialize/session behavior in an explicitly named
+compatibility path with its own pinned revision and tests. Keep the negative
+cases, stdio framing, Inspector evidence, and actual two-host usage or named
+blockers. V20 remains **NOT RUN** in this follow-up; see [M3](../../course/03-mcp.md).
+
+### V34 — Pinned HTTP lifecycle and authorization
+
+Test HTTP lifecycle behavior against the pinned protocol revision under
+ADR-0009; isolate and label legacy initialize/operate/close session tests rather
+than applying them universally. Preserve wrong-audience/scope rejection and
+token-passthrough refusal/audit negatives. Full OAuth server implementation
+remains outside core acceptance. V34 remains **NOT RUN** in this follow-up;
+see [M8](../../course/08-production.md#remote-authorization-and-configuration).
+
+### V22 — Staged security coverage
+
+The scope map retains **at least 8 of 12 at M6** and **all 12 at M8**, including
+the original exact safety outcomes, regressions and threat-model coverage.
+A mapped teaching topic does not change these acceptance thresholds.
+
 ## Standing blockers (honest inventory)
 
 - **claude CLI / codex CLI absent from non-interactive PATH** → V11 live

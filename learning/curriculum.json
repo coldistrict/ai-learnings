@@ -173,5 +173,6 @@
     }
   ],
   "content_revision": "2026-09-05",
-  "core_hours": "108–147"
+  "core_hours": "108–147",
+  "course_map": "learning/course-map.json"
 }

@@ -28,6 +28,11 @@ Prepare using the current milestone's `study_guide` and the relevant section of
 explanations and required bridges; later runnable labs must be authored and
 verified before assignment. Respect existing public ACs and check dated sources.
 
+If the current guide/session plan links a prepared pilot, use that bounded
+reference for the learner-authorized attempt (ADR-0011). Preparation is not a
+session start. On resume, preserve historical observations and acknowledge repaired
+misconceptions; label new evidence separately and collect clarity/pacing feedback.
+
 START/PRIME (5) with 1–3 due retrievals → MODEL↔PROBE (10–15; learner
 predicts before any reveal) → GATE (5; learner states the model in their own
 words; two misses → the lab becomes guided repair, no third lecture) → LAB

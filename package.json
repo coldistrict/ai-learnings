@@ -41,6 +41,8 @@
     "verify:v18": "node tools/verify/v18.js",
     "verify:v19": "node tools/verify/v19.js",
     "verify:gapmap": "node tools/verify/gapmap-rules.js",
-    "verify:stage0": "node tools/verify/run-all.js"
+    "verify:stage0": "node tools/verify/run-all.js",
+    "course:check": "node tools/course/check.js",
+    "course:test": "node --test tools/course/check.test.js"
   }
 }

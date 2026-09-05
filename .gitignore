@@ -4,3 +4,7 @@ node_modules/
 # Scratch/QA areas are never committed; solvability QA implementations are
 # created outside the repo and discarded (plan §8.5 A1).
 .scratch/
+# Both halves of an unfinished learning transaction are local recovery data.
+# Keep them together; see docs/SESSION_STATE.md. Closed journals stay trackable.
+/learning/active-session.json
+/learning/journal/.in-progress/

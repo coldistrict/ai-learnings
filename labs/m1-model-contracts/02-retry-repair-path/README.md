@@ -63,13 +63,4 @@ These criteria are the complete grading surface.
 
 ## Production interpretation
 
-This lab deliberately exercises unconstrained malformed output. With a real
-structured-output API, distinguish unsupported requests, refusals, truncation,
-transport errors, and wrong-but-valid content before choosing repair. Do not
-retry a refusal to bypass it or paste arbitrary untrusted output into privileged
-repair instructions. The lab does not claim to implement all provider outcomes.
-
-Its `timeoutMs` bounds waiting for an attempt and ends the run on that timeout.
-A production run also needs a total deadline covering prior attempts and waits.
-Resolving a timeout does not prove the remote request stopped or ceased billing.
-See [M1's cancellation and budget explanation](../../../course/01-model-contracts.md).
+Repair is conditional and measured, and timeout does not prove remote work or billing stopped; see [retry policy](../../../course/01-model-contracts.md#a-provider-boundary-makes-differences-explicit) and [cancellation](../../../course/01-model-contracts.md#streaming-and-cancellation).

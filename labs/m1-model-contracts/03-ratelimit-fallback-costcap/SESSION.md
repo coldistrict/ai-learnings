@@ -1,5 +1,7 @@
 # Session plan — m1-03 (tutor-facing; learner: don't pre-read)
 
+Assessment amendment: [ADR-0010](../../../learning/DECISIONS.md#adr-0010--lab-03-assessment-amendment-2026-09-05) changes the budget explanation/transfer expectations. Teach them before assessing new attempts; never rescore history. Public executable ACs and tests are unchanged.
+
 module: `m1-03-ratelimit-fallback-costcap` · variant: default (60)
 competencies: llm-fundamentals (primary), production-platform (reliability),
 enablement-org (cost story)

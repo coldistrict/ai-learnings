@@ -30,6 +30,10 @@ The [content review](docs/course-review-2026-09-05.md) records corrections,
 current sources, and verification limits. Later executable labs remain
 adapted to the learner and authored just in time.
 
+The [M1-01 teaching pilot](course/pilots/m1-01-structured-output-contract.md) is
+prepared; teaching and the remaining chapter rewrite await actual participation.
+Run `npm run course:check` for [structural course checks](tools/course/README.md).
+
 ## Layout (plan §5.3)
 
 | Path | What | Owner |

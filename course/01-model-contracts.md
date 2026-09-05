@@ -4,6 +4,10 @@ Prerequisite: [foundations](00-foundations.md). Use with the three
 [M1 labs](../labs/m1-model-contracts/PLAN.md). Lab acceptance criteria remain the
 grading contract; the production extensions below are taught before live use.
 
+Tutor entry for the paused M1-01 session: [prepared teaching pilot](pilots/m1-01-structured-output-contract.md).
+Use its paced analogous example when the learner separately asks to begin. Full
+chapter restructuring remains pending; see [scope](SCOPE.md).
+
 ## Four checks, four different guarantees
 
 Imagine extracting a room reservation: room, date, headcount, and evidence ID.
@@ -77,6 +81,10 @@ deterministic requirements such as authorization outside the generation step.
 | Wrong but schema-valid fact | Recheck evidence or abstain | Parsing again cannot establish truth |
 | Timeout after an external write | Reconcile state using operation identity | The write may already have happened |
 
+Lab 02 deliberately supplies unconstrained malformed output. Repair prompts use
+a safe validation summary; arbitrary untrusted output must not become privileged
+instructions. Its limited outcomes are not a complete provider contract.
+
 Retries consume a shared attempt, time, and spending budget. Use backoff with
 jitter, meaning a bounded randomized delay, to avoid synchronized retry storms.
 Check SDK retry defaults so an outer loop does not unknowingly multiply them.
@@ -90,7 +98,7 @@ Do not commit a parsed object or execute tool arguments from unfinished chunks.
 Assemble the documented event sequence, check completion status, then validate.
 A disconnected stream is an incomplete result, not an empty successful answer.
 
-A timeout stops the caller waiting. It does not prove remote work stopped.
+A timeout stops the caller waiting. It does not prove remote work or billing stopped.
 Propagate cancellation where supported, observe late completions, and reconcile
 uncertain side effects. A run deadline covers all attempts, backoff, and tools;
 a per-attempt timeout covers one operation. Both are useful and distinct.

@@ -52,6 +52,8 @@ Natural start: say **"Teach me the next session."**
 
 Use `npm run learn:next` for the current action and
 `learning/LEARNING_STATE.md` for progress. An open session takes precedence.
+The lock and matching draft are ignored together but remain local recovery data;
+see [unfinished sessions and Git](docs/SESSION_STATE.md) (ADR-0012).
 Infrastructure includes the learning OS, NimbusPay world, three scenario packs,
 M0 diagnostic, and M1 labs 01–03. M0–M9 teaching references are in
 `course/`; later executable exercises are authored just in time. Don't pre-read
@@ -66,6 +68,15 @@ This is bounded lesson preparation, not permission to read every chapter or
 the full learning history. Explain one concept with a worked analogous example,
 check a prediction, and use the existing public exercise contract for grading.
 Keep the diagnostic teaching-free until scoring ends.
+
+For M1-01, the guide and session plan link the prepared
+[teaching pilot](course/pilots/m1-01-structured-output-contract.md) (ADR-0011).
+Use it only after the learner separately asks to begin; resume the correct open
+session through the normal workflow. Other chapter restructuring remains pending
+pilot evidence. Required/optional coverage is explicit in [scope](course/SCOPE.md);
+Lab 03's changed explanation assessment applies prospectively after teaching
+(ADR-0010). Before executing V20/V34, read their local
+[gate amendments](docs/verification/RESULTS.md#execution-amendments-2026-09-05).
 
 The guide distinguishes implemented labs from future exercise briefs. Author
 and verify new lab prerequisites before assigning them. Before M1 live work,

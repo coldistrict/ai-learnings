@@ -34,6 +34,9 @@ sessions.
    Prepare with the current milestone's `study_guide` and the relevant part of
    `course/AUTHORING.md` (ADR-0009). Author missing runnable labs before assigning
    them; do not turn guide discussion into hidden criteria for existing labs.
+   Follow a linked prepared pilot only for a learner-authorized attempt (ADR-0011);
+   on resume, acknowledge prior repairs, distinguish new evidence, and collect
+   clarity/pacing feedback. Preparation does not start teaching.
 4. Honor cost consent (`--allow-live` + `--max-cost-usd`, cap in
    `learning/state.json`).
 5. Close: `npm run learn:close`. End by stating the next due action

@@ -67,8 +67,4 @@ behavior only; how you implement validation is yours to defend at review.
 
 ## What passing establishes
 
-Passing establishes the specified shape/value boundary for the fixtures. It does
-not prove correct incident classification or calibrated confidence. A value of
-`confidence: 0.9` is valid data, not evidence of 90% accuracy. Current provider
-structured-output schemas and refusals are covered in the M1 guide; this lab's
-two error codes describe its limited fake-provider contract.
+Schema compliance does not establish factual correctness or calibrated confidence; see [the guarantee boundaries](../../../course/01-model-contracts.md#four-checks-four-different-guarantees).
