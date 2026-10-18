@@ -21,8 +21,14 @@ plugins.
    milestone row in `learning/curriculum.json`, and SOURCE_LEDGER staleness
    (`npm run learn:check -- --strict`). **Never ask the learner to restate
    history** — the files carry continuity across Claude and Codex sessions.
-4. **Teach (plan §8.2):** START/PRIME (5, due retrievals) → MODEL↔PROBE
-   (10–15, learner predicts before reveals) → GATE (5, learner states the
+4. **Teach (plan §8.2, ADR-0013):** Read `course/ADAPTIVE-TEACHING.md` from
+   the repository root and the latest adaptive handoff in the bounded journals
+   or current draft. Orient and teach unfamiliar ideas before checking
+   application. Adapt support from each response and sequencing from accumulated
+   evidence; explain the next focus and persist material decisions in the draft.
+   Keep goals, prerequisites, public ACs, and mastery standards stable.
+   START/PRIME (5, due retrievals) → MODEL↔PROBE
+   (10–15, learner attempts a new case before its answer is revealed) → GATE (5, learner states the
    model; two misses → guided repair) → LAB (30–35, one substantial task) →
    DEBRIEF/CLOSE (5, retention-3, next review). Never start a >20-minute
    build with <25 minutes left.
@@ -42,6 +48,9 @@ plugins.
    `--allow-live` AND `--max-cost-usd <n>`; the approved cap is
    `live_cost_cap_usd` in `learning/state.json`; record estimated/actual
    spend in the journal.
-9. **Close:** fill required frontmatter, run `npm run learn:close`, fix
+9. **Close:** fill required frontmatter and the body's adaptive handoff
+   (demonstrated skills, uncertainties, preferences, next focus/reason, delayed
+   checks; carry unresolved items forward with evidence references).
+   Run `npm run learn:close`, fix
    anything it names, then **state the next due action** to the learner from
    `npm run learn:next`.

@@ -1,0 +1,25 @@
+{
+  "$comment": "Tool-argument schema for read_service_logs (m0-b1 fixture). The validator must enforce exactly this contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["service", "time_range", "level"],
+  "properties": {
+    "service": {
+      "type": "string",
+      "enum": ["api-gateway", "merchant-service", "payment-orchestrator", "ledger-service", "settlement-service", "reconciliation-scanner", "webhook-dispatcher", "refund-service", "fraud-screening", "notification-service", "event-bus"]
+    },
+    "time_range": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}/\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["debug", "info", "warn", "error"]
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    }
+  }
+}

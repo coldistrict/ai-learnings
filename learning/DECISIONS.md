@@ -162,3 +162,214 @@ regression plus a backdated abandoned-orphan case (V2 29/29).
 cleared; the real window is milliseconds and recovery is via learn:check.
 **Re-verification:** 15/15 harnesses green; labs baseline 0/18 unchanged.
 Recorded in RESULTS.md Amendment 3.
+
+## ADR-0009 — Course content refresh (2026-09-05)
+
+**Status:** accepted under the user's explicit request to analyze, update, and
+improve the course using Codex's judgment.
+**Context:** The v3 design has strong mastery, evaluation, security, and ownership
+rules, but local material mainly consists of a milestone map and three M1 labs.
+Introductory progress text is obsolete, M1 retry/cost wording overstates the
+fake-provider guarantees, and the original M3 model predates the July MCP revision.
+
+**Decision:** Add `course/` as the local teaching reference: ten milestone guides,
+worked examples, glossary, and tutor authoring standard. Link it from the
+curriculum, START_HERE, and tutor prompts. Preserve just-in-time executable
+exercise authoring, the capstone, gate IDs/learning objectives, learner ownership,
+cost consent, and delayed mastery. This supersedes the original plan's “no
+pre-generated course” restriction only for reusable concept guides and exercise
+briefs, not prewritten learner implementations or pre-scored sessions.
+
+Amend the M3 teaching/verification interpretation for the pinned protocol:
+2026-07-28 current request/discovery behavior replaces a universal legacy
+initialize/session requirement. V20 still requires correct protocol behavior,
+negative tests, Inspector evidence, and actual host compatibility; legacy paths
+retain revision-specific tests. This supersedes outdated wording in plan §7.1,
+§7.2, §10.1 and V20/V34 only where it assumes one historical lifecycle. The
+same rule applies to M8 HTTP tests; audience/scope/passthrough negatives remain.
+
+Clarify M1: repair is conditional and measured; schema validity is not factual
+correctness; streaming/refusal and cancellation need explicit treatment. Lab 03
+keeps its public ACs but is labeled an exhausted-budget/accounting exercise.
+Before V16 live enforcement, author public exercises and tests for conservative
+next-call bounds, shared atomic reservations, and uncertain usage reconciliation.
+This corrects the claim that current fake-provider semantics alone enforce a
+hard positive live cap. It does not waive live evidence or authorize spending.
+
+Integrate context selection/compaction/memory, recovery after uncertain effects,
+confidence calibration, grader controls, isolated eval splits, citation support,
+cache revocation, and honest pilot design into existing milestone time budgets.
+Advanced agent/tool/retrieval techniques remain measured optional experiments.
+Correct the unskipped milestone-range sum to **108–147 hours**; elapsed duration
+depends on practice, remediation, prerequisites, and delayed reviews.
+
+**Consequences:** `learn:next` must identify an unauthored milestone instead of
+claiming its empty module list is complete. Freshness means checked claim content,
+not just link health. The source ledger records documentation checks separately
+from live tests. Existing learner work, journals, open session, progress, and
+external approved documents are preserved. These additions are **tutor-authored
+(Codex)** and are not learner portfolio/build evidence. Review and verification
+are recorded in `docs/course-review-2026-09-05.md`.
+
+## ADR-0010 — Lab 03 assessment amendment (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Context:** The inherited refresh preserved Lab 03's public executable ACs and
+tests, but changed assessment expectations. The level-4 budget rubric changed
+from connecting the cap to session consent/V16 unprompted to explaining why
+positive live caps need next-call reservations. The explain-back and session
+probe also moved from placement of a spent-so-far check toward positive-budget
+overspend. Calling this only a wording clarification would conceal that change.
+
+**Decision:** Retain the corrected expectations and label them at the rubric and
+session plan. Teach the distinction before assessing it, and apply it only to
+new attempts after teaching. Never rescore historical work. Consent remains a
+required V16 control; reservations do not replace permission to spend. The
+existing five public ACs remain the complete executable grading surface.
+
+**Consequences:** Explanation/transfer assessment has changed; executable lab
+acceptance has not. Public reservation bridge work must be authored and tested
+before live enforcement. This decision grants no score, mastery, or spending
+consent and does not change the 0–4 scale or durable evidence rules.
+
+## ADR-0011 — Explicit scope and a single teaching pilot (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Context:** Dense technical guides are useful references, not demonstrated
+beginner teaching. The original plan's §3, §6, §7.2 and gate contract distinguish
+required depth from awareness, impressive scope, and specialist work. The refresh
+made subskills explicit without consistently separating those categories.
+
+**Decision:** Keep all ten competency IDs, depth targets, subskill names, learner
+records, public ACs, and mastery rules. Classify coverage in
+`learning/course-map.json`, explained in `course/SCOPE.md`. Distinguish original
+requirements, clarifications, added required exercises, and optional exploration.
+Gate mappings describe destinations and supporting teaching; they do not rewrite
+gate acceptance. Required-later topics must name their milestone and relevant
+gate. V22 remains at least eight fixtures at M6 and all twelve at M8. Security,
+authorization, recovery, spending consent and spending controls remain required.
+Optional techniques never become prerequisites for durable mastery.
+
+Pilot the three tiers (understand now, required later, optional exploration) in
+M1-01 only. Keep one guide and study_guide mapping per milestone; all full chapter
+restructuring remains pending. START_HERE and both tutor workflows point to the
+pilot through the current guide/session plan. Preparing materials does not start
+or resume a session. Actual learner participation, recorded assistance, and
+clarity/pacing feedback must precede any broader rewrite. Prior exposure and the
+absence of an earlier scored gate baseline preclude causal before/after claims.
+
+**Hour assessment:** Preserve **108–147 hours** as the original milestone-sum
+planning estimate, not an execution-validated total. This supersedes ADR-0009's
+assumption that additional required work necessarily fits existing budgets.
+Next-call/concurrent reservation exercises and uncertain-effect recovery drills
+are concrete added work even where motivated by existing safety objectives.
+Provisional authoring estimates in `course/SCOPE.md` identify 2.5–6.5 hours of
+potential pressure across M1/M5/M6/M8, with overlap unresolved; do not silently
+add that number to the headline or claim it is absorbed. Measure pilot teaching
+time and later bridge/drill time, then revisit scope/hours through a new ADR.
+Optional builds are outside the core estimate. No extra mandatory calibration
+dashboard, parallel-agent build, full OAuth server, or deletion service is added.
+
+**Consequences:** The offline checker verifies structure and traceability only.
+Scope classification is complete for the current subskill inventory; lesson
+sequencing, semantic completeness, and educational effectiveness are not. New
+exercise criteria and any assessment additions must be public before teaching
+and assessment, never retroactive. One pilot can inform design, not prove general
+teaching effectiveness. Phase B and Phase C remain pending.
+
+## ADR-0012 — Unfinished sessions remain local recovery data (2026-09-05)
+
+**Status:** accepted under the explicit follow-up implementation request.
+**Decision:** Ignore both `/learning/active-session.json` and
+`/learning/journal/.in-progress/` in Git, while keeping the actual local pair
+intact. Closed journals remain trackable and immutable. Operational handling is
+documented in `docs/SESSION_STATE.md`; START_HERE links it.
+**Consequences:** A fresh clone has no open session. Transferring unfinished work
+between machines requires separate handling of both files; Git is not its backup.
+Ignored drafts remain important recovery data, not disposable scratch files.
+`learn:check` diagnoses orphaned state. `learn:next` returns resume only when the
+lock and matching draft exist; it does not diagnose every orphan. No session
+recovery redesign, state regeneration, or transaction is authorized by this ADR.
+
+## ADR-0013 — Continuous adaptive teaching (2026-09-06)
+
+**Status:** accepted after the learner requested continuous adaptation, discussed
+the recommendation, and explicitly instructed: “Do as you are recommending.”
+**Context:** A stable curriculum supplies goals and mastery standards, but a fixed
+lesson script can ignore repaired misconceptions, prerequisite gaps, and teaching
+feedback. One response is insufficient evidence for a global level judgment or
+a broad course rewrite. The learner has also repeatedly requested orientation
+and explanations before unfamiliar application questions.
+
+**Decision:** Apply `course/ADAPTIVE-TEACHING.md` in both tutors' solo and paired
+contracts, the shared teach skill, and authoring/pilot guidance. Teach unfamiliar
+ideas first; use new attempts to adjust support immediately and accumulated
+evidence to choose subsequent practice and focus. Assess explanation, independent
+application, judgment, assistance, and delayed recall separately. Make the reason
+for the next step visible. Preserve required outcomes, dependencies, public ACs,
+diagnostic integrity, ownership, spending consent, and existing mastery gates.
+
+Persist material observations, provisional assessments, and teaching decisions
+in an Adaptive teaching journal section. At pause/close, write an Adaptive handoff
+with demonstrated skills, unresolved gaps, preferences, next focus/reason, and
+delayed checks. Carry unresolved items and evidence references forward so the
+existing bounded reads retain continuity. New drafts include these body sections;
+older open drafts gain them without rewriting history. This adds no frontmatter
+requirement or automatic score. `learn:next` keeps its existing priority and module
+order; tutors choose the teaching focus within that action using the handoff.
+
+**Relationship to ADR-0011:** Phase B was separately authorized and resumed. The
+pilot is adjustable throughout; its completion is not a prerequisite for adapting
+teaching or correcting an evidenced explanation/sequence problem. Broader chapter
+restructuring still requires patterns of actual participation and feedback, with
+assessment changes made public prospectively. No chapter is marked restructured
+and no pilot effectiveness is claimed by this policy change.
+
+**Consequences:** Tutor judgment and handoff quality remain necessary; structural
+checks cannot prove learning effectiveness. Course-maintenance time is excluded
+from practice time. This change creates no learner answer, completed lab/gate,
+mastery promotion, or delayed-review result. Existing closed records remain
+immutable and the current session stays open until its work is complete.
+
+**Verification:** Course structure/link checks, both generated skill bodies and
+skill validators, strict learning invariants, and scratch V3 (10/10) / V12 (6/6)
+checks pass. The resolver still names the same open session. Preservation checks
+confirm 11 state/history/scope files and 8 learner-owned files unchanged; the
+draft's frontmatter and full prior body are preserved, with adaptive notes appended.
+These checks validate infrastructure and continuity, not learning effectiveness
+or live host execution.
+
+## ADR-0014 — Focused teaching refinement (2026-10-09)
+
+**Status:** accepted under the learner's request to review and improve the course
+without drastic modification, including permission to inspect relevant chats.
+
+**Evidence:** Reviewed all ten guides, the teaching contracts, two closed journals,
+the open M1 draft, and relevant turns from “Pilot M1-01 teaching structure” and
+“Learning System Design Efficiently”. The learner repeatedly requests real-world
+context, mechanisms from first principles, useful AI work, and continuity. Their
+September responses include correct boundary reasoning and self-generated design
+counterexamples. The latest recorded conceptual gate is H2-assisted, not an
+unanswered or independent pass. See `docs/course-review-2026-10-09.md`.
+
+**Decision:** Add a compact provisional learner profile to the existing adaptive
+teaching preparation, practical problem openings to M0–M9, and a short project
+progression in the guide. Preserve the familiar M1 scenario, clarify its screen
+and data flow, correct stale preparation/resume wording, and document the already
+introduced application-owned Result bridge. Favor one useful attempt after
+instruction, direct answers to design questions, and progress into practice once
+the concept is demonstrated. These are teaching refinements within the current
+units, not additional assessments or a full chapter restructuring.
+
+Recheck all SOURCE_LEDGER claims from official documentation. Clarify that the
+existing Codex plugin layout is supported compatibility packaging and that the
+documented portable layout uses different schemas. Do not migrate scaffolds or
+claim host compatibility without execution evidence.
+
+**Consequences:** M0–M9 order, scope, 108–147-hour estimate, mastery standards,
+public lab contracts, ownership, consent, and delayed-review rules remain intact.
+No session is started, resumed, closed, or rescored by this maintenance. The open
+draft and all learner code/history are preserved. The profile is not a fixed
+learning-style diagnosis or proof of educational effectiveness. Full chapter
+migration remains pending, and later labs remain just-in-time authoring work.
+These changes are tutor-authored infrastructure, not learner portfolio evidence.

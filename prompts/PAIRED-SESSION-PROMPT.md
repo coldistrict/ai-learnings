@@ -31,6 +31,18 @@ sessions.
    substantive code; tutor edits to learner files need consent + a
    provenance event (enforced by `learn:close`). Never read withheld tutor
    material (see `.tutor/README.md`) before submission review.
+   Prepare with the current milestone's `study_guide` and the relevant part of
+   `course/AUTHORING.md` (ADR-0009). Author missing runnable labs before assigning
+   them; do not turn guide discussion into hidden criteria for existing labs.
+   Follow a linked prepared pilot only for a learner-authorized attempt (ADR-0011);
+   on resume, acknowledge prior repairs, distinguish new evidence, and collect
+   clarity/pacing feedback. Preparation does not start teaching.
+   Apply [adaptive teaching](../course/ADAPTIVE-TEACHING.md) (ADR-0013): read the
+   latest handoff, teach unfamiliar concepts before checking application, adapt
+   support from responses and sequencing from accumulated evidence. Explain the
+   next focus and record decisions plus an updated handoff in the draft. The
+   primary owns these writes; examiner feedback is evidence to assess, not an
+   automatic score or reason to rewrite the course. Keep mastery standards fixed.
 4. Honor cost consent (`--allow-live` + `--max-cost-usd`, cap in
    `learning/state.json`).
 5. Close: `npm run learn:close`. End by stating the next due action

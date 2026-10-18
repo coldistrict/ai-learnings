@@ -3,6 +3,10 @@
 Mental model (plan §7.1): **"A provider call is an unreliable RPC returning a
 probabilistic payload; contracts + budgets make it engineering."**
 
+Teaching reference: [M1 concepts and production bridge](../../course/01-model-contracts.md).
+Use this for explanations of structured-output limits, prompt experiments,
+streaming/refusal, cancellation, and reservation-based spending controls.
+
 Three authored sessions (Stage 2). Each lab: visible README contract
 (Scenario / Constraints / Acceptance criteria), learner-owned `workspace/`,
 tutor-owned visible tests (`node --test "labs/**/*.test.js"` or per-lab), a
@@ -12,6 +16,12 @@ anywhere. The deterministic fake provider (`tools/fake-provider/`) is the
 only provider at this stage; replay and real providers arrive later
 (replay at M2 evalkit; real+live cost benchmark closes M1 at Stage 3 under
 the V16 consent gates).
+
+The three labs are the first M1 sessions, not all of M1. Before the live
+benchmark, author and verify visible bridge exercises for refusal/incomplete
+streaming, provider differences, and positive/concurrent budget reservations
+per [the authoring standard](../../course/AUTHORING.md). The present lab-03
+contract cannot prove a hard positive spending cap. Preserve its existing ACs.
 
 | # | Session | Learner builds | Fails like production |
 |---|---|---|---|

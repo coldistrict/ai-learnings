@@ -1,9 +1,10 @@
 # AI Enabler Mastery System — learning repository
 
 Plan version: **ai-enabler-mastery-system-v3** (Claude–Codex consensus,
-2026-07). Target: Applied AI Enablement Engineer for engineering and
-operations workflows. This repo is the learner's: a mastery-gated 105–145
-focused-hour core program culminating in the **AI Incident Enablement
+2026-07), with the **2026-09-05 course refresh** in ADR-0009. Target: Applied
+AI Enablement Engineer for engineering and operations workflows. This repo is
+the learner's: a mastery-gated **108–147 focused-hour** core program culminating
+in the **AI Incident Enablement
 Platform** capstone over the synthetic **NimbusPay** world.
 
 **Honesty contract:** this program promises evidence and practice — never
@@ -19,15 +20,31 @@ npm run learn:next   # what "next" means right now
 
 Then tell your tutor (Claude Code or Codex): **"Teach me the next session."**
 The tutor follows `START_HERE.md` + `prompts/` (or the `teach` skill), runs
-one 60-minute session, and closes it transactionally. Current state:
-Stages 0–2 are implemented; the next session is the **M0 diagnostic
-(Session A)** — routing calibration, not a test you can fail.
+one 60-minute session, and closes it transactionally. The live next action
+comes from `learn:next`; progress is summarized in
+[`learning/LEARNING_STATE.md`](learning/LEARNING_STATE.md).
+
+Read the **[course guide](course/README.md)** for the M0–M9 learning path,
+plain-language explanations, worked examples, practice, and glossary.
+The [content review](docs/course-review-2026-09-05.md) records corrections,
+current sources, and verification limits. Later executable labs remain
+adapted to the learner and authored just in time.
+
+The [2026-10-09 review](docs/course-review-2026-10-09.md) adds focused teaching
+improvements from learner feedback: practical chapter openings, a concise
+teaching profile, and clearer continuity into the current lab.
+
+The [M1-01 teaching pilot](course/pilots/m1-01-structured-output-contract.md) is
+in progress; the current journal determines the next teaching step. Full chapter
+restructuring remains pending further evidence.
+Run `npm run course:check` for [structural course checks](tools/course/README.md).
 
 ## Layout (plan §5.3)
 
 | Path | What | Owner |
 |---|---|---|
 | `learning/` | learning OS: state, journals, generated views, ledgers | tutor infra |
+| `course/` | M0–M9 concept guides, worked examples, glossary, teaching standard | tutor |
 | `prompts/`, `.claude/skills/teach/`, `.agents/skills/teach/` | tutor session contracts + native wrappers | tutor |
 | `world/` | NimbusPay spec + deterministic doc generator | tutor |
 | `scenarios/` | incident scenario packs (public bundles) | tutor |
@@ -44,13 +61,18 @@ Everything at Stage 0–2 (this scaffold, world, packs, diagnostics, lab
 fixtures/tests) is tutor-authored infrastructure — recorded in
 `learning/DECISIONS.md` ADR-0002 and not claimable as learner build
 evidence. The learner's own work starts at the M0 diagnostic and the M1
-labs. Authoritative plan + verification documents live outside this repo;
-see `docs/RELOCATION.md`.
+labs. The original plan + verification documents live outside this repo;
+see `docs/RELOCATION.md`. Local amendments are append-only in
+`learning/DECISIONS.md`; the external originals remain historical records.
 
 ## Limitations (honest, current)
 
-- No sessions have run yet; the competency ledger is all `unseen`.
-- codex CLI, claude CLI, Go, and .NET were absent from the non-interactive
-  PATH at Stage 0 (`learning/prereq-report.json`) — host-dependent
-  verification gates are BLOCKED until installed; nothing is auto-installed.
+- Teaching content is available for all milestones; runnable lab infrastructure
+  currently covers M0 diagnostics and M1 labs 01–03. Guides do not imply
+  implemented capstone features or passed learner gates.
+- Toolchain availability is host-dependent. `learning/prereq-report.json` is
+  a dated inventory, not a live machine check; refresh it when a dependent
+  milestone starts. Missing prerequisites block their gates.
+- Current fake-provider cost tests prove exhausted-budget behavior; a hard
+  positive live cap needs the M1 reservation bridge and spending consent.
 - The synthetic pilot (M9) measures a portfolio methodology, not company ROI.

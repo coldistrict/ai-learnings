@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-05",
+  "baseline_commit": "779820380b3a610b76eccbc0054c92f4c28ed8d9",
+  "scope": "Pre-edit versus post-check SHA-256 comparison; no learner activity or mastery claim.",
+  "protected_file_count": 33,
+  "files": [
+    {
+      "path": "/Users/coldistric/source/repos/codex-claude-communication/tasks/2026-07-15-ai-enabler-mastery-system/final-plan.md",
+      "before": "c1cfe009d37f1003d02332773ce534b5ca2d1ef3f9f83ec52f6b09cc72910119",
+      "after": "c1cfe009d37f1003d02332773ce534b5ca2d1ef3f9f83ec52f6b09cc72910119"
+    },
+    {
+      "path": "/Users/coldistric/source/repos/codex-claude-communication/tasks/2026-07-15-ai-enabler-mastery-system/verification.md",
+      "before": "c2c935ce80a92545b1408f0f6d832d6472ed4b3a3e8e0377565c913bfd4b8bb5",
+      "after": "c2c935ce80a92545b1408f0f6d832d6472ed4b3a3e8e0377565c913bfd4b8bb5"
+    },
+    {
+      "path": "apps/README.md",
+      "before": "7cace8ab764ac2c73bd1b41132cbedfb8dc5709af3ec50cee8cc49f5648264b7",
+      "after": "7cace8ab764ac2c73bd1b41132cbedfb8dc5709af3ec50cee8cc49f5648264b7"
+    },
+    {
+      "path": "diagnostics/work/tool-boundary/schema.json",
+      "before": "ffd3197d72ab48fe7d2142a742e837f5db69ec81fa183c37e95e15da60caa492",
+      "after": "ffd3197d72ab48fe7d2142a742e837f5db69ec81fa183c37e95e15da60caa492"
+    },
+    {
+      "path": "diagnostics/work/tool-boundary/validate.js",
+      "before": "b7cd6177e119d28723f69592e777d815ea26509dc50be764097e363b59c3a519",
+      "after": "b7cd6177e119d28723f69592e777d815ea26509dc50be764097e363b59c3a519"
+    },
+    {
+      "path": "diagnostics/work/tool-boundary/validate.test.js",
+      "before": "cfd61fe7c0b0eb4d3a7b1eec910088a96cf80fe946db58fab9720da7a2344dc1",
+      "after": "cfd61fe7c0b0eb4d3a7b1eec910088a96cf80fe946db58fab9720da7a2344dc1"
+    },
+    {
+      "path": "labs/m1-model-contracts/01-structured-output-contract/fixtures/contract-schema.json",
+      "before": "46fa76f1eab327b56ecd62e6ee00a063401eefc3a31eac23893df6077c934ab3",
+      "after": "46fa76f1eab327b56ecd62e6ee00a063401eefc3a31eac23893df6077c934ab3"
+    },
+    {
+      "path": "labs/m1-model-contracts/01-structured-output-contract/tests/acceptance.test.js",
+      "before": "2a2497e27dce99f2931ff47b190b56404cfa65599bef65462338884e8aad7308",
+      "after": "2a2497e27dce99f2931ff47b190b56404cfa65599bef65462338884e8aad7308"
+    },
+    {
+      "path": "labs/m1-model-contracts/01-structured-output-contract/workspace/classify.js",
+      "before": "03e6164e483294f792b029fce2750af6aa1777eacaf922f5b4322c3f520d462e",
+      "after": "03e6164e483294f792b029fce2750af6aa1777eacaf922f5b4322c3f520d462e"
+    },
+    {
+      "path": "labs/m1-model-contracts/02-retry-repair-path/tests/acceptance.test.js",
+      "before": "f18cfaaddc3b0ea9382847071b45505678677709e62f0a8453d66dff6cb58023",
+      "after": "f18cfaaddc3b0ea9382847071b45505678677709e62f0a8453d66dff6cb58023"
+    },
+    {
+      "path": "labs/m1-model-contracts/02-retry-repair-path/workspace/adapter.js",
+      "before": "4343daf09b72eb094d95a5892d9ede2ae184a13802b75377315f1aec91a6ed98",
+      "after": "4343daf09b72eb094d95a5892d9ede2ae184a13802b75377315f1aec91a6ed98"
+    },
+    {
+      "path": "labs/m1-model-contracts/03-ratelimit-fallback-costcap/fixtures/pricing.json",
+      "before": "9b4823ed2c2080899f2d9166b051f639ccbd2ce52d633dba9cd02e5698ef97f4",
+      "after": "9b4823ed2c2080899f2d9166b051f639ccbd2ce52d633dba9cd02e5698ef97f4"
+    },
+    {
+      "path": "labs/m1-model-contracts/03-ratelimit-fallback-costcap/tests/acceptance.test.js",
+      "before": "d95c4ac4d192fc4c42e7d1c05bdf3842ad354202e99fb2d24e894aec42d696d7",
+      "after": "d95c4ac4d192fc4c42e7d1c05bdf3842ad354202e99fb2d24e894aec42d696d7"
+    },
+    {
+      "path": "labs/m1-model-contracts/03-ratelimit-fallback-costcap/workspace/policy.js",
+      "before": "d7f32375b3c52c3a056e92a567a30894828bd03ddee1fd5b6c3ee8572cbfb468",
+      "after": "d7f32375b3c52c3a056e92a567a30894828bd03ddee1fd5b6c3ee8572cbfb468"
+    },
+    {
+      "path": "learning/COMPETENCY_LEDGER.md",
+      "before": "63d1f8e458ba0ee3e2d82fbec6632c900c1c00ea50244ccad2c988ee36356f9a",
+      "after": "63d1f8e458ba0ee3e2d82fbec6632c900c1c00ea50244ccad2c988ee36356f9a"
+    },
+    {
+      "path": "learning/INTERVIEW_BANK.md",
+      "before": "a446adbaecc3ade15a7a3c6c44220c8654be71a105d81fddc18efdd41846c033",
+      "after": "a446adbaecc3ade15a7a3c6c44220c8654be71a105d81fddc18efdd41846c033"
+    },
+    {
+      "path": "learning/LEARNING_STATE.md",
+      "before": "36cb4ffe1c2e783c476e9629ccdc25c7d970d4ff07f0fdd9ed9a6b21d10051a3",
+      "after": "36cb4ffe1c2e783c476e9629ccdc25c7d970d4ff07f0fdd9ed9a6b21d10051a3"
+    },
+    {
+      "path": "learning/PORTFOLIO_EVIDENCE.md",
+      "before": "1c1db7ac890d22b9476e1f0f5992737f3a0551c4568207b8eff263fa80e372ee",
+      "after": "1c1db7ac890d22b9476e1f0f5992737f3a0551c4568207b8eff263fa80e372ee"
+    },
+    {
+      "path": "learning/PROVENANCE.md",
+      "before": "978a8cf7f7a59216c7545c2fd87caf6b65b5d7d5192f52c51d7909d3acbc4e49",
+      "after": "978a8cf7f7a59216c7545c2fd87caf6b65b5d7d5192f52c51d7909d3acbc4e49"
+    },
+    {
+      "path": "learning/active-session.json",
+      "before": "e54981678f605857ee33f99d5e5d5ae0eb50429dc6b632c220b25b8454177ee1",
+      "after": "e54981678f605857ee33f99d5e5d5ae0eb50429dc6b632c220b25b8454177ee1"
+    },
+    {
+      "path": "learning/diagnostic-scores.json",
+      "before": "17dfb25b4e31b716b569857d7b7ed7deaf230cfc4515d8165ef87568e6b1be86",
+      "after": "17dfb25b4e31b716b569857d7b7ed7deaf230cfc4515d8165ef87568e6b1be86"
+    },
+    {
+      "path": "learning/gap-map.json",
+      "before": "7c4487324204bd89b7fcc91de709696efefb3d7964f2da8560bafa6fe584d825",
+      "after": "7c4487324204bd89b7fcc91de709696efefb3d7964f2da8560bafa6fe584d825"
+    },
+    {
+      "path": "learning/gap-map.md",
+      "before": "04cc781fae55129dfa89ae2eeb0d315eeb3b2be2d7719aa2b8c91b8b5d7a9b65",
+      "after": "04cc781fae55129dfa89ae2eeb0d315eeb3b2be2d7719aa2b8c91b8b5d7a9b65"
+    },
+    {
+      "path": "learning/journal/.in-progress/.gitkeep",
+      "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "learning/journal/.in-progress/67aae9b3-bd60-485a-809b-ca71930d8a33.md",
+      "before": "6583597c2a9ea3d0978b423d7db6f76a85011364de711463066f973208314062",
+      "after": "6583597c2a9ea3d0978b423d7db6f76a85011364de711463066f973208314062"
+    },
+    {
+      "path": "learning/journal/2e5e465a-65aa-4c24-b5b3-c2af16d29462.md",
+      "before": "1815415b5db545cf507eb0c1d8f80220a2c8a3817d9d375955c5a3c3bca17449",
+      "after": "1815415b5db545cf507eb0c1d8f80220a2c8a3817d9d375955c5a3c3bca17449"
+    },
+    {
+      "path": "learning/journal/d033fd56-500b-4cfe-9cca-d69746a567a4.md",
+      "before": "03f80c12e77be2070d5f545391adb99a7c336d1bdc76a7d371fa3111a0745c37",
+      "after": "03f80c12e77be2070d5f545391adb99a7c336d1bdc76a7d371fa3111a0745c37"
+    },
+    {
+      "path": "learning/prereq-report.json",
+      "before": "4e11df7b6b901ba9e7353a4215924c7aa4da19db37ea442b4b3a6702c9504810",
+      "after": "4e11df7b6b901ba9e7353a4215924c7aa4da19db37ea442b4b3a6702c9504810"
+    },
+    {
+      "path": "learning/remediation.json",
+      "before": "722c956f03a2fa1cc4d5474b8a7dd82b57f6ed48adf5dc3c90272d03afa5718a",
+      "after": "722c956f03a2fa1cc4d5474b8a7dd82b57f6ed48adf5dc3c90272d03afa5718a"
+    },
+    {
+      "path": "learning/reviews/.gitkeep",
+      "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "learning/sources-report.json",
+      "before": "f93a0f5e6b17e46bf482ead2aadbd25ba2c10cf100d608606e00619d7e1918ff",
+      "after": "f93a0f5e6b17e46bf482ead2aadbd25ba2c10cf100d608606e00619d7e1918ff"
+    },
+    {
+      "path": "learning/state.json",
+      "before": "3d2f4252a5c0a9f9ad8f29b133f90ee207dbb2d5e6d4874db2135259ffcdf103",
+      "after": "3d2f4252a5c0a9f9ad8f29b133f90ee207dbb2d5e6d4874db2135259ffcdf103"
+    },
+    {
+      "path": "packages/README.md",
+      "before": "7c21b4cff21454fc08691536140ad50250f91bf2a07b59badad6a06281f092f4",
+      "after": "7c21b4cff21454fc08691536140ad50250f91bf2a07b59badad6a06281f092f4"
+    }
+  ],
+  "acceptance_sections": "All 3 byte-identical to inherited refresh and original checkout HEAD; scenario/constraints/commands also unchanged from inherited refresh.",
+  "learner_file_set": "Unchanged; no substantive implementation added.",
+  "curriculum_rows_and_competencies": "Existing milestone rows and full competency file unchanged.",
+  "adrs": "Original content remains an exact prefix; only appended decisions.",
+  "historical_results": "Exact original content after removing the separately dated execution amendment.",
+  "source_ledger": "Unchanged from inherited refresh; no new documentation recheck claimed.",
+  "git_ignore": "Open lock and matching draft ignored and untracked; closed journals trackable."
+}

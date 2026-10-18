@@ -697,6 +697,13 @@ export function nextAction(root) {
   const curriculum = readJson(P.curriculum(root));
   const ms = curriculum.milestones.find((m) => m.id === state.current_milestone);
   if (!ms) return { class: 'milestone', text: 'No milestone found; check learning/state.json' };
+  if (ms.modules.length === 0) {
+    const guide = ms.study_guide ? `${ms.study_guide} and ` : '';
+    return {
+      class: 'milestone',
+      text: `Author the next lesson for ${ms.id} (${ms.title}) using ${guide}course/AUTHORING.md; no runnable modules are authored yet. Milestone gates remain pending: ${ms.gates.join(', ')}`,
+    };
+  }
   const done = new Set(
     closedJournals(root).map((j) => j.front.module).filter(Boolean),
   );

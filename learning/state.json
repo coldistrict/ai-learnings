@@ -1,11 +1,12 @@
 {
   "schema": 1,
   "plan_version": "ai-enabler-mastery-system-v3",
-  "current_milestone": "M0",
-  "last_closed_session": null,
-  "pace_variant": null,
+  "current_milestone": "M1",
+  "last_closed_session": "d033fd56-500b-4cfe-9cca-d69746a567a4",
+  "pace_variant": "15h/wk",
   "mode_default": "solo",
-  "selected_port": null,
+  "selected_port": "go",
+  "role_overlay": "core-enablement",
   "live_cost_cap_usd": null,
-  "notes": "pace_variant, selected_port, and live_cost_cap_usd are M0/M1 outputs (plan §4, §10.3); they stay null until the diagnostic runs. current_milestone advances only when a milestone's gates pass."
+  "notes": "M0 diagnostic selected the 15h/wk pace, core-enablement overlay, and Go port. Go is absent from the recorded inventory, so V32 remains BLOCKED(prereq:Go). live_cost_cap_usd remains unset until explicit learner approval. current_milestone advances only when a milestone's gates pass."
 }

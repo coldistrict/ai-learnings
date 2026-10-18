@@ -1,0 +1,360 @@
+# Executed 2026-09-05: course follow-up checks
+# V11 exit 4 retains blocked host subchecks. All transcripts below are fresh runs.
+
+$ npm run course:check
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 course:check
+> node tools/course/check.js
+
+course:check: PASS — 41 topics, 136 subskills, 108–147 estimated hours, 10 chapters pending; 189 local references and 20 source uses checked.
+Structural consistency and traceability only; no source freshness, live validation, mastery or teaching-effectiveness claim.
+
+$ npm run course:test
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 course:test
+> node --test tools/course/check.test.js
+
+TAP version 13
+# Subtest: valid scratch course passes; date age is not educational freshness
+ok 1 - valid scratch course passes; date age is not educational freshness
+  ---
+  duration_ms: 79.587833
+  type: 'test'
+  ...
+# Subtest: rejects wrong canonical total
+ok 2 - rejects wrong canonical total
+  ---
+  duration_ms: 32.461083
+  type: 'test'
+  ...
+# Subtest: rejects wrong README total
+ok 3 - rejects wrong README total
+  ---
+  duration_ms: 28.729792
+  type: 'test'
+  ...
+# Subtest: rejects wrong navigation hours
+ok 4 - rejects wrong navigation hours
+  ---
+  duration_ms: 25.6405
+  type: 'test'
+  ...
+# Subtest: rejects missing study guide
+ok 5 - rejects missing study guide
+  ---
+  duration_ms: 21.539167
+  type: 'test'
+  ...
+# Subtest: rejects missing local section
+ok 6 - rejects missing local section
+  ---
+  duration_ms: 26.805666
+  type: 'test'
+  ...
+# Subtest: rejects unknown gate
+ok 7 - rejects unknown gate
+  ---
+  duration_ms: 31.528542
+  type: 'test'
+  ...
+# Subtest: rejects wrong V22 curriculum stage
+ok 8 - rejects wrong V22 curriculum stage
+  ---
+  duration_ms: 27.846
+  type: 'test'
+  ...
+# Subtest: rejects changed original V22 invariant
+ok 9 - rejects changed original V22 invariant
+  ---
+  duration_ms: 29.983917
+  type: 'test'
+  ...
+# Subtest: rejects unknown destination milestone
+ok 10 - rejects unknown destination milestone
+  ---
+  duration_ms: 50.603
+  type: 'test'
+  ...
+# Subtest: rejects gate exists but wrong destination
+ok 11 - rejects gate exists but wrong destination
+  ---
+  duration_ms: 38.342083
+  type: 'test'
+  ...
+# Subtest: rejects broken competency mapping
+ok 12 - rejects broken competency mapping
+  ---
+  duration_ms: 21.56175
+  type: 'test'
+  ...
+# Subtest: rejects unmapped subskill
+ok 13 - rejects unmapped subskill
+  ---
+  duration_ms: 31.631708
+  type: 'test'
+  ...
+# Subtest: rejects unknown subskill
+ok 14 - rejects unknown subskill
+  ---
+  duration_ms: 35.228208
+  type: 'test'
+  ...
+# Subtest: rejects duplicate topic ID
+ok 15 - rejects duplicate topic ID
+  ---
+  duration_ms: 20.93275
+  type: 'test'
+  ...
+# Subtest: rejects duplicate milestone ID
+ok 16 - rejects duplicate milestone ID
+  ---
+  duration_ms: 22.48625
+  type: 'test'
+  ...
+# Subtest: rejects duplicate module ID
+ok 17 - rejects duplicate module ID
+  ---
+  duration_ms: 19.669084
+  type: 'test'
+  ...
+# Subtest: rejects invalid revision date
+ok 18 - rejects invalid revision date
+  ---
+  duration_ms: 16.882084
+  type: 'test'
+  ...
+# Subtest: rejects empty lesson focus
+ok 19 - rejects empty lesson focus
+  ---
+  duration_ms: 16.694416
+  type: 'test'
+  ...
+# Subtest: rejects broken tier topic
+ok 20 - rejects broken tier topic
+  ---
+  duration_ms: 14.126958
+  type: 'test'
+  ...
+# Subtest: rejects optional topic made a prerequisite
+ok 21 - rejects optional topic made a prerequisite
+  ---
+  duration_ms: 17.78275
+  type: 'test'
+  ...
+# Subtest: rejects missing required destination
+ok 22 - rejects missing required destination
+  ---
+  duration_ms: 16.980542
+  type: 'test'
+  ...
+# Subtest: rejects spending control relabeled optional
+ok 23 - rejects spending control relabeled optional
+  ---
+  duration_ms: 16.387
+  type: 'test'
+  ...
+# Subtest: rejects missing module material
+ok 24 - rejects missing module material
+  ---
+  duration_ms: 15.52875
+  type: 'test'
+  ...
+# Subtest: rejects unknown source name
+ok 25 - rejects unknown source name
+  ---
+  duration_ms: 15.375334
+  type: 'test'
+  ...
+# Subtest: rejects unknown structured source
+ok 26 - rejects unknown structured source
+  ---
+  duration_ms: 15.9775
+  type: 'test'
+  ...
+# Subtest: rejects broken inline local link
+ok 27 - rejects broken inline local link
+  ---
+  duration_ms: 15.859917
+  type: 'test'
+  ...
+# Subtest: rejects broken reference-style link
+ok 28 - rejects broken reference-style link
+  ---
+  duration_ms: 16.103125
+  type: 'test'
+  ...
+# Subtest: rejects missing fragment link
+ok 29 - rejects missing fragment link
+  ---
+  duration_ms: 15.000792
+  type: 'test'
+  ...
+# Subtest: rejects fake pending chapter tiers
+ok 30 - rejects fake pending chapter tiers
+  ---
+  duration_ms: 15.380708
+  type: 'test'
+  ...
+# Subtest: rejects unobserved pilot used to complete a chapter
+ok 31 - rejects unobserved pilot used to complete a chapter
+  ---
+  duration_ms: 16.786833
+  type: 'test'
+  ...
+# Subtest: rejects stale pilot destination table
+ok 32 - rejects stale pilot destination table
+  ---
+  duration_ms: 15.465958
+  type: 'test'
+  ...
+# Subtest: rejects missing execution amendment
+ok 33 - rejects missing execution amendment
+  ---
+  duration_ms: 15.027875
+  type: 'test'
+  ...
+# Subtest: CLI failure exits nonzero and leaves scratch files unchanged
+ok 34 - CLI failure exits nonzero and leaves scratch files unchanged
+  ---
+  duration_ms: 86.86325
+  type: 'test'
+  ...
+# Subtest: links and heading anchors handle supported Markdown forms
+ok 35 - links and heading anchors handle supported Markdown forms
+  ---
+  duration_ms: 0.139916
+  type: 'test'
+  ...
+# Subtest: pilot JSON data examples are valid illustrations, with no executable classifier
+ok 36 - pilot JSON data examples are valid illustrations, with no executable classifier
+  ---
+  duration_ms: 0.171542
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1062.897959
+
+$ npm run learn:check
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 learn:check
+> node tools/learn/check.js
+
+info: open/interrupted session: 67aae9b3-bd60-485a-809b-ca71930d8a33 (teacher codex, started 2026-08-29T23:36:03.148Z) — resume with learn:resume or abort with learn:abort
+info: BLOCKED(prereq:codex CLI) — V11 (codex host run)
+info: BLOCKED(prereq:codex CLI) — V20 (Codex usage)
+info: BLOCKED(prereq:codex CLI) — V30 (codex handoff)
+info: BLOCKED(prereq:codex CLI) — V31 (codex install)
+info: BLOCKED(prereq:claude CLI) — V11 (claude host run)
+info: BLOCKED(prereq:claude CLI) — V20 (Claude Code usage)
+info: BLOCKED(prereq:claude CLI) — V30 (claude handoff)
+info: BLOCKED(prereq:claude CLI) — V31 (claude install)
+info: BLOCKED(prereq:Go) — V32 (if selectedPort=go)
+info: BLOCKED(prereq:.NET) — V32 (if selectedPort=csharp)
+learn:check: all invariants hold.
+
+$ npm run verify:v10a
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 verify:v10a
+> node tools/verify/v10a.js
+
+  ok   ≥10 data rows — rows=17
+  ok   every row has all 6 columns non-empty — all complete
+  ok   row present: MCP dated current revision
+  ok   row present: Anthropic structured outputs
+  ok   row present: OpenAI structured outputs
+  ok   row present: Claude Code skills/plugins
+  ok   row present: Codex skills/plugins
+  ok   row present: hosted-Evals retirement
+  ok   fixture: exactly one row aged >30 days
+  ok   learn:check --strict exits nonzero with the aged row — exit=2
+  ok   flags exactly that 1 row as stale — 1 stale line(s)
+  ok   with the date restored learn:check --strict exits 0 — exit=0
+  ok   real repo: learn:check --strict exits 0 (no stale rows as of today) — exit=0
+V10a: PASS (13/13 checks)
+
+$ npm run verify:v12
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 verify:v12
+> node tools/verify/v12.js
+
+  ok   F1 (all triggers present): names resume of the open draft UUID — next: Resume open session 00000000-0000-4000-8000-000000000001 (teacher claude); run: npm run learn:resume
+  ok   F2 (no draft): names the mandatory remediation item — next: Mandatory remediation: rem-001 — evals-observability: rebuild grader-calibration model
+  ok   F3 (no draft, no remediation): names the due competency — next: Due retrieval/durable check: llm-fundamentals (due 2026-01-08)
+  ok   F4 (clean): names the current milestone module/gate — next: Next module in M0 (Role/availability calibration + baseline diagnostic): m0-diagnostic-session-a
+  ok   4/4 fixtures produced the expected next-action class in priority order
+  ok   F5 (unauthored milestone): asks for lesson authoring with guide and pending gate — next: Author the next lesson for M2 (Deterministic workflow + evalkit v1) using course/02-workflows-and-evals.md and course/AUTHORING.md; no runnable modules are authored yet. Milestone gates remain pending: V15
+V12: PASS (6/6 checks)
+
+$ npm run verify:v11
+exit: 4
+
+> ai-enabler-mastery-system@0.1.0 verify:v11
+> node tools/verify/v11.js
+
+  ok   SOLO-CLAUDE-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   SOLO-CODEX-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   PAIRED-SESSION-PROMPT.md: contains all required elements (grep ≥1 each) — 9/9
+  ok   PAIRED: examiner read-only
+  ok   PAIRED: single review file
+  ok   PAIRED: ≤3 findings
+  ok   PAIRED: exactly 1 challenge
+  ok   .claude/skills/teach/SKILL.md exists
+  ok   .agents/skills/teach/SKILL.md exists
+  ok   delimited shared body: 0 differing lines between hosts — skills:verify — shared bodies identical across both hosts and current (0 differing lines).
+  BLOCKED(prereq:claude CLI) [host] claude CLI: live "Teach me the next session" run — no artifact (v11-host-claude.md)
+  BLOCKED(prereq:codex CLI) [host] codex CLI: live "Teach me the next session" run — no artifact (v11-host-codex.md)
+V11: PASS on runnable checks (10/10) + 2 BLOCKED sub-check(s): prereq:claude CLI, prereq:codex CLI
+
+$ npm run labs:audit
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 labs:audit
+> node tools/labs-audit.js
+
+ok   m1-model-contracts/01-structured-output-contract — headers 3/3, ACs 7, tests 7, unmatched 0
+ok   m1-model-contracts/02-retry-repair-path — headers 3/3, ACs 6, tests 6, unmatched 0
+ok   m1-model-contracts/03-ratelimit-fallback-costcap — headers 3/3, ACs 5, tests 5, unmatched 0
+labs:audit — 3 lab(s), 0 violation(s).
+
+$ npm run skills:verify
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 skills:verify
+> node tools/build-skills.js --verify
+
+skills:verify — shared bodies identical across both hosts and current (0 differing lines).
+
+$ npm run learn:next
+exit: 0
+
+> ai-enabler-mastery-system@0.1.0 learn:next
+> node tools/learn/next.js
+
+next-action-class: resume
+next: Resume open session 67aae9b3-bd60-485a-809b-ca71930d8a33 (teacher codex); run: npm run learn:resume
+
+$ git diff --check
+exit: 0
+
+
+# Final report/navigation check, also executed 2026-09-05
+$ npm run course:check
+exit: 0
+course:check: PASS — 41 topics, 136 subskills, 108–147 estimated hours, 10 chapters pending; 190 local references and 20 source uses checked.
+$ git diff --check
+exit: 0
+$ preservation audit (pre-edit baseline versus current bytes)
+exit: 0
+PASS: 33 protected hashes, learner file set, all 3 original AC sections, scenario/constraints/commands, metadata, ADR prefix, historical results, source ledger and ignore behavior.

@@ -1,0 +1,44 @@
+V13 — Diagnostic produces a routing gap map [manual+]
+Executed: 2026-08-29
+Plan: ai-enabler-mastery-system-v3
+
+PASS — diagnostic inputs and rubric
+- diagnostics/m0-session-a.md section time boxes: 10 + 15 + 20 + 15 = 60 minutes.
+- diagnostics/m0-session-b.md section time boxes: 25 + 15 + 10 + 10 = 60 minutes.
+- .tutor/withheld/diagnostic/scoring-key.md covers all 10 competency areas on the 0–4 explain/build-debug/judgment scale where evidence exists.
+- The scoring key was not read until after the learner completed Session B submission.
+
+PASS — recorded diagnostic execution
+- Closed M0 journals: 2
+  - learning/journal/2e5e465a-65aa-4c24-b5b3-c2af16d29462.md (m0-diagnostic-session-a)
+  - learning/journal/d033fd56-500b-4cfe-9cca-d69746a567a4.md (m0-diagnostic-session-b)
+- Recorded score input: learning/diagnostic-scores.json
+- Generator command: node tools/diagnostic/gapmap.js --input learning/diagnostic-scores.json
+- Generated outputs: learning/gap-map.md and learning/gap-map.json
+
+PASS — gap-map required fields
+- area score count: 10
+- pace_variant: 15h/wk
+- role_overlay: core-enablement
+- environment_report: learning/prereq-report.json
+- skipped_but_still_gated: []
+- next_session_id: m1-01-structured-output-contract
+
+PASS — selected port and post-choice validation
+- selectedPort: go (exactly one value)
+- decision inputs present: posting_fit, background, inventory_ref
+- post-choice validation toolchain: Go
+- present: false
+- V32 status: BLOCKED(prereq:Go)
+- No silent switch to C# occurred.
+
+PASS — non-punitive ledger initialization
+- diagnostic durable promotions: 0
+- generated ledger durable rows: 0
+- generated ledger unseen rows: 10
+
+PASS — routing-rule machinery
+- npm run verify:gapmap
+- GAPMAP-RULES: PASS (6/6 checks)
+
+V13 RESULT: PASS

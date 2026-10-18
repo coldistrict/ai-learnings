@@ -42,7 +42,7 @@ present; **codex CLI, claude CLI, Go, .NET absent from PATH**
 
 | Gate | Outcome | Notes |
 |---|---|---|
-| V13 diagnostic gap map [manual+] | **NOT RUN — authoring complete, execution deferred by design** | Both session plans exist with §4 time boxes (60+60), fixtures authored, scoring key withheld, gap-map generator implemented and self-tested on a clearly-labeled SAMPLE fixture into scratch only (no `learning/gap-map.*` exists). The diagnostic itself requires the learner and sits exactly at the approved stop boundary. **V13 is NOT claimed passed.** |
+| V13 diagnostic gap map [manual+] | **PASS** (2026-08-29) | `evidence/V13.txt` — both 60-minute diagnostic plans executed into 2 closed journals; post-submission scoring produced 10-area `learning/gap-map.{md,json}` with 15h/wk pace, core-enablement overlay, environment reference, empty skipped-but-gated list, and next session; exactly one `selectedPort` (`go`) with all decision inputs; post-choice validation recorded **BLOCKED(prereq:Go)** without switching; 0 diagnostic durable promotions; 10 ledger rows remain non-punitively `unseen`; routing-rule machinery 6/6. |
 
 ## Stage 2 gate
 
@@ -56,6 +56,39 @@ V14, V16, V17 (Stage 3 pilot / M1 exit), V15 (M2), V20 (M3), V21 (M4),
 V22–V25 (M5/M6), V26/V34 (M8), V27/V28/V32/V33/V35/V36 (M9 / core build
 complete), V29 (program ready), V30 (first drill during Stage 3), V31 (M7).
 None attempted; none claimed.
+
+## Execution amendments (2026-09-05)
+
+Read these markers before authoring or running the affected gates, together with
+the original checklist located by [RELOCATION](../RELOCATION.md). They apply to
+future execution under [ADR-0009](../../learning/DECISIONS.md#adr-0009--course-content-refresh-2026-09-05).
+They are not new test results. All dated historical entries above and below keep
+their original meaning; July checks did not test the later pinned protocol.
+
+### V20 — Pinned protocol contract
+
+Test lifecycle behavior against the protocol revision pinned in SOURCE_LEDGER
+and record actual SDK/client/transport versions. Under ADR-0009, the pinned
+revision's discovery/request behavior replaces a universal legacy initialize
+requirement. Isolate legacy initialize/session behavior in an explicitly named
+compatibility path with its own pinned revision and tests. Keep the negative
+cases, stdio framing, Inspector evidence, and actual two-host usage or named
+blockers. V20 remains **NOT RUN** in this follow-up; see [M3](../../course/03-mcp.md).
+
+### V34 — Pinned HTTP lifecycle and authorization
+
+Test HTTP lifecycle behavior against the pinned protocol revision under
+ADR-0009; isolate and label legacy initialize/operate/close session tests rather
+than applying them universally. Preserve wrong-audience/scope rejection and
+token-passthrough refusal/audit negatives. Full OAuth server implementation
+remains outside core acceptance. V34 remains **NOT RUN** in this follow-up;
+see [M8](../../course/08-production.md#remote-authorization-and-configuration).
+
+### V22 — Staged security coverage
+
+The scope map retains **at least 8 of 12 at M6** and **all 12 at M8**, including
+the original exact safety outcomes, regressions and threat-model coverage.
+A mapped teaching topic does not change these acceptance thresholds.
 
 ## Standing blockers (honest inventory)
 

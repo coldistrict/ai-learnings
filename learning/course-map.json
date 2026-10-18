@@ -1,0 +1,1076 @@
+{
+  "schema": 1,
+  "decision": "learning/DECISIONS.md#adr-0011--explicit-scope-and-a-single-teaching-pilot-2026-09-05",
+  "coverage_status": "classified-sequencing-pending",
+  "gates": {
+    "V13": {
+      "stages": {
+        "M0": ""
+      },
+      "authority": "Original verification.md V13"
+    },
+    "V14": {
+      "stages": {
+        "M1": ""
+      },
+      "authority": "Original verification.md V14"
+    },
+    "V16": {
+      "stages": {
+        "M1": ""
+      },
+      "authority": "Original verification.md V16"
+    },
+    "V17": {
+      "stages": {
+        "M1": ""
+      },
+      "authority": "Original verification.md V17"
+    },
+    "V15": {
+      "stages": {
+        "M2": ""
+      },
+      "authority": "Original verification.md V15"
+    },
+    "V20": {
+      "stages": {
+        "M3": ""
+      },
+      "authority": "Original verification.md V20",
+      "amendment": "docs/verification/RESULTS.md#v20--pinned-protocol-contract"
+    },
+    "V21": {
+      "stages": {
+        "M4": ""
+      },
+      "authority": "Original verification.md V21"
+    },
+    "V23": {
+      "stages": {
+        "M5": ""
+      },
+      "authority": "Original verification.md V23"
+    },
+    "V24": {
+      "stages": {
+        "M5": ""
+      },
+      "authority": "Original verification.md V24"
+    },
+    "V22": {
+      "stages": {
+        "M6": ">=8",
+        "M8": "12/12"
+      },
+      "authority": "Original verification.md V22",
+      "amendment": "docs/verification/RESULTS.md#v22--staged-security-coverage"
+    },
+    "V25": {
+      "stages": {
+        "M6": ""
+      },
+      "authority": "Original verification.md V25"
+    },
+    "V31": {
+      "stages": {
+        "M7": ""
+      },
+      "authority": "Original verification.md V31"
+    },
+    "V26": {
+      "stages": {
+        "M8": ""
+      },
+      "authority": "Original verification.md V26"
+    },
+    "V34": {
+      "stages": {
+        "M8": ""
+      },
+      "authority": "Original verification.md V34",
+      "amendment": "docs/verification/RESULTS.md#v34--pinned-http-lifecycle-and-authorization"
+    },
+    "V27": {
+      "stages": {
+        "M9": "",
+        "*": ""
+      },
+      "authority": "Original verification.md V27"
+    },
+    "V28": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V28"
+    },
+    "V32": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V32"
+    },
+    "V33": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V33"
+    },
+    "V35": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V35"
+    },
+    "V36": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V36"
+    },
+    "V29": {
+      "stages": {
+        "M9": ""
+      },
+      "authority": "Original verification.md V29"
+    },
+    "V18": {
+      "stages": {
+        "*": ""
+      },
+      "authority": "Original verification.md V18"
+    },
+    "V19": {
+      "stages": {
+        "*": ""
+      },
+      "authority": "Original verification.md V19"
+    },
+    "V30": {
+      "stages": {
+        "*": ""
+      },
+      "authority": "Original verification.md V30"
+    }
+  },
+  "chapters": [
+    {
+      "milestone": "M0",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M1",
+      "status": "pending",
+      "reason": "M1-01 pilot prepared; full chapter restructuring awaits learner evidence."
+    },
+    {
+      "milestone": "M2",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M3",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M4",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M5",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M6",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M7",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M8",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    },
+    {
+      "milestone": "M9",
+      "status": "pending",
+      "reason": "Chapter sequencing and restructuring await M1-01 pilot evidence."
+    }
+  ],
+  "topics": [
+    {
+      "id": "model-basics",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "tokens/context",
+        "nondeterminism"
+      ],
+      "reference": "course/01-model-contracts.md#a-provider-boundary-makes-differences-explicit",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V17"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "contract-boundary",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "structured outputs",
+        "validation",
+        "provider boundaries"
+      ],
+      "reference": "course/01-model-contracts.md#four-checks-four-different-guarantees",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V17"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "provider-policy",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "model selection",
+        "latency/cost",
+        "rate limits/retries/timeouts/fallbacks"
+      ],
+      "reference": "course/01-model-contracts.md#a-provider-boundary-makes-differences-explicit",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V17"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "streaming-refusal",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "streaming",
+        "refusal/incomplete-output handling"
+      ],
+      "reference": "course/01-model-contracts.md#streaming-and-cancellation",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V17"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Streaming cutoff was original M1 work; refusal/completion distinctions clarify the provider boundary. Author the missing public bridge before assignment."
+    },
+    {
+      "id": "grounding",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "hallucination"
+      ],
+      "reference": "course/04-retrieval.md#worked-example-measure-the-right-failure",
+      "destinations": [
+        {
+          "milestone": "M4",
+          "gate": "V21"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "prompt-comparison",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "prompt experiments",
+        "reasoning-effort tradeoffs"
+      ],
+      "reference": "course/01-model-contracts.md#prompt-design-as-an-experiment",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V17"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Required prompt/provider comparison and awareness of supported effort tradeoffs; no particular effort setting or extra tuning campaign is a mastery prerequisite."
+    },
+    {
+      "id": "confidence-limits",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "confidence calibration"
+      ],
+      "reference": "course/06-evaluation-and-security.md#worked-example-a-score-is-not-certainty",
+      "destinations": [
+        {
+          "milestone": "M6",
+          "gate": "V25"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Understand now that a number is not accuracy; later interpret observed correctness against scores. No separate calibration dashboard is required."
+    },
+    {
+      "id": "live-reservations",
+      "requirement": "required",
+      "basis": "added-required",
+      "competency": "llm-fundamentals",
+      "subskills": [
+        "budget reservation versus accounting"
+      ],
+      "reference": "course/01-model-contracts.md#accounting-is-different-from-reserving-a-budget",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V16"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Consent and cap enforcement were original. Conservative next-call bounds, atomic shared reservations and uncertain usage are new public bridge exercises; teach before assessment."
+    },
+    {
+      "id": "workflow-contracts",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "tool schemas/descriptions",
+        "orchestration/state",
+        "idempotency",
+        "error taxonomy",
+        "deterministic-vs-agent decision"
+      ],
+      "reference": "course/02-workflows-and-evals.md#separate-proposals-from-execution",
+      "destinations": [
+        {
+          "milestone": "M2",
+          "gate": "V15"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "loop-limits",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "budgets/stop conditions"
+      ],
+      "reference": "course/05-context-and-agents.md#the-agent-loop",
+      "destinations": [
+        {
+          "milestone": "M5",
+          "gate": "V24"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "approval-compensation",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "approval",
+        "compensation"
+      ],
+      "reference": "course/05-context-and-agents.md#worked-example-recovery-after-a-lost-response",
+      "destinations": [
+        {
+          "milestone": "M5",
+          "gate": "V23"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "effect-recovery",
+      "requirement": "required",
+      "basis": "added-required",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "durable execution/recovery"
+      ],
+      "reference": "course/05-context-and-agents.md#worked-example-recovery-after-a-lost-response",
+      "destinations": [
+        {
+          "milestone": "M5",
+          "gate": "V23"
+        },
+        {
+          "milestone": "M8",
+          "gate": "V26"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Approval/idempotency/compensation are original objectives; a persisted uncertain-effect interruption/resume drill adds concrete required work, supporting V23 and later V26."
+    },
+    {
+      "id": "dependency-order",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "dependency-aware parallelism"
+      ],
+      "reference": "course/02-workflows-and-evals.md#idempotency-makes-retries-safe-to-reason-about",
+      "destinations": [
+        {
+          "milestone": "M2",
+          "gate": "V15"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Required reasoning about dependencies and ordering; parallel-agent or parallel-dispatch implementation is optional."
+    },
+    {
+      "id": "framework-compare",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "tool-workflow-agent",
+      "subskills": [
+        "framework delegation"
+      ],
+      "reference": "course/05-context-and-agents.md#newer-techniques-earn-their-place",
+      "destinations": [
+        {
+          "milestone": "M5",
+          "gate": "V24"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Original plan §6 requires one raw-loop versus SDK comparison and a delegation ADR before adoption; framework adoption itself is optional."
+    },
+    {
+      "id": "retrieval-comparison",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "retrieval-rag",
+      "subskills": [
+        "ingestion/chunking",
+        "embeddings",
+        "lexical/semantic/hybrid",
+        "retrieval evaluation"
+      ],
+      "reference": "course/04-retrieval.md#lexical-semantic-hybrid-and-reranking",
+      "destinations": [
+        {
+          "milestone": "M4",
+          "gate": "V21"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Lexical failure and embedding/hybrid comparison are required, even if deployment keeps lexical search; reranking is optional."
+    },
+    {
+      "id": "retrieval-access",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "retrieval-rag",
+      "subskills": [
+        "metadata/ACL filtering",
+        "freshness",
+        "access revocation/cache isolation"
+      ],
+      "reference": "course/04-retrieval.md#permission-and-freshness-are-part-of-retrieval",
+      "destinations": [
+        {
+          "milestone": "M4",
+          "gate": "V21"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original ACL/stale-deleted-document negatives require access enforcement and revocation at reads, including cache hits; a complete deletion service remains optional."
+    },
+    {
+      "id": "citation-evidence",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "retrieval-rag",
+      "subskills": [
+        "citations",
+        "grounded refusal",
+        "citation validity versus support",
+        "retrieval/answer failure attribution"
+      ],
+      "reference": "course/04-retrieval.md#worked-example-measure-the-right-failure",
+      "destinations": [
+        {
+          "milestone": "M4",
+          "gate": "V21"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Separate source existence, support and answer quality to meet the original grounding and separated-metric objectives."
+    },
+    {
+      "id": "retrieval-injection",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "retrieval-rag",
+      "subskills": [
+        "injection boundaries"
+      ],
+      "reference": "course/06-evaluation-and-security.md#security-is-enforced-at-action-and-data-boundaries",
+      "destinations": [
+        {
+          "milestone": "M6",
+          "gate": "V22"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "mcp-contracts",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "mcp",
+      "subskills": [
+        "architecture/roles",
+        "tools/resources/prompts",
+        "schemas",
+        "lifecycle",
+        "errors",
+        "least privilege",
+        "debugging/Inspector",
+        "testing",
+        "client compatibility",
+        "version evolution",
+        "revision-pinned discovery/request behavior",
+        "legacy lifecycle compatibility"
+      ],
+      "reference": "course/03-mcp.md#teach-the-revision-you-actually-run",
+      "destinations": [
+        {
+          "milestone": "M3",
+          "gate": "V20"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original protocol/compatibility objectives as amended by ADR-0009. Record the revision; legacy recognition is required, legacy implementation only when the chosen compatibility path needs it."
+    },
+    {
+      "id": "mcp-remote",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "mcp",
+      "subskills": [
+        "transports",
+        "auth",
+        "consent",
+        "audit"
+      ],
+      "reference": "course/08-production.md#remote-authorization-and-configuration",
+      "destinations": [
+        {
+          "milestone": "M8",
+          "gate": "V34"
+        },
+        {
+          "milestone": "M3",
+          "gate": "V20"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Stdio begins at M3/V20; HTTP and audience/scope/passthrough negatives land at M8/V34. Full OAuth server implementation remains optional."
+    },
+    {
+      "id": "native-packaging",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "devtool-packaging",
+      "subskills": [
+        "repo instructions",
+        "skills",
+        "commands",
+        "hooks",
+        "plugins",
+        "MCP configuration",
+        "permissions/sandboxing",
+        "install/distribution/versioning",
+        "Claude Code vs Codex deltas"
+      ],
+      "reference": "course/07-developer-tools.md#practice-and-completion-evidence",
+      "destinations": [
+        {
+          "milestone": "M7",
+          "gate": "V31"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "evalkit-baseline",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "evals-observability",
+      "subskills": [
+        "task definition",
+        "golden/adversarial datasets",
+        "deterministic/contract tests",
+        "recorded/replay",
+        "tool-call correctness",
+        "regression gates"
+      ],
+      "reference": "course/02-workflows-and-evals.md#build-the-measuring-instrument-early",
+      "destinations": [
+        {
+          "milestone": "M2",
+          "gate": "V15"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "release-measurement",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "evals-observability",
+      "subskills": [
+        "rubric/model graders",
+        "human calibration",
+        "safety scorers",
+        "variance policy",
+        "traces",
+        "version tracking",
+        "cost/latency",
+        "trajectory versus outcome scoring",
+        "uncertainty and correlated samples"
+      ],
+      "reference": "course/06-evaluation-and-security.md#measure-outcomes-and-diagnose-trajectories",
+      "destinations": [
+        {
+          "milestone": "M6",
+          "gate": "V25"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original release calibration, variance and trace requirements; explain sample limits without adding a mandatory statistical inference project."
+    },
+    {
+      "id": "retrieval-metrics",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "evals-observability",
+      "subskills": [
+        "retrieval metrics"
+      ],
+      "reference": "course/04-retrieval.md#worked-example-measure-the-right-failure",
+      "destinations": [
+        {
+          "milestone": "M4",
+          "gate": "V21"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "eval-controls",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "evals-observability",
+      "subskills": [
+        "split contamination",
+        "grader negative controls"
+      ],
+      "reference": "course/02-workflows-and-evals.md#worked-example-test-the-scorer-too",
+      "destinations": [
+        {
+          "milestone": "M2",
+          "gate": "V15"
+        },
+        {
+          "milestone": "M6",
+          "gate": "V25"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original held-out data and always-passing-grader failure case; teach explicitly and revisit at M6/V25."
+    },
+    {
+      "id": "ablation-experiment",
+      "requirement": "optional",
+      "basis": "optional",
+      "competency": "evals-observability",
+      "subskills": [
+        "ablations"
+      ],
+      "reference": "course/06-evaluation-and-security.md#worked-example-a-score-is-not-certainty",
+      "destinations": [],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Optional component-removal experiment after a measured need; not a prerequisite for durable mastery."
+    },
+    {
+      "id": "security-regressions",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "security-governance",
+      "subskills": [
+        "threat modeling",
+        "direct/indirect injection",
+        "tool poisoning",
+        "secrets/leakage",
+        "tenancy",
+        "least privilege",
+        "input/output validation",
+        "approval for risky actions",
+        "incident response",
+        "risk tiers R0–R4"
+      ],
+      "reference": "course/06-evaluation-and-security.md#security-is-enforced-at-action-and-data-boundaries",
+      "destinations": [
+        {
+          "milestone": "M6",
+          "gate": "V22"
+        },
+        {
+          "milestone": "M8",
+          "gate": "V22"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Original security coverage, with controls first introduced at M1/M2/M3/M5; at least 8/12 fixtures by M6, all 12/12 by M8."
+    },
+    {
+      "id": "remote-security",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "security-governance",
+      "subskills": [
+        "confused deputy",
+        "authn/authz",
+        "audit"
+      ],
+      "reference": "course/08-production.md#remote-authorization-and-configuration",
+      "destinations": [
+        {
+          "milestone": "M8",
+          "gate": "V34"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Required at the original depth; supporting teaching does not add executable gate criteria."
+    },
+    {
+      "id": "memory-cache-security",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "security-governance",
+      "subskills": [
+        "memory poisoning",
+        "cache revocation"
+      ],
+      "reference": "course/06-evaluation-and-security.md#security-is-enforced-at-action-and-data-boundaries",
+      "destinations": [
+        {
+          "milestone": "M6",
+          "gate": "V22"
+        },
+        {
+          "milestone": "M8",
+          "gate": "V22"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Required injection and tenancy controls apply to any memory/cache used. No long-term memory service is required. Complete relevant negatives at M8."
+    },
+    {
+      "id": "sandbox-boundaries",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "security-governance",
+      "subskills": [
+        "sandbox and egress boundaries"
+      ],
+      "reference": "course/07-developer-tools.md#separate-instructions-capabilities-and-enforcement",
+      "destinations": [
+        {
+          "milestone": "M7",
+          "gate": "V31"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original host permissions/sandboxing plus least-privilege boundary reasoning; no new sandbox product is required."
+    },
+    {
+      "id": "production-operations",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "production-platform",
+      "subskills": [
+        "API boundaries",
+        "deployment",
+        "CI/CD",
+        "config/secrets",
+        "queues/concurrency",
+        "reliability",
+        "caching awareness",
+        "observability",
+        "cost controls",
+        "versioning/migrations",
+        "rollout/rollback",
+        "failure drills",
+        "admission control"
+      ],
+      "reference": "course/08-production.md#design-for-bounded-work",
+      "destinations": [
+        {
+          "milestone": "M8",
+          "gate": "V26"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original operations/queue/cache/drill requirements at working or awareness depth; prior cost/trace foundations remain M1/M2/M6. No production-scale load claim."
+    },
+    {
+      "id": "context-state",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "production-platform",
+      "subskills": [
+        "context selection/compaction/scoped memory"
+      ],
+      "reference": "course/05-context-and-agents.md#context-engineering-decide-what-each-call-needs",
+      "destinations": [
+        {
+          "milestone": "M5",
+          "gate": "V24"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Required context selection, bounded task state, and explanation of lossy compaction/scoping. Vendor compaction integration and long-term memory builds are optional; recovery controls remain required."
+    },
+    {
+      "id": "concurrent-budget",
+      "requirement": "required",
+      "basis": "added-required",
+      "competency": "production-platform",
+      "subskills": [
+        "budget reservations under concurrency"
+      ],
+      "reference": "course/01-model-contracts.md#accounting-is-different-from-reserving-a-budget",
+      "destinations": [
+        {
+          "milestone": "M1",
+          "gate": "V16"
+        },
+        {
+          "milestone": "M8",
+          "gate": "V26"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Same shared public reservation bridge as live-reservations; do not count a second independent project. Revisit in M8 operations."
+    },
+    {
+      "id": "operations-recovery",
+      "requirement": "required",
+      "basis": "added-required",
+      "competency": "production-platform",
+      "subskills": [
+        "recovery after uncertain effects"
+      ],
+      "reference": "course/08-production.md#worked-example-rolling-back-a-bad-release",
+      "destinations": [
+        {
+          "milestone": "M8",
+          "gate": "V26"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Extend the M5 uncertain-effect drill to rollback/in-flight work; shared evidence may satisfy both teaching objectives without duplicate projects."
+    },
+    {
+      "id": "enablement-practice",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "enablement-org",
+      "subskills": [
+        "workflow discovery",
+        "use-case scoring",
+        "baseline measurement",
+        "ROI/quality metrics",
+        "build/buy",
+        "pilots",
+        "adoption/training",
+        "playbooks",
+        "change management",
+        "sunset criteria"
+      ],
+      "reference": "course/09-enablement.md#enablement-includes-the-people-doing-the-work",
+      "destinations": [
+        {
+          "milestone": "M9",
+          "gate": "V35"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Original parallel enablement artifacts begin at M0 and continue every milestone; M9/V35 is the pilot destination, not permission to defer all discovery until M9."
+    },
+    {
+      "id": "honest-pilot",
+      "requirement": "required",
+      "basis": "clarification",
+      "competency": "enablement-org",
+      "subskills": [
+        "human review and correction cost",
+        "pilot counterbalancing and confounding"
+      ],
+      "reference": "course/09-enablement.md#design-a-comparison-that-can-disappoint-you",
+      "destinations": [
+        {
+          "milestone": "M9",
+          "gate": "V35"
+        }
+      ],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Original before/after methodology and limitation requirements: count review cost, recognize prior exposure, use matched/order-aware design where feasible; no claim of randomized causal proof."
+    },
+    {
+      "id": "project-defense",
+      "requirement": "required",
+      "basis": "original",
+      "competency": "interview-communication",
+      "subskills": [
+        "live coding/debugging",
+        "AI system design",
+        "threat-model drill",
+        "eval-design drill",
+        "product/ROI scenario",
+        "behavioral STAR",
+        "executive communication",
+        "demo recovery",
+        "honest limitations",
+        "30/60/90"
+      ],
+      "reference": "course/09-enablement.md#completion-evidence",
+      "destinations": [
+        {
+          "milestone": "M9",
+          "gate": "V29"
+        }
+      ],
+      "authority": "Original plan §3, §6, §7.1–7.2; original verification gate",
+      "scope_note": "Original per-milestone attempts and timed final readiness; V29 is additional program/interview readiness, not automatic core-build completion."
+    },
+    {
+      "id": "advanced-agent-experiments",
+      "requirement": "optional",
+      "basis": "optional",
+      "competency": "tool-workflow-agent",
+      "subskills": [],
+      "reference": "course/05-context-and-agents.md#newer-techniques-earn-their-place",
+      "destinations": [],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Parallel agents and programmatic tool calling need an observed problem and measured comparison. Optional implementation never gates durable mastery."
+    },
+    {
+      "id": "advanced-retrieval-experiments",
+      "requirement": "optional",
+      "basis": "optional",
+      "competency": "retrieval-rag",
+      "subskills": [],
+      "reference": "course/04-retrieval.md#lexical-semantic-hybrid-and-reranking",
+      "destinations": [],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Reranking, contextual retrieval, and full deletion-pipeline infrastructure remain optional; baseline comparison and access/freshness controls remain required."
+    },
+    {
+      "id": "advanced-memory-build",
+      "requirement": "optional",
+      "basis": "optional",
+      "competency": "production-platform",
+      "subskills": [],
+      "reference": "course/05-context-and-agents.md#context-engineering-decide-what-each-call-needs",
+      "destinations": [],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Optional vendor-specific compaction or long-term memory implementation. Any implementation still needs security, access and recovery controls."
+    },
+    {
+      "id": "specialist-experiments",
+      "requirement": "optional",
+      "basis": "optional",
+      "competency": "interview-communication",
+      "subskills": [],
+      "reference": "course/09-enablement.md#defend-the-project-with-evidence",
+      "destinations": [],
+      "authority": "ADR-0011; original objectives and scope assessment in course/SCOPE.md",
+      "scope_note": "Fine-tuning feasibility and multimodal experiments are optional; foundation-model training/GPU serving remain specialist/deferred. Required honest routing knowledge does not require these builds."
+    }
+  ],
+  "pilot": {
+    "module": "m1-01-structured-output-contract",
+    "milestone": "M1",
+    "reference": "course/pilots/m1-01-structured-output-contract.md",
+    "status": "prepared-not-run",
+    "tiers": {
+      "understand_now": [
+        "model-basics",
+        "contract-boundary"
+      ],
+      "required_later": [
+        "provider-policy",
+        "streaming-refusal",
+        "confidence-limits",
+        "live-reservations",
+        "workflow-contracts",
+        "approval-compensation",
+        "effect-recovery",
+        "mcp-contracts",
+        "mcp-remote",
+        "retrieval-access",
+        "security-regressions"
+      ],
+      "optional_exploration": [
+        "advanced-agent-experiments",
+        "advanced-retrieval-experiments",
+        "advanced-memory-build",
+        "ablation-experiment"
+      ]
+    }
+  },
+  "module_materials": {
+    "m0-diagnostic-session-a": "diagnostics/m0-session-a.md",
+    "m0-diagnostic-session-b": "diagnostics/m0-session-b.md",
+    "m1-01-structured-output-contract": "labs/m1-model-contracts/01-structured-output-contract/README.md",
+    "m1-02-retry-repair-path": "labs/m1-model-contracts/02-retry-repair-path/README.md",
+    "m1-03-ratelimit-fallback-costcap": "labs/m1-model-contracts/03-ratelimit-fallback-costcap/README.md"
+  }
+}

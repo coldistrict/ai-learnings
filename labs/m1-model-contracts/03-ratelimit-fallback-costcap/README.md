@@ -8,8 +8,9 @@ by the token — so the call site needs a policy: back off when told, fail
 over when the primary is dead, account for every token, and stop cold when
 the budget is spent. You are building
 `runWithPolicy(providers, request, options)` in `workspace/policy.js`. This
-is also where the program's live-cost consent story (plan §10.3) gets its
-mechanical teeth: the same cap semantics later guard real API spend.
+teaches exhausted-budget checks and reporting. Live spending additionally needs
+the reservation bridge explained below; this fake-provider exercise alone is
+not a production hard-cap implementation.
 
 ## Constraints
 
@@ -64,3 +65,7 @@ node --test "labs/m1-model-contracts/03-ratelimit-fallback-costcap/tests/*.test.
   (including AC-4's), not just on success.
 
 These criteria are the complete grading surface.
+
+## Budget limitation and the live-use bridge
+
+The spent-so-far check does not guarantee a hard positive live spending cap; see [the required reservation bridge](../../../course/01-model-contracts.md#accounting-is-different-from-reserving-a-budget).

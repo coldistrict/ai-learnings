@@ -1,66 +1,212 @@
 {
-  "note": "The ten competency areas scored by the M0 diagnostic (plan §4) and tracked in the generated COMPETENCY_LEDGER.md. Subskills map to the plan §3 competency matrix; depth targets from §3/§7.2.",
+  "note": "The ten competency areas scored by the M0 diagnostic (plan §4) and tracked in the generated COMPETENCY_LEDGER.md. Subskills map to the plan §3 competency matrix; depth targets from §3/§7.2. ADR-0009 adds explicit teaching subskills without changing the ten diagnostic areas, scores, depth targets, or existing learner mastery.",
   "scale": "0 absent/unsafe · 1 recognition · 2 guided partial · 3 independent solid · 4 strong transfer/tradeoffs",
   "areas": [
     {
       "id": "llm-fundamentals",
       "title": "LLM/application fundamentals",
       "depth_target": "deep",
-      "subskills": ["tokens/context", "model selection", "latency/cost", "nondeterminism", "hallucination", "structured outputs", "validation", "streaming", "rate limits/retries/timeouts/fallbacks", "provider boundaries"]
+      "subskills": [
+        "tokens/context",
+        "model selection",
+        "latency/cost",
+        "nondeterminism",
+        "hallucination",
+        "structured outputs",
+        "validation",
+        "streaming",
+        "rate limits/retries/timeouts/fallbacks",
+        "provider boundaries",
+        "prompt experiments",
+        "reasoning-effort tradeoffs",
+        "refusal/incomplete-output handling",
+        "confidence calibration",
+        "budget reservation versus accounting"
+      ]
     },
     {
       "id": "tool-workflow-agent",
       "title": "Tool use & workflow/agent design",
       "depth_target": "deep",
-      "subskills": ["tool schemas/descriptions", "orchestration/state", "budgets/stop conditions", "idempotency", "approval", "compensation", "error taxonomy", "deterministic-vs-agent decision"]
+      "subskills": [
+        "tool schemas/descriptions",
+        "orchestration/state",
+        "budgets/stop conditions",
+        "idempotency",
+        "approval",
+        "compensation",
+        "error taxonomy",
+        "deterministic-vs-agent decision",
+        "durable execution/recovery",
+        "dependency-aware parallelism",
+        "framework delegation"
+      ]
     },
     {
       "id": "retrieval-rag",
       "title": "Retrieval & company knowledge",
       "depth_target": "working→deep",
-      "subskills": ["ingestion/chunking", "embeddings", "lexical/semantic/hybrid", "metadata/ACL filtering", "citations", "freshness", "retrieval evaluation", "grounded refusal", "injection boundaries"]
+      "subskills": [
+        "ingestion/chunking",
+        "embeddings",
+        "lexical/semantic/hybrid",
+        "metadata/ACL filtering",
+        "citations",
+        "freshness",
+        "retrieval evaluation",
+        "grounded refusal",
+        "injection boundaries",
+        "citation validity versus support",
+        "access revocation/cache isolation",
+        "retrieval/answer failure attribution"
+      ]
     },
     {
       "id": "mcp",
       "title": "MCP",
       "depth_target": "deep (tools/lifecycle); working (advanced primitives)",
-      "subskills": ["architecture/roles", "tools/resources/prompts", "transports", "schemas", "lifecycle", "errors", "auth", "least privilege", "consent", "audit", "debugging/Inspector", "testing", "client compatibility", "version evolution"]
+      "subskills": [
+        "architecture/roles",
+        "tools/resources/prompts",
+        "transports",
+        "schemas",
+        "lifecycle",
+        "errors",
+        "auth",
+        "least privilege",
+        "consent",
+        "audit",
+        "debugging/Inspector",
+        "testing",
+        "client compatibility",
+        "version evolution",
+        "revision-pinned discovery/request behavior",
+        "legacy lifecycle compatibility"
+      ]
     },
     {
       "id": "devtool-packaging",
       "title": "Developer agents & extension packaging",
       "depth_target": "working",
-      "subskills": ["repo instructions", "skills", "commands", "hooks", "plugins", "MCP configuration", "permissions/sandboxing", "install/distribution/versioning", "Claude Code vs Codex deltas"]
+      "subskills": [
+        "repo instructions",
+        "skills",
+        "commands",
+        "hooks",
+        "plugins",
+        "MCP configuration",
+        "permissions/sandboxing",
+        "install/distribution/versioning",
+        "Claude Code vs Codex deltas"
+      ]
     },
     {
       "id": "evals-observability",
       "title": "Evals & observability",
       "depth_target": "deep",
-      "subskills": ["task definition", "golden/adversarial datasets", "deterministic/contract tests", "recorded/replay", "rubric/model graders", "human calibration", "retrieval metrics", "tool-call correctness", "safety scorers", "variance policy", "traces", "version tracking", "cost/latency", "regression gates"]
+      "subskills": [
+        "task definition",
+        "golden/adversarial datasets",
+        "deterministic/contract tests",
+        "recorded/replay",
+        "rubric/model graders",
+        "human calibration",
+        "retrieval metrics",
+        "tool-call correctness",
+        "safety scorers",
+        "variance policy",
+        "traces",
+        "version tracking",
+        "cost/latency",
+        "regression gates",
+        "split contamination",
+        "grader negative controls",
+        "trajectory versus outcome scoring",
+        "ablations",
+        "uncertainty and correlated samples"
+      ]
     },
     {
       "id": "security-governance",
       "title": "Security, privacy & governance",
       "depth_target": "deep",
-      "subskills": ["threat modeling", "direct/indirect injection", "tool poisoning", "confused deputy", "secrets/leakage", "authn/authz", "tenancy", "least privilege", "input/output validation", "approval for risky actions", "audit", "incident response", "risk tiers R0–R4"]
+      "subskills": [
+        "threat modeling",
+        "direct/indirect injection",
+        "tool poisoning",
+        "confused deputy",
+        "secrets/leakage",
+        "authn/authz",
+        "tenancy",
+        "least privilege",
+        "input/output validation",
+        "approval for risky actions",
+        "audit",
+        "incident response",
+        "risk tiers R0–R4",
+        "memory poisoning",
+        "cache revocation",
+        "sandbox and egress boundaries"
+      ]
     },
     {
       "id": "production-platform",
       "title": "Production/platform engineering",
       "depth_target": "working",
-      "subskills": ["API boundaries", "deployment", "CI/CD", "config/secrets", "queues/concurrency", "reliability", "caching awareness", "observability", "cost controls", "versioning/migrations", "rollout/rollback", "failure drills"]
+      "subskills": [
+        "API boundaries",
+        "deployment",
+        "CI/CD",
+        "config/secrets",
+        "queues/concurrency",
+        "reliability",
+        "caching awareness",
+        "observability",
+        "cost controls",
+        "versioning/migrations",
+        "rollout/rollback",
+        "failure drills",
+        "context selection/compaction/scoped memory",
+        "budget reservations under concurrency",
+        "admission control",
+        "recovery after uncertain effects"
+      ]
     },
     {
       "id": "enablement-org",
       "title": "AI enablement as an organizational function",
       "depth_target": "working→deep",
-      "subskills": ["workflow discovery", "use-case scoring", "baseline measurement", "ROI/quality metrics", "build/buy", "pilots", "adoption/training", "playbooks", "change management", "sunset criteria"]
+      "subskills": [
+        "workflow discovery",
+        "use-case scoring",
+        "baseline measurement",
+        "ROI/quality metrics",
+        "build/buy",
+        "pilots",
+        "adoption/training",
+        "playbooks",
+        "change management",
+        "sunset criteria",
+        "human review and correction cost",
+        "pilot counterbalancing and confounding"
+      ]
     },
     {
       "id": "interview-communication",
       "title": "Interview & communication competence",
       "depth_target": "deep",
-      "subskills": ["live coding/debugging", "AI system design", "threat-model drill", "eval-design drill", "product/ROI scenario", "behavioral STAR", "executive communication", "demo recovery", "honest limitations", "30/60/90"]
+      "subskills": [
+        "live coding/debugging",
+        "AI system design",
+        "threat-model drill",
+        "eval-design drill",
+        "product/ROI scenario",
+        "behavioral STAR",
+        "executive communication",
+        "demo recovery",
+        "honest limitations",
+        "30/60/90"
+      ]
     }
   ]
 }
