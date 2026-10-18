@@ -3,6 +3,15 @@
 Prerequisite: the tested M3/M5 capability and M6 safety boundaries. Outcome:
 the same useful workflow delivered through two verified native integrations.
 
+## The practical problem
+
+A colleague wants to use Noor's incident workflow from their own coding assistant.
+The demo worked on the author's machine; the colleague's installation loads the
+instructions but never runs the expected check. Packaging is about making the
+actual workflow usable and verifiable on each host. You will test the experience
+from installation through a useful result and a recoverable failure, so the next
+person does not need to guess the missing setup.
+
 ## Separate instructions, capabilities, and enforcement
 
 Repository instructions explain how work should be done in a project. A **skill**
@@ -20,7 +29,7 @@ Keep entry instructions concise and load supporting material when needed; this
 is **progressive disclosure**. Explain triggering and non-triggering use cases
 so an assistant can select the workflow appropriately.
 [Agent Skills specification](https://agentskills.io/specification),
-[OpenAI skill documentation](https://developers.openai.com/codex/skills).
+[OpenAI skill documentation](https://learn.chatgpt.com/docs/build-skills).
 
 ## Share meaning; verify each host
 
@@ -39,6 +48,13 @@ the learner must package the actual incident workflow.
 These paths identify the course's layouts; they do not claim all fields or
 discovery rules are interchangeable. Verify current manifests, hook trust, and
 cache/update behavior before implementing.
+
+Documentation check, 2026-10-09: OpenAI describes `.codex-plugin/plugin.json` as
+a supported compatibility layout. It also documents a portable Agent Plugins
+layout with root `plugin.json` and `mcp.json`, using different schemas. Keep the
+course's existing layout unless an actual host test justifies migration; renaming
+files alone does not convert the formats. Compare the packaging that each tested
+host supports before choosing an adapter.
 [Claude plugins](https://code.claude.com/docs/en/plugins),
 [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins).
 

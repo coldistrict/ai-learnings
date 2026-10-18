@@ -290,3 +290,86 @@ Ignored drafts remain important recovery data, not disposable scratch files.
 `learn:check` diagnoses orphaned state. `learn:next` returns resume only when the
 lock and matching draft exist; it does not diagnose every orphan. No session
 recovery redesign, state regeneration, or transaction is authorized by this ADR.
+
+## ADR-0013 — Continuous adaptive teaching (2026-09-06)
+
+**Status:** accepted after the learner requested continuous adaptation, discussed
+the recommendation, and explicitly instructed: “Do as you are recommending.”
+**Context:** A stable curriculum supplies goals and mastery standards, but a fixed
+lesson script can ignore repaired misconceptions, prerequisite gaps, and teaching
+feedback. One response is insufficient evidence for a global level judgment or
+a broad course rewrite. The learner has also repeatedly requested orientation
+and explanations before unfamiliar application questions.
+
+**Decision:** Apply `course/ADAPTIVE-TEACHING.md` in both tutors' solo and paired
+contracts, the shared teach skill, and authoring/pilot guidance. Teach unfamiliar
+ideas first; use new attempts to adjust support immediately and accumulated
+evidence to choose subsequent practice and focus. Assess explanation, independent
+application, judgment, assistance, and delayed recall separately. Make the reason
+for the next step visible. Preserve required outcomes, dependencies, public ACs,
+diagnostic integrity, ownership, spending consent, and existing mastery gates.
+
+Persist material observations, provisional assessments, and teaching decisions
+in an Adaptive teaching journal section. At pause/close, write an Adaptive handoff
+with demonstrated skills, unresolved gaps, preferences, next focus/reason, and
+delayed checks. Carry unresolved items and evidence references forward so the
+existing bounded reads retain continuity. New drafts include these body sections;
+older open drafts gain them without rewriting history. This adds no frontmatter
+requirement or automatic score. `learn:next` keeps its existing priority and module
+order; tutors choose the teaching focus within that action using the handoff.
+
+**Relationship to ADR-0011:** Phase B was separately authorized and resumed. The
+pilot is adjustable throughout; its completion is not a prerequisite for adapting
+teaching or correcting an evidenced explanation/sequence problem. Broader chapter
+restructuring still requires patterns of actual participation and feedback, with
+assessment changes made public prospectively. No chapter is marked restructured
+and no pilot effectiveness is claimed by this policy change.
+
+**Consequences:** Tutor judgment and handoff quality remain necessary; structural
+checks cannot prove learning effectiveness. Course-maintenance time is excluded
+from practice time. This change creates no learner answer, completed lab/gate,
+mastery promotion, or delayed-review result. Existing closed records remain
+immutable and the current session stays open until its work is complete.
+
+**Verification:** Course structure/link checks, both generated skill bodies and
+skill validators, strict learning invariants, and scratch V3 (10/10) / V12 (6/6)
+checks pass. The resolver still names the same open session. Preservation checks
+confirm 11 state/history/scope files and 8 learner-owned files unchanged; the
+draft's frontmatter and full prior body are preserved, with adaptive notes appended.
+These checks validate infrastructure and continuity, not learning effectiveness
+or live host execution.
+
+## ADR-0014 — Focused teaching refinement (2026-10-09)
+
+**Status:** accepted under the learner's request to review and improve the course
+without drastic modification, including permission to inspect relevant chats.
+
+**Evidence:** Reviewed all ten guides, the teaching contracts, two closed journals,
+the open M1 draft, and relevant turns from “Pilot M1-01 teaching structure” and
+“Learning System Design Efficiently”. The learner repeatedly requests real-world
+context, mechanisms from first principles, useful AI work, and continuity. Their
+September responses include correct boundary reasoning and self-generated design
+counterexamples. The latest recorded conceptual gate is H2-assisted, not an
+unanswered or independent pass. See `docs/course-review-2026-10-09.md`.
+
+**Decision:** Add a compact provisional learner profile to the existing adaptive
+teaching preparation, practical problem openings to M0–M9, and a short project
+progression in the guide. Preserve the familiar M1 scenario, clarify its screen
+and data flow, correct stale preparation/resume wording, and document the already
+introduced application-owned Result bridge. Favor one useful attempt after
+instruction, direct answers to design questions, and progress into practice once
+the concept is demonstrated. These are teaching refinements within the current
+units, not additional assessments or a full chapter restructuring.
+
+Recheck all SOURCE_LEDGER claims from official documentation. Clarify that the
+existing Codex plugin layout is supported compatibility packaging and that the
+documented portable layout uses different schemas. Do not migrate scaffolds or
+claim host compatibility without execution evidence.
+
+**Consequences:** M0–M9 order, scope, 108–147-hour estimate, mastery standards,
+public lab contracts, ownership, consent, and delayed-review rules remain intact.
+No session is started, resumed, closed, or rescored by this maintenance. The open
+draft and all learner code/history are preserved. The profile is not a fixed
+learning-style diagnosis or proof of educational effectiveness. Full chapter
+migration remains pending, and later labs remain just-in-time authoring work.
+These changes are tutor-authored infrastructure, not learner portfolio evidence.

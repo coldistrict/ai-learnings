@@ -37,6 +37,12 @@ sessions.
    Follow a linked prepared pilot only for a learner-authorized attempt (ADR-0011);
    on resume, acknowledge prior repairs, distinguish new evidence, and collect
    clarity/pacing feedback. Preparation does not start teaching.
+   Apply [adaptive teaching](../course/ADAPTIVE-TEACHING.md) (ADR-0013): read the
+   latest handoff, teach unfamiliar concepts before checking application, adapt
+   support from responses and sequencing from accumulated evidence. Explain the
+   next focus and record decisions plus an updated handoff in the draft. The
+   primary owns these writes; examiner feedback is evidence to assess, not an
+   automatic score or reason to rewrite the course. Keep mastery standards fixed.
 4. Honor cost consent (`--allow-live` + `--max-cost-usd`, cap in
    `learning/state.json`).
 5. Close: `npm run learn:close`. End by stating the next due action

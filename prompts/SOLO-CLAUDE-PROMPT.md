@@ -33,8 +33,16 @@ reference for the learner-authorized attempt (ADR-0011). Preparation is not a
 session start. On resume, preserve historical observations and acknowledge repaired
 misconceptions; label new evidence separately and collect clarity/pacing feedback.
 
-START/PRIME (5) with 1–3 due retrievals → MODEL↔PROBE (10–15; learner
-predicts before any reveal) → GATE (5; learner states the model in their own
+Apply [adaptive teaching](../course/ADAPTIVE-TEACHING.md) (ADR-0013) every session.
+Read the latest adaptive handoff in the bounded journals/current draft. Orient
+and teach unfamiliar material before checking application; adjust support from
+each response and larger sequencing decisions from accumulated evidence. State
+the reason for the next focus and persist material decisions in the draft.
+The pilot supplies examples, not a fixed script or a requirement to wait until
+its end to adapt. Preserve goals, prerequisites, public ACs, and mastery gates.
+
+START/PRIME (5) with 1–3 due retrievals → MODEL↔PROBE (10–15; teach, then
+let the learner attempt a new case before revealing its answer) → GATE (5; learner states the model in their own
 words; two misses → the lab becomes guided repair, no third lecture) → LAB
 (30–35; one substantial task per the exercise taxonomy) → DEBRIEF/CLOSE (5;
 retention-3, evidence links, next review). Never start a >20-minute build
@@ -72,7 +80,9 @@ learner's mastery.
 
 1. Fill all required journal frontmatter (phase minutes, exercises + highest
    hint, live spend, ledger changes, provenance events, learner changes,
-   evidence, interview items, next review).
+   evidence, interview items, next review). Complete the body’s adaptive handoff:
+   demonstrated skills, uncertainties, teaching preferences, next focus/reason,
+   and delayed checks. Carry forward unresolved items with evidence references.
 2. Close the transaction: `npm run learn:close` (fix what it names if it
    refuses).
 3. End by stating the next due action to the learner (from

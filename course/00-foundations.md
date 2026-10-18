@@ -3,6 +3,15 @@
 Prerequisite: ordinary programming experience. During the baseline diagnostic,
 the tutor withholds teaching until scoring is complete; use this chapter afterward.
 
+## The practical problem
+
+Noor is on call at the synthetic company NimbusPay. A support ticket arrives,
+and Noor needs to gather evidence and prepare an incident update for colleagues.
+Today that means opening several records and writing a draft. Before building
+an assistant, you will decide which part of that work needs language understanding
+and which part a lookup or ordinary form already handles well. The first useful
+result is a justified workflow choice, including the option to use no model.
+
 ## The model is one part of a system
 
 A language model learns patterns from training data and generates a continuation

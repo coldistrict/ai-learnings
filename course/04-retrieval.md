@@ -3,6 +3,15 @@
 Prerequisite: M2 evaluation and M3 access-controlled tools. Outcome: a measured
 retrieval pipeline whose answers cite authorized, current supporting evidence.
 
+## The practical problem
+
+Noor asks for the procedure relevant to a ticket. The assistant gives a confident
+answer and a citation, but the cited procedure is for a different service. More
+fluent wording will not repair that evidence gap. You will follow the path from
+question to retrieved documents to supported claims, then compare search methods
+on the same cases. The useful result is knowing where an answer went wrong and
+which change could fix it.
+
 ## RAG is a pipeline, not a vector database
 
 **Retrieval-augmented generation (RAG)** selects external evidence and supplies

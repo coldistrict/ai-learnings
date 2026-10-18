@@ -3,6 +3,14 @@
 Prerequisite: M6 release evidence and M7 tested integrations. Outcome: a
 reproducible deployment and demonstrated recovery under realistic synthetic faults.
 
+## The practical problem
+
+Several operators use the incident assistant at once. A dependency slows down,
+retries pile up, and a new release starts using stale evidence. The problem now
+extends beyond the quality of one reply. You will control how much work enters
+the system, detect when service degrades, and practise recovery. A useful release
+includes a tested way to stop expansion and restore a known working state.
+
 ## Design for bounded work
 
 Reliability starts with admission control: reject, queue, or defer work when

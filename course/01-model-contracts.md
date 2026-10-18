@@ -5,24 +5,44 @@ Prerequisite: [foundations](00-foundations.md). Use with the three
 grading contract; the production extensions below are taught before live use.
 
 Tutor entry for the paused M1-01 session: [prepared teaching pilot](pilots/m1-01-structured-output-contract.md).
-Use its paced analogous example when the learner separately asks to begin. Full
+Use it when the learner asks to begin or continue; the latest journal selects
+the resume point rather than restarting the example. Full
 chapter restructuring remains pending; see [scope](SCOPE.md).
+
+## The practical problem
+
+Noor clicks “Prepare update” in a proposed incident workspace. The model returns
+something readable, but the application needs predictable fields before it can
+display a reviewable draft. This milestone builds that boundary and its failure
+paths. Start with the familiar library workflow in the pilot; then transfer the
+idea to the existing classifier lab. Parsing, schema, source checks, and permission
+answer different questions—even when they all concern the same reply.
 
 ## Four checks, four different guarantees
 
-Imagine extracting a room reservation: room, date, headcount, and evidence ID.
+For a second example, Jo manages office meeting rooms. Colleagues email meeting
+requests in varied wording; Jo pastes a request into an internal booking screen.
+The model proposes room, date, headcount, and the request's evidence ID. The
+application checks the proposal before displaying it for Jo's review. Only a
+separate authorized booking operation can reserve a room.
 
 1. **Parse:** is the response valid JSON?
 2. **Validate shape:** are required fields present, types correct, enums allowed,
    and extra properties handled according to the contract?
 3. **Validate meaning:** does the room exist, does headcount fit its capacity,
-   and does the supplied evidence support the requested date?
+   and do the proposed room/date match what the request actually asks for?
 4. **Authorize:** may this user reserve this room now?
 
 A schema can require a date-shaped string; it cannot establish that the meeting
 really occurs on that date. Likewise a model-generated `confidence: 0.95` is a
 claim, not a calibrated 95% probability. Measure correctness within confidence
 bands before using a score for routing, and keep high-impact policy in code.
+
+An allowed room can still be the wrong requested room. Record lookup checks
+existence and capacity; it does not by itself establish the user's intent. For
+ambiguous requests, ask for clarification or review of the exact proposed booking.
+Permission to act and agreement about what to do remain separate questions.
+These checks are application responsibilities; a schema does not perform them.
 
 **Structured outputs** constrain the response to a supported schema. JSON mode
 only addresses JSON syntax. Function calling structures a proposed tool call;

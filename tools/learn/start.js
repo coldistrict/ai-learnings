@@ -138,6 +138,18 @@ try {
 - Evidence links:
 - Next review:
 
+## Adaptive teaching
+<!-- Follow course/ADAPTIVE-TEACHING.md. Record material observations only:
+     evidence (case/response/artifact + assistance), provisional assessment
+     and uncertainty, then teaching decision/reason. Do not prefill outcomes. -->
+
+## Adaptive handoff
+- Demonstrated skills (evidence references):
+- Unresolved gaps / unobserved skills:
+- Teaching preferences / feedback:
+- Next focus and reason (within learn:next priority):
+- Delayed check needed / scheduled:
+
 <!-- Frontmatter editing rules: keep strings double-quoted (JSON style),
      keep fields single-line; prose belongs in this body. -->
 `;

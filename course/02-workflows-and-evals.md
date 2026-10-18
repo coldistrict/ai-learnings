@@ -3,6 +3,14 @@
 Prerequisite: M1 contracts and failure taxonomy. Outcome: a useful deterministic
 workflow and an evaluation harness that exposes at least one real failure.
 
+## The practical problem
+
+Noor's assistant should collect records, prepare a draft, and leave it for review.
+Now imagine the same request arrives twice, or a test awards full marks to an
+invented answer. A convincing demo can hide both failures. Here you will make the
+steps explicit and build a measuring tool that catches mistakes. The central
+decision is what ordinary code should control even when one step uses a model.
+
 ## Separate proposals from execution
 
 A tool is a typed capability offered to the application or model. Its contract

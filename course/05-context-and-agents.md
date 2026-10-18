@@ -3,6 +3,15 @@
 Prerequisite: contracts, evalkit, MCP, and retrieval. Outcome: one bounded
 investigation loop with explicit state, safe approval, and interruption recovery.
 
+## The practical problem
+
+Noor has a ticket with incomplete evidence. The next useful lookup depends on
+what the previous one reveals, so a fixed sequence may waste work or miss a lead.
+This is a reason to test an agent: a model that proposes the next step while code
+controls execution. You will compare it with the existing workflow and handle
+an interruption without forgetting what happened. More autonomy must earn its
+cost through better investigation results.
+
 ## Context engineering: decide what each call needs
 
 **Prompt engineering** designs the instructions. **Context engineering** chooses

@@ -8,3 +8,8 @@ node_modules/
 # Keep them together; see docs/SESSION_STATE.md. Closed journals stay trackable.
 /learning/active-session.json
 /learning/journal/.in-progress/
+
+# Local provider credentials are never published.
+.env
+.env.*
+!.env.example

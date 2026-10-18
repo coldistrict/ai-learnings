@@ -4,6 +4,9 @@ This is teaching infrastructure, not a scored learner artifact. Read only the
 current milestone's guide and the sections needed for today's objective. Continue
 to use START_HERE, bounded state, the hint ladder, and transactional journals.
 The guide supplies explanations; it does not authorize completing learner code.
+Apply [adaptive teaching](ADAPTIVE-TEACHING.md) (ADR-0013) throughout the session:
+use evidence to choose support and next practice, and persist the reason in the
+current journal. A prepared sequence is adjustable teaching guidance.
 
 Apply [scope and migration status](SCOPE.md) (ADR-0011) before planning assessment.
 Only [M1-01](pilots/m1-01-structured-output-contract.md) has a prepared teaching
@@ -18,13 +21,25 @@ understanding. Define unfamiliar terms when first used. Start with a small
 analogous example outside the assessed incident pack, then connect it to the
 application. Explain both the mechanism and the guarantee it does not provide.
 
+Use the [learner profile](LEARNER-PROFILE.md) to prepare the explanation. Before
+showing fields, make the person, screen/action, input source, model contribution,
+and destination of the output concrete. Connect the unit to a useful capstone
+behavior. Chapter openings supply motivation; they are not extra exercises.
+Explain what benefit the model adds over the ordinary non-AI approach, and keep
+roles and execution permissions consistent throughout the example.
+
 Use a concrete sequence:
 
-1. Present the situation and ask for a prediction.
-2. Explain the mechanism with a trace, small table, or worked calculation.
-3. Change one condition and ask the learner to predict the new result.
+1. Orient the learner: purpose, application context, and relevant prior evidence.
+2. Teach unfamiliar ideas with a trace, small table, or worked calculation.
+3. Change one condition and invite an independent prediction or application;
+   wait for the attempt before feedback, then adjust support to the response.
 4. Have the learner build, repair, review, or measure one bounded artifact.
 5. Ask for an explanation without notes and schedule different-context retrieval.
+
+Use this sequence flexibly: omit redundant explanation when prior evidence
+supports application, and repair a prerequisite when a pattern of difficulty
+supports that decision. A single answer does not establish overall ability.
 
 These chapters span multiple sessions. Budget approximately 5 minutes retrieval,
 12 explanation/probe, 5 gate, 33 practice, and 5 debrief. If a learner cannot
@@ -112,6 +127,7 @@ needs dates, different contexts, and the required evidence classes.
 
 Record concrete misconceptions such as “timeout cancels the bill” or “a valid
 citation proves support,” then schedule a different example that reveals whether
-the model changed. Preserve completed journals; this course refresh is not
+the learner's understanding changed. Keep repaired and still-uncertain skills
+distinct in the adaptive handoff. Preserve completed journals; this course refresh is not
 retroactive evidence of learner progress. Keep failed/blocked/live-untested
 results visible when closing the session.

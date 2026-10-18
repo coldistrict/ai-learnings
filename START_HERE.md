@@ -1,7 +1,8 @@
 # START_HERE — tutor/learner contract
 
 Plan version `ai-enabler-mastery-system-v3`; content amendment 2026-09-05
-(ADR-0009). Changes to THIS file happen
+(ADR-0009); adaptive teaching amendment 2026-09-06 (ADR-0013); focused teaching
+refinement 2026-10-09 (ADR-0014). Changes to THIS file happen
 only via a DECISIONS.md ADR. Tutors: your full session contract is
 `prompts/SOLO-CLAUDE-PROMPT.md`, `prompts/SOLO-CODEX-PROMPT.md`, or
 `prompts/PAIRED-SESSION-PROMPT.md` (the `teach` skill wraps the same body).
@@ -65,15 +66,20 @@ diagnostics or SESSION.md probes. Gate results and evidence live in
 After bounded state reads, load the current milestone's `study_guide` from
 `learning/curriculum.json`, plus the relevant section of `course/AUTHORING.md`.
 This is bounded lesson preparation, not permission to read every chapter or
-the full learning history. Explain one concept with a worked analogous example,
-check a prediction, and use the existing public exercise contract for grading.
+the full learning history. Apply [adaptive teaching](course/ADAPTIVE-TEACHING.md)
+(ADR-0013): orient and teach unfamiliar ideas, then use observed understanding
+to adjust explanations, practice, pace, and the next focus. Read the latest
+adaptive handoff within the bounded journals; update it with evidence, uncertainty,
+and the reason for the next step. Keep goals, prerequisites, and mastery standards
+stable, and use the existing public exercise contract for grading.
 Keep the diagnostic teaching-free until scoring ends.
 
 For M1-01, the guide and session plan link the prepared
 [teaching pilot](course/pilots/m1-01-structured-output-contract.md) (ADR-0011).
-Use it only after the learner separately asks to begin; resume the correct open
-session through the normal workflow. Other chapter restructuring remains pending
-pilot evidence. Required/optional coverage is explicit in [scope](course/SCOPE.md);
+Use it when the learner asks to begin or continue; resume the correct open
+session through the normal workflow. Adapt teaching throughout the authorized
+attempt; broader chapter restructuring remains pending patterns of pilot evidence
+and feedback. Required/optional coverage is explicit in [scope](course/SCOPE.md);
 Lab 03's changed explanation assessment applies prospectively after teaching
 (ADR-0010). Before executing V20/V34, read their local
 [gate amendments](docs/verification/RESULTS.md#execution-amendments-2026-09-05).

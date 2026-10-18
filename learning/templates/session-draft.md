@@ -25,3 +25,19 @@ unblock — needs one (plan §8.5).
 
 Body sections: START/PRIME (due retrievals) · MODEL ↔ PROBE · GATE · LAB
 (evidence step, hints used) · DEBRIEF/CLOSE (retention-3, next review).
+
+## Adaptive teaching and handoff (ADR-0013)
+
+New drafts also include **Adaptive teaching** and **Adaptive handoff** body
+sections. Follow [the shared policy](../../course/ADAPTIVE-TEACHING.md). These
+are tutor-maintained notes; they add no required frontmatter or automatic scores.
+Append them to an older open draft when adopting the policy; preserve its prior
+observations and never modify closed journals.
+
+Record material evidence (case/response/artifact and assistance), the provisional
+assessment and uncertainty, and the resulting teaching decision with its reason.
+At pause/close, carry forward demonstrated skills with evidence references,
+unresolved gaps/unobserved skills, teaching preferences, next focus and reason,
+and delayed checks needed or scheduled. Distinguish a plan from a performed check.
+Actual due scheduling uses ledger-change `next_due`; `next_review` prose alone
+does not enter the resolver's due queue.

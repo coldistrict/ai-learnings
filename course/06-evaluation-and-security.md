@@ -3,6 +3,14 @@
 Prerequisite: M2 evalkit and the M5 investigation runtime. Outcome: a defensible
 release decision with known limitations, calibrated grading, and failure evidence.
 
+## The practical problem
+
+A proposed release produces useful incident drafts on most test cases. One run,
+however, uses a record the requester should not see. Would you ship it? This
+milestone turns that decision into evidence: what failed, how it happened, which
+control should stop it, and what the tests still leave uncertain. You will use
+synthetic failure cases to challenge both the assistant and the grader judging it.
+
 ## Measure outcomes and diagnose trajectories
 
 An outcome scorer asks whether the final answer or effect was correct. A

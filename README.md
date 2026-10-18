@@ -30,8 +30,13 @@ The [content review](docs/course-review-2026-09-05.md) records corrections,
 current sources, and verification limits. Later executable labs remain
 adapted to the learner and authored just in time.
 
+The [2026-10-09 review](docs/course-review-2026-10-09.md) adds focused teaching
+improvements from learner feedback: practical chapter openings, a concise
+teaching profile, and clearer continuity into the current lab.
+
 The [M1-01 teaching pilot](course/pilots/m1-01-structured-output-contract.md) is
-prepared; teaching and the remaining chapter rewrite await actual participation.
+in progress; the current journal determines the next teaching step. Full chapter
+restructuring remains pending further evidence.
 Run `npm run course:check` for [structural course checks](tools/course/README.md).
 
 ## Layout (plan §5.3)

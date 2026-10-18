@@ -3,6 +3,8 @@
 Content revision: **2026-09-05**. Base plan: `ai-enabler-mastery-system-v3`,
 with the teaching and freshness amendments in
 [ADR-0009](../learning/DECISIONS.md#adr-0009--course-content-refresh-2026-09-05).
+Focused teaching refinement: **2026-10-09**, recorded in
+[ADR-0014](../learning/DECISIONS.md#adr-0014--focused-teaching-refinement-2026-10-09).
 
 The outcome is to build, evaluate, operate, and explain a useful AI integration:
 the **AI Incident Enablement Platform**, using the synthetic NimbusPay company.
@@ -18,8 +20,25 @@ and use separate practice examples. They do not disclose diagnostic answers or
 the incident packs' ground truth. A chapter is a reference across several
 sessions, not a reading assignment to finish in one sitting.
 
-For each concept: explain it in plain language → predict one failure → try a
-small example → inspect evidence → explain the result without notes. Learning
+The tutor follows [adaptive teaching](ADAPTIVE-TEACHING.md): keep clear goals,
+teach unfamiliar ideas with context and examples, then choose practice, pace,
+and the next focus from what you demonstrate. Your journal carries the evidence,
+remaining uncertainties, and the reason for the next step between sessions.
+
+The [teaching profile](LEARNER-PROFILE.md) reflects your requests for complete
+real-world context, explanations from first principles, and a clear reason to
+use AI. Each chapter now opens with a practical problem in the proposed NimbusPay
+workflow. These openings show what the work is for; they add no assignments.
+Your tutor should connect the problem to one useful activity, acknowledge what
+you have demonstrated, and keep moving as the evidence supports it.
+
+The project grows in three stages: M0–M3 select useful work and connect reliable
+capabilities; M4–M6 gather evidence, investigate, and evaluate; M7–M9 make the
+workflow usable, operate it, and decide whether it is worth adopting. These are
+planned capabilities, not a claim that later labs or features already exist.
+
+For each concept: learn the explanation → try a changed case → inspect evidence
+and feedback → apply it independently. Learning
 to recognize an answer and independently producing it are different abilities.
 Revisit the concept in a different setting at least three days later before
 claiming durable mastery.
@@ -52,8 +71,8 @@ Diagnostic skips may shorten lessons but never waive gates.
 
 ## Pilot and structural checks
 
-The [M1-01 teaching pilot](pilots/m1-01-structured-output-contract.md) is prepared
-for the learner's separate instruction to begin. All full chapter restructuring
+The [M1-01 teaching pilot](pilots/m1-01-structured-output-contract.md) has begun;
+resume its pending step when the learner asks to continue. Full chapter restructuring
 remains pending actual pilot evidence and feedback. The guides remain technical
 references; their existence does not establish beginner teaching effectiveness.
 See [scope, tiers, and hour implications](SCOPE.md) (ADR-0011).
@@ -81,3 +100,5 @@ its verification, and the remaining execution work.
 
 The [dated follow-up report](../docs/course-follow-up-2026-09-05.md) records the
 assessment/scope decisions, structural checks, preservation and pending pilot.
+The [October review](../docs/course-review-2026-10-09.md) records subsequent learner
+evidence and focused refinements, without marking a full chapter migration.

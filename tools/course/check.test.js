@@ -108,7 +108,7 @@ test('pilot JSON data examples are valid illustrations, with no executable class
   const text = fs.readFileSync(path.join(repo, 'course/pilots/m1-01-structured-output-contract.md'), 'utf8');
   const values = [...text.matchAll(/```json\n([\s\S]*?)\n```/g)].map(m => JSON.parse(m[1]));
   assert.equal(values.length, 3);
-  assert.equal(values[0].visitorText, 'The returns desk opens at 10:00.');
+  assert.equal(values[0].staffNote, 'The returns desk opens at 10:00.');
   assert.equal(values[1].opens_at, '10:00');
   assert.equal(values[2].opens_at, '11:00');
   assert.equal(values[1].desk, values[2].desk);

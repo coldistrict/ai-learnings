@@ -3,6 +3,15 @@
 Prerequisite: the implemented capstone and its evidence. Outcome: an honest
 pilot report, a usable adoption plan, and demonstrated interview readiness.
 
+## The practical problem
+
+Noor's team tries the assistant. Drafts appear faster, but operators spend time
+checking and correcting them. Has the workflow improved? You will measure the
+whole task, including review effort, and decide whether to expand, revise, or
+stop. Your final demonstration should explain one useful outcome, one failure,
+and the evidence behind your choices. That makes the project defensible to both
+an engineering interviewer and the people expected to use it.
+
 ## Enablement includes the people doing the work
 
 Discover a workflow with its operators before choosing a model or platform.

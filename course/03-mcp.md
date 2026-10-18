@@ -3,6 +3,15 @@
 Prerequisite: M2 tool contracts, traces, and negative tests. Outcome: a narrow
 stdio server, an automated client suite, and recorded host compatibility.
 
+## The practical problem
+
+Noor wants to use the same incident lookup from two assistant applications.
+Copying the lookup into each application would create two implementations to
+maintain. MCP provides a shared connection to a capability server; it does not
+make every caller trustworthy or every client compatible. You will inspect what
+actually crosses that connection and prove which requests the server accepts.
+That is the reason for learning the protocol before adding more tools.
+
 ## What MCP standardizes
 
 Model Context Protocol gives applications a shared way to discover and use
